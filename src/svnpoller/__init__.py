@@ -79,5 +79,5 @@ def run():
 
             conf.set(sect, 'newest_rev', rev)
 
-    conf.write(open(CONFIG_PATH, 'wt'))
+    conf.write(open(config_file, 'wt'))
 
