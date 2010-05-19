@@ -1,4 +1,6 @@
-polling svn repository and notify by email.
+`svnpoller` watches target SVN repositories regularly and transmits a
+commit-mail to the designated notify party about each commit when there
+are new commits.
 
 Requirements
 ------------
@@ -14,7 +16,7 @@ Dependencies
 
 * `lxml`
 
-* svn command (1.6 or later)
+* svn external command (1.6 or later)
 
 
 Features
@@ -25,8 +27,8 @@ Features
 * send commit message and diff by email
 
 
-An example
-----------
+Setup
+-----
 
 Make environment (by easy_install)::
 
@@ -41,10 +43,22 @@ Make environment (by buildout)::
    $ bin/buildout
 
 
-Copy and write ini file. example::
+Copy and modify ini file. example::
 
    $ cp <svnpoller installed path>/svnpoller/svnpoller.ini .
+   $ vi svnpoller.ini
+
+Usage
+-----
+
+Execute svnpoller command::
+
    $ svnpoller svnpoller.ini
+
+or setup cron job::
+
+   $ crontab -e
+   0 0 * * * /path/to/svnpoller /path/to/svnpoller.ini
 
 
 History
