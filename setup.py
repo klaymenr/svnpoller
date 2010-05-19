@@ -12,7 +12,7 @@ classifiers = [
    "Intended Audience :: System Administrators",
    "License :: OSI Approved :: Python Software Foundation License",
    "Programming Language :: Python",
-   "Topic :: Software Development :: Bug Trackin",
+   "Topic :: Software Development",
 ]
 
 setup(
