@@ -22,15 +22,23 @@ Features
 
 * polling specified svn repository
 
-* send commit log, diff by email
+* send commit message and diff by email
 
 
 An example
 ----------
 
-Make environment::
+Make environment (by easy_install)::
 
    $ easy_install svnpoller
+
+
+Make environment (by buildout)::
+
+   $ hg clone http://bitbucket.org/shimizukawa/svnpoller
+   $ cd svnpoller
+   $ python bootstrap.py
+   $ bin/buildout
 
 
 Copy and write ini file. example::
