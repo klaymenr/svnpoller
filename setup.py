@@ -18,13 +18,13 @@ classifiers = [
 setup(
     name='svnpoller',
     version=version,
-    description='polling svn repository and notify.',
+    description='polling svn repository and notify by email.',
     long_description=long_description,
     classifiers=classifiers,
     keywords=['subversion','svn','poll','notify'],
     author='Takayuki SHIMIZUKAWA',
     author_email='shimizukawa at gmail.com',
-    url='http://svn.freia.jp/open/svnpoller/',
+    url='http://bitbucket.org/shimizukawa/svnpoller',
     license='PSL',
     package_dir={'': 'src'},
     install_requires=[

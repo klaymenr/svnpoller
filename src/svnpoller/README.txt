@@ -1,9 +1,9 @@
-polling svn repository and notify.
+polling svn repository and notify by email.
 
 Requirements
 ------------
 
-* Python 2.5 or later
+* Python 2.6 or later
 
 
 Dependencies
@@ -25,16 +25,18 @@ Features
 * send commit log, diff by email
 
 
-Limitations
------------
-
-TODO: write here.
-
-
 An example
 ----------
 
-TODO: write here.
+Make environment::
+
+   $ easy_install svnpoller
+
+
+Copy and write ini file. example::
+
+   $ cp <svnpoller installed path>/svnpoller/svnpoller.ini .
+   $ svnpoller svnpoller.ini
 
 
 History
