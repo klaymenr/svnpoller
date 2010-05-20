@@ -11,17 +11,21 @@ ENV['LANG'] = 'C'
 
 POPEN_KW = dict(stdin=subprocess.PIPE, stdout=subprocess.PIPE, env=ENV)
 
-MAIL_TEMPLATE = """
- Revision: %(rev)s
- Author: %(auth)s
- Date: %(date)s
- Message:
+MAIL_TEMPLATE = """\
+* Revision: %(rev)s
+* Author: %(auth)s
+* Date: %(date)s
+* Message:
 %(msg)s
 
+* Paths:
+%(paths)s
+
+* Diff:
 %(diff)s
 """
 
-def build_message(rev, auth, date, msg, diff):
+def build_message(rev, auth, date, msg, paths, diff):
     return MAIL_TEMPLATE % locals()
 
 
@@ -59,6 +63,8 @@ def run():
             svn_diff.append('-c%s' % rev)
             svn_diff.append(opts.get('url'))
             proc = subprocess.Popen(svn_diff, **POPEN_KW)
+            paths = '\n'.join((" %s %s" % (x.attrib['action'], x.text))
+                              for x in node.find('paths'))
             diff_data = proc.stdout.read()
 
             text = build_message(
@@ -66,6 +72,7 @@ def run():
                     node.find('author').text,
                     node.find('date').text,
                     node.find('msg').text,
+                    paths,
                     diff_data)
 
             subject = '[%(sect)s: %(rev)s]' % locals()
