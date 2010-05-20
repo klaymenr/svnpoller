@@ -1,0 +1,5 @@
+include bootstrap.py
+include buildout.cfg
+include TODO.txt
+include MANIFEST.in
+recursive-include src/svnpoller *.py *.txt *.ini

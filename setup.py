@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup
+from setuptools import setup, find_packages
 import os
 
-version = '0.0.1'
+version = '0.0.2'
 long_description = \
   open(os.path.join("src","svnpoller","README.txt")).read() + \
   open(os.path.join("TODO.txt")).read()
@@ -26,7 +26,10 @@ setup(
     author_email='shimizukawa at gmail.com',
     url='http://bitbucket.org/shimizukawa/svnpoller',
     license='PSL',
+    packages=find_packages('src'),
     package_dir={'': 'src'},
+    package_data = {'': ['buildout.cfg']},
+    include_package_data=True,
     install_requires=[
        'setuptools',
        'lxml',

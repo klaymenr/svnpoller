@@ -1,7 +1,10 @@
+.installed.cfg
 .pyc
 .swp
 bin
+build
 develop-eggs
+dist
 eggs
-.installed.cfg
+parts
 src/svnpoller.egg-info
