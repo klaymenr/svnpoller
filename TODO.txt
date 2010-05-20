@@ -1,6 +1,12 @@
 Todos
 ------
-* refactoring
+* Add test code.
+* Refactoring.
+* Remove lxml dependency (but want to support py2.4).
+* Add mercurial(hg) support.
+* Add bazaar(bzr) support.
+* Introduce customizable mail template.
+* Attach diff without printing in the main text.
 
 Known Issues
 ~~~~~~~~~~~~~
