@@ -64,11 +64,7 @@ or setup cron job::
 History
 -------
 
-0.0.2
-~~~~~
-* fix broken package
-
-0.0.1
+0.0.4
 ~~~~~
 * first release
 

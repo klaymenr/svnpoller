@@ -53,7 +53,7 @@ def run():
         xml_data = proc.stdout.read()
 
         root = etree.XML(xml_data)
-        for node in reversed(root):
+        for node in root:
             rev = node.attrib['revision']
             svn_diff = ['svn', 'diff']
             svn_diff.append('-c%s' % rev)
