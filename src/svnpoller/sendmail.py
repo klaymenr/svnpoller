@@ -63,7 +63,3 @@ def _sendmail(fromaddr, toaddrs, msg, smtpserver):
     server.sendmail(fromaddr, toaddrs, msg)
     server.quit()
 
-
-def _sendmail(fromaddr, toaddrs, msg, smtpserver):
-    print msg
-
