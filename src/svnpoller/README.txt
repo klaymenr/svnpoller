@@ -5,7 +5,7 @@ are new commits.
 Requirements
 ------------
 
-* Python 2.6 or later
+* Python 2.4 or later
 
 
 Dependencies
@@ -63,6 +63,10 @@ or setup cron job::
 
 History
 -------
+
+0.0.5
+~~~~~
+* Add changed `path-list` to mail-message.
 
 0.0.4
 ~~~~~
