@@ -38,9 +38,9 @@ class Log(object):
         root = xml2elem(xml_data)
         entry = root.find('logentry')
         self.paths = [(x.attrib['action'], x.text) for x in entry.find('paths')]
-        self.normalized_paths = [
-                (a, p[len(self.subpath):].lstrip('/'))
-                for a,p in self.paths]
+        #self.normalized_paths = [
+        #        (a, p[len(self.subpath):].lstrip('/'))
+        #        for a,p in self.paths]
         self.author = entry.find('author').text
         self.date = datetime.strptime(entry.find('date').text[:19],'%Y-%m-%dT%H:%M:%S')
         self.msg = entry.find('msg').text
@@ -50,27 +50,21 @@ class Log(object):
         cmd = ['svn', 'info', '--xml']
         cmd.append('-r%s' % str(rev))
         cmd.append(url)
-        proc = subprocess.Popen(cmd, **POPEN_KW)
-        out,err = proc.communicate()
-        proc.wait()
+        out,err = command(cmd)
         return out
 
     def _prepare_log(self, url, rev):
         cmd = ['svn', 'log', '-v', '--xml']
         cmd.append('-r%s' % str(rev))
         cmd.append(url)
-        proc = subprocess.Popen(cmd, **POPEN_KW)
-        out,err = proc.communicate()
-        proc.wait()
+        out,err = command(cmd)
         return out
 
     def _prepare_diff(self, url, rev):
         cmd = ['svn', 'diff']
         cmd.append('-c%s' % rev)
         cmd.append(url)
-        proc = subprocess.Popen(cmd, **POPEN_KW)
-        out,err = proc.communicate()
-        proc.wait()
+        out,err = command(cmd)
         return out
 
     def __repr__(self):
@@ -95,9 +89,7 @@ def get_logs(url, rev=None, rev2=None):
     elif rev:
         cmd.append('-c%s' % str(rev))
     cmd.append(url)
-    proc = subprocess.Popen(cmd, **POPEN_KW)
-    out,err = proc.communicate()
-    proc.wait()
+    out,err = command(cmd)
     root = xml2elem(out)
     return [Log(url, node.attrib['revision']) for node in root]
 
@@ -121,11 +113,15 @@ def get_revisions(urls, rev=None):
         if rev:
             cmd.append('-r%s:HEAD' % str(rev))
         cmd.append(url)
-        proc = subprocess.Popen(cmd, **POPEN_KW)
-        out,err = proc.communicate()
-        proc.wait()
+        out,err = command(cmd)
         root = xml2elem(out)
         revs.update(int(node.attrib['revision']) for node in root)
 
     return sorted(revs)
+
+def command(cmd):
+    proc = subprocess.Popen(cmd, **POPEN_KW)
+    out,err = proc.communicate()
+    proc.wait()
+    return out,err
 

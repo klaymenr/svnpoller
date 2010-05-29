@@ -24,11 +24,7 @@ def build_message(rev, auth, date, msg, paths, diff):
     return MAIL_TEMPLATE % locals()
 
 
-def run():
-    if len(sys.argv) > 1:
-        config_file = sys.argv[1]
-    else:
-        config_file = CONFIG_PATH
+def main(config_file):
     conf = ConfigParser()
     conf.read(config_file)
 
@@ -74,4 +70,17 @@ def run():
             conf.set(sect, 'newest_rev', rev)
 
     conf.write(open(config_file, 'wt'))
+
+
+def run():
+    if len(sys.argv) > 1:
+        config_file = sys.argv[1]
+    else:
+        config_file = CONFIG_PATH
+
+    main(config_file)
+
+
+if __name__ == '__main__':
+    run()
 

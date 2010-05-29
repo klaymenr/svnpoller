@@ -35,6 +35,8 @@ setup(
        'lxml',
         # -*- Extra requirements: -*-
     ],
+    test_suite='nose.collector',
+    tests_require=['Nose'],
     entry_points="""
        [console_scripts]
        svnpoller = svnpoller:run
