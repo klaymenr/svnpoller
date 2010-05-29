@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<log>
+<logentry
+   revision="113304">
+<author>vincentfretin</author>
+<date>2010-03-17T16:21:02.720070Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-el.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-gl.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ar.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fr.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-et.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-kn.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-nl.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hr.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-th.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pl.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-nn.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-it.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sl.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-lt.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-hk.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ca.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pt.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-da.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sr.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-tr.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fa.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sv.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-de.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-bg.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ja.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ka.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-he.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fi.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hi.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-eo.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ta.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-mi.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-cs.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-es.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-te.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ko.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-eu.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-tw.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fu.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-cy.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hu.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-no.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sk.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-vi.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sm.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-uk.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-cn.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hy.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ro.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sr-Latn.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-to.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sq.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pt-br.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-my.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-af.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ru.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes.pot</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-id.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-bn.po</path>
+</paths>
+<msg>Added label_use_end_date and label_whole_day_event messages to atcontenttypes</msg>
+</logentry>
+</log>

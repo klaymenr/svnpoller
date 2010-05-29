@@ -1,17 +1,43 @@
 import unittest, os
+from optparse import OptionParser
 
 FIXTURE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fixtures')
+
+svn_command_parser = OptionParser()
+svn_command_parser.add_option('-r', '--revision',
+                              action='store', type='string', dest='revision')
+svn_command_parser.add_option('-c', '--change',
+                              action='store', type='string', dest='change')
+svn_command_parser.add_option('', '--xml',
+                              action='store_true', default=False, dest='xml')
+svn_command_parser.exit = lambda *args, **kw: None
+svn_command_parser.error = lambda *args, **kw: None
+
 
 def command(cmd):
     #if 'dummy-url' not in cmd:
     #    return command_orig(cmd)
 
-    if 'info' in cmd:
+    if 'info' == cmd[1]:
         return open(os.path.join(FIXTURE_DIR, 'info-1.xml')).read(), ''
-    elif 'log' in cmd:
-        return open(os.path.join(FIXTURE_DIR, 'log-1v.xml')).read(), ''
-    elif 'diff' in cmd:
+
+    elif 'log' == cmd[1]:
+        options, args = svn_command_parser.parse_args(cmd[2:])
+        if options.change:
+            rev = options.change
+        elif options.revision:
+            rev = options.revision.replace(':','-')
+        else:
+            rev = '1-HEAD'
+        filename = 'log-%s.xml' % rev
+        if not os.path.exists(os.path.join(FIXTURE_DIR, filename)):
+            raise RuntimeError(filename)
+
+        return open(os.path.join(FIXTURE_DIR, filename)).read(), ''
+
+    elif 'diff' == cmd[1]:
         return open(os.path.join(FIXTURE_DIR, 'diff-1.txt')).read(), ''
+
     else:
         return command_orig(cmd)
 

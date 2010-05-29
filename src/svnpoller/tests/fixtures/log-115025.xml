@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<log>
+<logentry
+   revision="115025">
+<author>tyam</author>
+<date>2010-04-10T07:09:52.745456Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/plone-ja.po</path>
+<path
+   kind=""
+   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ja.po</path>
+</paths>
+<msg>update for new terms</msg>
+</logentry>
+</log>
