@@ -49,7 +49,7 @@ def main(config_file):
         base_url[2] = '/'.join(base_path)
         base_url = urlunparse(base_url)
         revs = get_revisions(urls, newest_rev)
-        logs = [get_log(base_url, rev) for rev in revs]
+        logs = (get_log(base_url, rev) for rev in revs)
 
         for log in logs:
             text = build_message(
