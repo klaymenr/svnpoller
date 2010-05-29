@@ -1,7 +1,6 @@
 import os, sys
 from urlparse import urlparse, urlunparse
 from ConfigParser import ConfigParser
-import sendmail
 from svnlog import *
 
 CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'svnpoller.ini')
@@ -24,7 +23,7 @@ def build_message(rev, auth, date, msg, paths, diff):
     return MAIL_TEMPLATE % locals()
 
 
-def main(config_file):
+def main(config_file, sender):
     conf = ConfigParser()
     conf.read(config_file)
 
@@ -60,12 +59,12 @@ def main(config_file):
             rev = log.rev
             subject = '[%(sect)s: %(rev)s]' % locals()
 
-            sendmail.send(
-                    mail_data['fromaddr'],
-                    opts.get('address'),
-                    subject,
-                    text,
-                    smtpserver=mail_data['smtpserver'])
+            sender(
+                mail_data['fromaddr'],
+                opts.get('address'),
+                subject,
+                text,
+                smtpserver=mail_data['smtpserver'])
 
             conf.set(sect, 'newest_rev', rev)
 
@@ -78,7 +77,8 @@ def run():
     else:
         config_file = CONFIG_PATH
 
-    main(config_file)
+    import sendmail
+    main(config_file, sendmail.send)
 
 
 if __name__ == '__main__':

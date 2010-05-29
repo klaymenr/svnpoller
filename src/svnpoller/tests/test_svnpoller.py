@@ -34,7 +34,7 @@ class TestSvnPoller(base.TestBase):
         super(TestSvnPoller, self).tearDown()
 
     def test_mail_payload(self):
-        svnpoller.main(self.config_file)
+        svnpoller.main(self.config_file, self._stub_sender)
 
         self.assertEqual(len(TEST_REVS), len(self._sent))
         self.assertEqual('poller@example.com', self._sent[0]['fromaddr'])
@@ -42,7 +42,7 @@ class TestSvnPoller(base.TestBase):
         self.assertEqual('localhost', self._sent[0]['smtpserver'])
 
     def test_config_update(self):
-        svnpoller.main(self.config_file)
+        svnpoller.main(self.config_file, self._stub_sender)
 
         conf = ConfigParser()
         conf.read(self.config_file)

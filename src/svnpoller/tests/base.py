@@ -47,22 +47,21 @@ command_orig = svnlog.command
 
 class TestBase(unittest.TestCase):
 
-    def _stub_sendmail(self, fromaddr, toaddrs, msg, smtpserver):
-        self._sent.append(locals())
+    def _stub_sender(self, fromaddr, toaddrs, subject, message_text,
+                     smtpserver='localhost', charset='utf-8', sender=None):
+
+        def storage(fromaddr, toaddrs, msg, smtpserver):
+            self._sent.append(locals())
+
+        from svnpoller.sendmail import send
+        send(fromaddr, toaddrs, subject, message_text,
+             smtpserver=smtpserver, charset=charset, sender=storage)
 
     def setUp(self):
-        from svnpoller import sendmail
-        self.sendmail_orig = sendmail._sendmail
-
         self._sent = []
-        sendmail._sendmail = self._stub_sendmail
-
         svnlog.command = command
 
     def tearDown(self):
-        from svnpoller import sendmail
-        sendmail._sendmail = self.sendmail_orig
-
         svnlog.command = command_orig
 
 

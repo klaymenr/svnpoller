@@ -4,8 +4,15 @@ from email.MIMEText import MIMEText
 from email.Header import Header
 
 
+def _sender(fromaddr, toaddrs, msg, smtpserver):
+    server = smtplib.SMTP(smtpserver)
+    #server.set_debuglevel(1)
+    server.sendmail(fromaddr, toaddrs, msg)
+    server.quit()
+
+
 def send(fromaddr, toaddrs, subject, message_text,
-         smtpserver='localhost', charset='utf-8'):
+         smtpserver='localhost', charset='utf-8', sender=_sender):
 
     if type(toaddrs) in (ListType, TupleType):
         pass
@@ -18,7 +25,7 @@ def send(fromaddr, toaddrs, subject, message_text,
     text = u'\n'.join(safe_decode(x, default_charset)
                       for x in message_text.splitlines())
     msg = buildmail(charset, fromaddr, toaddrs, subject, text)
-    return _sendmail(fromaddr, toaddrs, msg.as_string(), smtpserver)
+    return sender(fromaddr, toaddrs, msg.as_string(), smtpserver)
 
 
 def guess_charset(data):
@@ -56,10 +63,4 @@ def buildmail(charset, fromaddr, toaddrs, subject, message):
     message['To'] = m_to
     return message
 
-
-def _sendmail(fromaddr, toaddrs, msg, smtpserver):
-    server = smtplib.SMTP(smtpserver)
-    #server.set_debuglevel(1)
-    server.sendmail(fromaddr, toaddrs, msg)
-    server.quit()
 
