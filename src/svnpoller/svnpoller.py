@@ -71,14 +71,38 @@ def main(config_file, sender):
     conf.write(open(config_file, 'wt'))
 
 
+def dry_run_sender(fromaddr, toaddrs, subject, message_text,
+                   smtpserver='localhost', charset='utf-8', sender=None):
+
+    def storage(fromaddr, toaddrs, msg, smtpserver):
+        print msg
+
+    from sendmail import send
+    send(fromaddr, toaddrs, subject, message_text,
+         smtpserver=smtpserver, charset=charset, sender=storage)
+
+
 def run():
-    if len(sys.argv) > 1:
-        config_file = sys.argv[1]
+    from optparse import OptionParser
+    parser = OptionParser()
+    parser.add_option('-n', '--dry-run',
+                      action='store_true', default=False,
+                      dest='dry_run')
+    options, args = parser.parse_args()
+
+
+    if len(args) > 0:
+        config_file = args[0]
     else:
         config_file = CONFIG_PATH
 
-    import sendmail
-    main(config_file, sendmail.send)
+    if options.dry_run:
+        sender = dry_run_sender
+    else:
+        import sendmail
+        sender = sendmail.send
+
+    main(config_file, sender)
 
 
 if __name__ == '__main__':
