@@ -38,16 +38,15 @@ def main(config_file, sender):
 
         opts = dict(conf.items(sect))
 
-        newest_rev = opts.get('newest_rev', None)
-        #if newest_rev: # add 1 rev
-        #    newest_rev = str(int(newest_rev)+1)
+        newest_rev = opts.get('newest_rev', '0')
+        next_rev = int(newest_rev)+1
         urls = filter(None, opts.get('url').splitlines())
         base_path = os.path.commonprefix([urlparse(x)[2].split('/')
                                           for x in urls])
         base_url = list(urlparse(urls[0]))
         base_url[2] = '/'.join(base_path)
         base_url = urlunparse(base_url)
-        revs = get_revisions(urls, newest_rev)
+        revs = get_revisions(urls, next_rev)
         logs = (get_log(base_url, rev) for rev in revs)
 
         for log in logs:

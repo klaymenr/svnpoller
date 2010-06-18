@@ -31,12 +31,16 @@ def command(cmd):
             rev = '1-HEAD'
         filename = 'log-%s.xml' % rev
         if not os.path.exists(os.path.join(FIXTURE_DIR, filename)):
-            raise RuntimeError(filename)
+            raise RuntimeError(filename+' was not found')
 
-        return open(os.path.join(FIXTURE_DIR, filename)).read(), ''
+        f = os.path.join(FIXTURE_DIR, filename)
+        #print f
+        return open(f).read(), ''
 
     elif 'diff' == cmd[1]:
-        return open(os.path.join(FIXTURE_DIR, 'diff-1.txt')).read(), ''
+        f = os.path.join(FIXTURE_DIR, 'diff-1.txt')
+        #print f
+        return open(f).read(), ''
 
     else:
         return command_orig(cmd)

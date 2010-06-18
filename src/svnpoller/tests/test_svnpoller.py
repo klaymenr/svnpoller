@@ -2,6 +2,10 @@ import os
 from tempfile import mkstemp
 from ConfigParser import ConfigParser
 
+if __name__ == '__main__':
+    import sys
+    sys.path.insert(0, '')
+
 import base
 from svnpoller import svnpoller
 
@@ -15,7 +19,6 @@ fromaddr = poller@example.com
 
 [PloneTranslations-ja]
 url = http://svn.plone.org/svn/collective/PloneTranslations/trunk/i18n/atcontenttypes-ja.po
-newest_rev = 1
 address = user1@example.com
 '''
 
@@ -49,4 +52,21 @@ class TestSvnPoller(base.TestBase):
         self.assertEqual(str(TEST_REVS[-1]),
                          conf.get('PloneTranslations-ja', 'newest_rev'))
 
+    def test_update_latest_revision(self):
+        svnpoller.main(self.config_file, self._stub_sender)
+        self.assert_(self._sent)
+        self._sent = []
+
+        conf = ConfigParser()
+        conf.read(self.config_file)
+        rev = conf.get('PloneTranslations-ja', 'newest_rev')
+        self.assertEqual('115025', rev)
+
+        svnpoller.main(self.config_file, self._stub_sender)
+        self.assertEqual(0, len(self._sent))
+
+
+if __name__ == '__main__':
+    import unittest
+    unittest.main()
 

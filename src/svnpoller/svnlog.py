@@ -100,12 +100,30 @@ def get_log(url, rev):
 
 def get_revisions(urls, rev=None):
     """
-    >>> urls = ['http://svn.example.com/repos/path1',
-    ...         'http://svn.example.com/repos/path2']
-    >>> get_revisions(urls)
-    [1,2,3,5]
-    >>> get_revisions(urls, 3)
-    [3,5]
+        >>> urls = ['http://svn.example.com/repos/path1',
+        ...         'http://svn.example.com/repos/path2']
+
+    No `rev` supplied, get_revisions return all revisions for urls.
+
+        >>> get_revisions(urls)
+        [1,2,3,5]
+
+    If `rev` supplied, get_revisions collect logs by 'svn -r rev:HEAD',
+    then returned revisions include `rev` revision.
+
+        >>> get_revisions(urls, 3)
+        [3,5]
+
+    Another call samples:
+
+        >>> get_revisions(urls, None)
+        [1,2,3,5]
+        >>> get_revisions(urls, 0)
+        [1,2,3,5]
+        >>> get_revisions(urls, '0')
+        [1,2,3,5]
+        >>> get_revisions(urls, '3')
+        [3,5]
     """
     revs = set()
     for url in urls:

@@ -1,13 +1,15 @@
 Todos
 ------
-* Add test code.
-* Refactoring.
+* Add notify mechanism when lost target (maybe repository structure was changed)
 * Remove lxml dependency (but want to support py2.4).
 * Add mercurial(hg) support.
 * Add bazaar(bzr) support.
 * Introduce customizable mail template.
-* Attach diff without printing in the main text.
+* Attach diff without printing in the main text.(config?)
+* Refactoring.
+* Add test: multi url polling
 
 Known Issues
 ~~~~~~~~~~~~~
+* "--dry-run" update latest revision config value.
 
