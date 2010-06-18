@@ -62,7 +62,7 @@ class Log(object):
 
     def _prepare_diff(self, url, rev):
         cmd = ['svn', 'diff']
-        cmd.append('-c%s' % rev)
+        cmd.append('-r%s' % rev)
         cmd.append(url)
         out,err = command(cmd)
         return out
@@ -87,7 +87,7 @@ def get_logs(url, rev=None, rev2=None):
     if rev and rev2:
         cmd.append('-r%s:%s' % (str(rev), str(rev2)))
     elif rev:
-        cmd.append('-c%s' % str(rev))
+        cmd.append('-r%s' % str(rev))
     cmd.append(url)
     out,err = command(cmd)
     root = xml2elem(out)
