@@ -1,5 +1,6 @@
 import unittest, os
 from optparse import OptionParser
+import minimock
 
 FIXTURE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fixtures')
 
@@ -43,10 +44,8 @@ def command(cmd):
         return open(f).read(), ''
 
     else:
-        return command_orig(cmd)
-
-from svnpoller import svnlog
-command_orig = svnlog.command
+        raise RuntimeError("'%s' was not supported." % cmd)
+        #return svnpoller.svnlog.command(cmd) # call original code.
 
 
 class TestBase(unittest.TestCase):
@@ -63,9 +62,10 @@ class TestBase(unittest.TestCase):
 
     def setUp(self):
         self._sent = []
-        svnlog.command = command
+        import svnpoller.svnlog
+        minimock.mock('svnpoller.svnlog.command', mock_obj=command)
 
     def tearDown(self):
-        svnlog.command = command_orig
+        minimock.restore()
 
 

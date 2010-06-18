@@ -35,8 +35,14 @@ setup(
        'lxml',
         # -*- Extra requirements: -*-
     ],
+    extras_require=dict(
+        test=[
+            'Nose',
+            'minimock',
+        ],
+    ),
     test_suite='nose.collector',
-    tests_require=['Nose'],
+    tests_require=['Nose','minimock'],
     entry_points="""
        [console_scripts]
        svnpoller = svnpoller:run
