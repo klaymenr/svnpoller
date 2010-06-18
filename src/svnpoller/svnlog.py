@@ -3,8 +3,10 @@
 __all__ = ['POPEN_KW', 'Log', 'get_logs', 'get_log', 'get_revisions']
 
 
-import os, subprocess
+import os, sys, subprocess
 from datetime import datetime
+
+# import ElementTree or lxml
 try:
     # for python 2.5 or later.
     from xml.etree.ElementTree import fromstring as xml2elem
@@ -14,6 +16,15 @@ except:
         from lxml.etree import XML as xml2elem
     except:
         raise ImportError("Need 'xml.etree.ElementTree.fromstring' or 'lxml.etree.XML'")
+
+
+# Python2.4 have no `strptime` method at datetime class
+if sys.version_info < (2,5):
+    import time
+    strptime = lambda t,f: datetime(*(time.strptime(t, f)[0:6]))
+else:
+    strptime = datetime.strptime
+
 
 POPEN_ENV = os.environ.copy()
 POPEN_ENV['LANG'] = 'C'
@@ -42,7 +53,7 @@ class Log(object):
         #        (a, p[len(self.subpath):].lstrip('/'))
         #        for a,p in self.paths]
         self.author = entry.find('author').text
-        self.date = datetime.strptime(entry.find('date').text[:19],'%Y-%m-%dT%H:%M:%S')
+        self.date = strptime(entry.find('date').text[:19],'%Y-%m-%dT%H:%M:%S')
         self.msg = entry.find('msg').text
         self.diff = self._prepare_diff(self.url, self.rev)
 
