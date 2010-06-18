@@ -45,7 +45,7 @@ Notified mail sample::
 Requirements
 ------------
 
-* Python 2.4 or later
+* Python 2.4 or later (not support 3.x)
 
 
 Dependencies
@@ -54,9 +54,9 @@ Dependencies
 * `setuptools <http://pypi.python.org/pypi/setuptools>`_ or
   `distribute <http://pypi.python.org/pypi/distribute>`_
 
-* `lxml`
+* `lxml` (if python version less than 2.5)
 
-* svn external command (1.6 or later)
+* svn external command (1.4 or later)
 
 
 Features
