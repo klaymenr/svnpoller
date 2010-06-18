@@ -107,6 +107,11 @@ or setup cron job::
 History
 -------
 
+0.0.6
+~~~~~
+* Fix: latest revision's change ware notified every time.
+* Add: some tests.
+
 0.0.5
 ~~~~~
 * Add changed `path-list` to mail-message.
