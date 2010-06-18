@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.0.6'
+version = '0.0.7'
 long_description = \
   open(os.path.join("src","svnpoller","README.txt")).read() + \
   open(os.path.join("TODO.txt")).read()

@@ -107,6 +107,12 @@ or setup cron job::
 History
 -------
 
+0.0.7
+~~~~~
+
+* Remove: `lxml` dependency. (if python version less than 2.5)
+* Reduce: svn external command version (1.4 or later)
+
 0.0.6
 ~~~~~
 * Fix: latest revision's change ware notified every time.
