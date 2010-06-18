@@ -8,6 +8,7 @@ Todos
 * Attach diff without printing in the main text.(config?)
 * Refactoring.
 * Add test: multi url polling
+* Add test: Python2.4, 2.5, 2.6 support check.
 
 Known Issues
 ~~~~~~~~~~~~~

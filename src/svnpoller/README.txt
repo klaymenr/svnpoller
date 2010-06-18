@@ -109,7 +109,7 @@ History
 
 0.0.7
 ~~~~~
-
+* Fix: datetime.strptime replaced with time.strptime (for Python-2.4)
 * Remove: `lxml` dependency. (if python version less than 2.5)
 * Reduce: svn external command version (1.4 or later)
 
