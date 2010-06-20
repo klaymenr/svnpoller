@@ -11,6 +11,8 @@ svn_command_parser.add_option('-c', '--change',
                               action='store', type='string', dest='change')
 svn_command_parser.add_option('', '--xml',
                               action='store_true', default=False, dest='xml')
+svn_command_parser.add_option('-v', '--verbose',
+                              action='store', type='string', dest='verbose')
 svn_command_parser.exit = lambda *args, **kw: None
 svn_command_parser.error = lambda *args, **kw: None
 
