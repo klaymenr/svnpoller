@@ -52,6 +52,9 @@ def command(cmd):
 
 class TestBase(unittest.TestCase):
 
+    def _storage(self, fromaddr, toaddrs, msg, smtpserver):
+        self._sent.append(locals())
+
     def _stub_sender(self, fromaddr, toaddrs, subject, message_text,
                      smtpserver='localhost', charset='utf-8', sender=None):
 

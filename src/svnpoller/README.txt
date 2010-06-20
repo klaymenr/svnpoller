@@ -107,11 +107,16 @@ or setup cron job::
 History
 -------
 
+0.0.8
+~~~~~
+* Fix: Notify mail send only first address when multiple address
+  (comma separated) was specified on ini file.
+
 0.0.7
 ~~~~~
 * Fix: datetime.strptime replaced with time.strptime (for Python-2.4)
-* Remove: `lxml` dependency. (if python version less than 2.5)
-* Reduce: svn external command version (1.4 or later)
+* Remove: `lxml` dependency. (if python-2.5 or later)
+* Change: supported svn external command version: 1.4 or later
 
 0.0.6
 ~~~~~

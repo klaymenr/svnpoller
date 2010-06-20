@@ -17,7 +17,7 @@ def send(fromaddr, toaddrs, subject, message_text,
     if type(toaddrs) in (ListType, TupleType):
         pass
     elif type(toaddrs) in (StringType,):
-        toaddrs = (toaddrs,)
+        toaddrs = [x.strip() for x in toaddrs.split(',')]
     else:
         raise TypeError, toaddrs
 
