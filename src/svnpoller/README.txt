@@ -109,6 +109,7 @@ History
 
 0.0.9 (2010-6-23)
 ~~~~~~~~~~~~~~~~~~
+* Fix: commit message include multi-byte charactor cause exception.
 * Remove: `lxml` dependency, become optional
   (thanks to 'Federico' for the patch!).
 

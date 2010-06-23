@@ -38,25 +38,28 @@ class Log(object):
         self.diff = self._prepare_diff(self.url, self.rev)
 
     def _prepare_info(self, url, rev):
+        '''return `utf-8` xml data'''
         cmd = ['svn', 'info', '--xml']
         cmd.append('-r%s' % str(rev))
         cmd.append(url)
         out,err = command(cmd)
-        return safe_decode(out)
+        return out
 
     def _prepare_log(self, url, rev):
+        '''return `utf-8` xml data'''
         cmd = ['svn', 'log', '-v', '--xml']
         cmd.append('-r%s' % str(rev))
         cmd.append(url)
         out,err = command(cmd)
-        return safe_decode(out)
+        return out
 
     def _prepare_diff(self, url, rev):
+        '''return `unicode` text data'''
         cmd = ['svn', 'diff']
         cmd.append('-r%s' % rev)
         cmd.append(url)
         out,err = command(cmd)
-        return safe_decode(out)
+        return out.decode('utf-8')
 
     def __repr__(self):
         return "<Log rev=%s, url='%s'>" % (str(self.rev), str(self.url))
@@ -129,8 +132,10 @@ def get_revisions(urls, rev=None):
     return sorted(revs)
 
 def command(cmd):
+    '''command return communication data by `utf-8` '''
     proc = subprocess.Popen(cmd, **POPEN_KW)
     out,err = proc.communicate()
     proc.wait()
+    out = safe_decode(out).encode('utf-8')
     return out,err
 
