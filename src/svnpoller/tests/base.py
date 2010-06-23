@@ -4,7 +4,7 @@ import minimock
 
 FIXTURE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fixtures')
 TEST_URL = 'http://svn.freia.jp/open/zope2docs/branches'
-TEST_REVS = [655,664,667,668,670]
+TEST_REVS = [516,632,655,664,667,668,670]
 TEST_MAX_REV = TEST_REVS[-1]
 
 svn_command_parser = OptionParser()
@@ -23,7 +23,6 @@ svn_command_parser.error = lambda *args, **kw: None
 def command(cmd):
     #if 'dummy-url' not in cmd:
     #    return command_orig(cmd)
-    print cmd
 
     options, args = svn_command_parser.parse_args(cmd[2:])
     if options.change:
@@ -71,10 +70,16 @@ class TestBase(unittest.TestCase):
         send(fromaddr, toaddrs, subject, message_text,
              smtpserver=smtpserver, charset=charset, sender=storage)
 
+    def _command(self, cmd):
+        self._cmd_hist.append(cmd)
+        print cmd # print when test failed. (nose functionality)
+        return command(cmd)
+
     def setUp(self):
         self._sent = []
+        self._cmd_hist = []
         import svnpoller.svnlog
-        minimock.mock('svnpoller.svnlog.command', mock_obj=command)
+        minimock.mock('svnpoller.svnlog.command', mock_obj=self._command)
 
     def tearDown(self):
         minimock.restore()

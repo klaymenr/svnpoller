@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<log>
+<logentry
+   revision="516">
+<author>taka</author>
+<date>2009-10-03T06:28:56.067053Z</date>
+<paths>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.8.10"
+   copyfrom-rev="514"
+   action="A">/zope2docs/branches/ja/2.8.11</path>
+</paths>
+<msg>add 2.8.11. no changes from 2.8.10</msg>
+</logentry>
+</log>

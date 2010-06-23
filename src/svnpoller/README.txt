@@ -115,6 +115,8 @@ History
 * Fix: Exception caused by error status return from svn command
   when repository was not updated since last check
   (thanks to 'Federico' for the patch!).
+* Add: copy-only or delete-only or move-only diff are not attached
+  (thanks to 'Federico' for the patch!).
 
 0.0.8 (2010-6-20)
 ~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,12 @@
+Index: buildout.packager/trunk/sample/buildout.cfg
+===================================================================
+--- buildout.packager/trunk/sample/buildout.cfg	(リビジョン 0)
++++ buildout.packager/trunk/sample/buildout.cfg	(リビジョン 670)
+@@ -0,0 +1,7 @@
++[buildout]
++parts = app
++
++[app]
++recipe = zc.recipe.egg
++eggs =
++	Sphinx

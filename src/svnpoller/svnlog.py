@@ -28,14 +28,17 @@ class Log(object):
         xml_data = self._prepare_log(self.url, self.rev)
         root = xml2elem(xml_data)
         entry = root.find('logentry')
-        self.paths = [(x.attrib['action'], x.text) for x in entry.find('paths')]
-        #self.normalized_paths = [
-        #        (a, p[len(self.subpath):].lstrip('/'))
-        #        for a,p in self.paths]
         self.author = entry.find('author').text
         self.date = strptime(entry.find('date').text[:19],'%Y-%m-%dT%H:%M:%S')
         self.msg = entry.find('msg').text
-        self.diff = self._prepare_diff(self.url, self.rev)
+
+        paths = entry.find('paths')
+        self.paths = [(x.attrib['action'], x.text) for x in paths]
+        self.diff = self._process_diff(self.url, self.rev, paths)
+
+        #self.normalized_paths = [
+        #        (a, p[len(self.subpath):].lstrip('/'))
+        #        for a,p in self.paths]
 
     def _prepare_info(self, url, rev):
         '''return `utf-8` xml data'''
@@ -60,6 +63,34 @@ class Log(object):
         cmd.append(url)
         status, out, err = command(cmd)
         return safe_decode(out, per_line=True)
+
+    def _process_diff(self, url, rev, path_set):
+        need_diff = [x for x in path_set
+                     if not (
+                       x.attrib['action'] == 'D' or
+                       (x.attrib['action'] == 'A' and
+                        'copyfrom-path' in x.attrib)
+                     )]
+
+        if need_diff:
+            return self._prepare_diff(url, rev)
+
+        else:
+            # copy or move or delete only
+            diffs = []
+            for path in path_set:
+                attrib = path.attrib
+                if attrib['action'] == 'A':
+                    diff = 'Copied: %s\n   from %s (rev %s)' % (
+                                path.text,
+                                attrib['copyfrom-path'],
+                                attrib['copyfrom-rev'],
+                            )
+                elif attrib['action'] == 'D':
+                    diff = 'Deleted: %s' % path.text
+                diffs.append(diff)
+
+            return '\n'.join(diffs)
 
     def __repr__(self):
         return "<Log rev=%s, url='%s'>" % (str(self.rev), str(self.url))

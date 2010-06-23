@@ -108,4 +108,45 @@
 
 和訳完了</msg>
 </logentry>
+<logentry
+   revision="632">
+<author>taka</author>
+<date>2010-01-13T16:51:51.426541Z</date>
+<paths>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.10.4-2.10.9"
+   copyfrom-rev="562"
+   action="A">/zope2docs/branches/ja/2.10.4-2.10.11</path>
+<path
+   kind=""
+   action="D">/zope2docs/branches/ja/2.11.0-2.11.4</path>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.11.0-2.11.4"
+   copyfrom-rev="562"
+   action="A">/zope2docs/branches/ja/2.11.0-2.11.6</path>
+<path
+   kind=""
+   action="D">/zope2docs/branches/ja/2.10.4-2.10.9</path>
+</paths>
+<msg>update for svn.zope.org/repos/main/Zope/tags/2.10.11
+update for svn.zope.org/repos/main/Zope/tags/2.11.6
+
+r108112
+</msg>
+</logentry>
+<logentry
+   revision="516">
+<author>taka</author>
+<date>2009-10-03T06:28:56.067053Z</date>
+<paths>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.8.10"
+   copyfrom-rev="514"
+   action="A">/zope2docs/branches/ja/2.8.11</path>
+</paths>
+<msg>add 2.8.11. no changes from 2.8.10</msg>
+</logentry>
 </log>
