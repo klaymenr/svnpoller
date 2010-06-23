@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <info>
 <entry
-   kind="file"
-   path="atcontenttypes-ja.po"
-   revision="118351">
-<url>http://svn.plone.org/svn/collective/PloneTranslations/trunk/i18n/atcontenttypes-ja.po</url>
+   kind="dir"
+   path="branches"
+   revision="670">
+<url>http://svn.freia.jp/open/zope2docs/branches</url>
 <repository>
-<root>http://svn.plone.org/svn/collective</root>
-<uuid>db7f04ef-aaf3-0310-a811-c281ed44c4ad</uuid>
+<root>http://svn.freia.jp/open</root>
+<uuid>b8b513e8-2002-0410-a283-f63f680859ec</uuid>
 </repository>
 <commit
-   revision="115025">
-<author>tyam</author>
-<date>2010-04-10T07:09:52.745456Z</date>
+   revision="670">
+<author>taka</author>
+<date>2010-06-14T09:01:37.400829Z</date>
 </commit>
 </entry>
 </info>

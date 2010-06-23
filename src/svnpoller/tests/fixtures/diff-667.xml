@@ -1,0 +1,3603 @@
+Index: ja/2.12.7/doc/CHANGES.rst
+===================================================================
+--- ja/2.12.7/doc/CHANGES.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/CHANGES.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,1023 @@
++Changelog
++=========
++
++ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«ã¯ç¾åœ¨ã® Zope ãƒªãƒªãƒ¼ã‚¹ã§ã®å¤‰æ›´ç‚¹ã‚’è¨˜è¼‰ã—ã¦ã„ã¾ã™ã€‚
++ã“ã‚Œä»¥å‰ã®å¤‰æ›´ã«ã¤ã„ã¦ã¯ http://docs.zope.jp/zope2/releases/
++ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
++
++2.12.7 (2010-06-13)
++-------------------
++
++ãƒã‚°ä¿®æ­£
+++++++++++
++
++- LP #583702: 2.12.6ã®#574286å¯¾å¿œæ™‚ã«ç™ºç”Ÿã—ãŸã€mailhostã®ã‚­ãƒ¥ãƒ¼å‡¦ç†ã®ã‚³ãƒ¼ãƒ‰
++  ã«ãŠã‘ã‚‹å›å¸°ãƒã‚°ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- xmlrpcã«ãŠã‘ã‚‹Unauthorizedä¾‹å¤–å‡¦ç†ã‚’æ­£ã—ãè¡Œã†ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- Fiveã®processInputs()ãŒã€ :list ã‹ :tuple ã®è¦ç´ ã¨ã—ã¦ int ãªã©ã®éæ–‡å­—åˆ—
++  ã‚’å«ã‚€å ´åˆã«ãã®è¦ç´ ã‚’ç„¡è¦–ã—ã¦ã„ã¾ã—ãŸã€‚ã¾ãŸã€ :records ã¯å®Œå…¨ã«ç„¡è¦–ã—ã¦
++  ãŠã‚Šã€ :record ã«ã¤ã„ã¦ã‚‚ä½•ã‚‚ã—ã¦ã„ã¾ã›ã‚“ã§ã—ãŸã€‚
++
++- LP #143261: (å¤ªå¤ã®) Zope2.debug ã‚¤ãƒ³ã‚¿ãƒ©ã‚¯ãƒ†ã‚£ãƒ–ãƒªã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒãƒƒã‚¬
++  ãŒæœ€ä¸Šä½ã® ``Zope`` ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’å‚ç…§ã—ã¦ã„ã¾ã—ãŸãŒã€ãã‚Œã¯ã ã„ã¶å‰ã«
++  ``Zope2`` ã«åå‰å¤‰æ›´ã•ã‚Œã¦ã„ãŸãŸã‚ä¸æ­£ãªå‚ç…§ã¨ãªã£ã¦ã„ã¾ã—ãŸã€‚
++
++- LP #142874: ``URL`` ã‹ ``URL1`` ã¨ã„ã†åå‰ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã™ã‚‹ã¨ã€
++  ZMIç”»é¢ã®è¡¨ç¤ºãŒæ­£ã—ãè¡Œã‚ã‚Œãªããªã‚‹å•é¡Œã‚’ä¿®æ­£ã€‚
++
++- LP #142878: URLã§AccessRuleã¨SiteRootã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆè¨­å®šã®ç„¡åŠ¹åŒ–ã‚’è¡Œã†æ©Ÿèƒ½
++  ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚ ``os.environ`` ã«ã‚ˆã‚‹ç„¡åŠ¹åŒ–æŒ‡å®šã¯å¾“æ¥é€šã‚Šä½¿ç”¨ã§ãã‚‹ã®ã§
++  ã“ã¡ã‚‰ã‚’ä½¿ã£ã¦ä¸‹ã•ã„ã€‚
++
++- LP #143144: zope.conf ã® ``mount-point`` ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–å‘ã‘ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ
++  ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #142410: KeywordIndexã§ä»¥ä¸‹ã®å ´åˆã«ãŠã„ã¦ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹å‡¦ç†ã‚’è¡Œã‚ãªã„
++  ã‚ˆã†ã«ã—ã¾ã—ãŸ: ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹å¯¾è±¡ã®å±æ€§ãŒãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‹ã‚‰ç„¡ããªã£ãŸå ´åˆã€‚
++  å±æ€§ã«ã‚¢ã‚¯ã‚»ã‚¹ã—ãŸéš›ã«AttributeErrorãŒç™ºç”Ÿã—ãŸå ´åˆã€‚å–å¾—ã—ãŸå±æ€§ã®å€¤
++  ãŒç©ºã ã£ãŸå ´åˆã€‚
++
++- LP #142590: ``DTMLMethod`` ã¨ ``DTMLDocument`` ã® ``manage_edit``
++  ãƒ¡ã‚½ãƒƒãƒ‰ãŒ ``TaintedString`` ã‚’æ‰±ãˆã¦ã„ãªã‹ã£ãŸå•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++  ã¾ãŸ ``DTMLDocument.manage_edit`` ãƒ¡ã‚½ãƒƒãƒ‰ã¯è¦ªã‚¯ãƒ©ã‚¹ã®DTMLMethodã§
++  å®šç¾©ã•ã‚Œã¦ã„ã¦å†—é•·ãªãŸã‚å‰Šé™¤ã—ã¾ã—ãŸã€‚
++
++- LP #142451: ``changeOwnership`` ã§æ‰€æœ‰è€…ã®å¤‰æ›´ã‚’å†å¸°çš„ã«è¡Œã‚ãªã„å ´åˆã¯ã€
++  å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ä¸€åˆ‡è§¦ã‚‰ãªã„ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- LP #142750 ã¨ LP #142481: åŒã˜ãƒ•ã‚©ãƒ«ãƒ€ã«2ã¤ä»¥ä¸Šã® VirtualHostMoster
++  ã‚’ä½œæˆã—ãŸã‚Šã€æ–°è¦ã«ä½œæˆã™ã‚‹éš›ã«IDã‚’æ±ºã‚ã‚‹å¿…è¦ãŒã‚ã£ãŸã‚Šã™ã‚‹å•é¡Œã‚’
++  é¿ã‘ã‚‹ãŸã‚ã«ã€ VirtualHostMoster ã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§IDã‚’æŒã¤ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++  ä»Šå¾Œã¯IDã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã¯å‡ºæ¥ãªããªã‚Šã€IDå…¥åŠ›ã®ãŸã‚ã®è¿½åŠ ç”»é¢ã¯
++  ç„¡ããªã‚Šã¾ã—ãŸã€‚
++
++æ©Ÿèƒ½è¿½åŠ 
+++++++++++
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  - distribute = 0.6.13
++  - five.formlib = 1.0.3
++  - lxml = 2.2.6
++  - Sphinx = 0.6.6
++  - tempstorage = 2.11.3
++  - zope.app.apidoc = 3.6.6
++  - zope.app.applicationcontrol = 3.5.1
++  - zope.app.authentication = 3.6.1
++  - zope.app.i18n = 3.6.2
++  - zope.app.intid = 3.7.1
++  - zope.app.wsgi = 3.6.1
++  - zope.contenttype = 3.4.3
++  - zope.container = 3.8.3
++  - zope.deferredimport = 3.5.2
++  - zope.intid = 3.7.2
++  - zope.principalannotation = 3.6.1
++
++- Fiveã®ãƒ†ã‚¹ãƒˆãƒ–ãƒ©ã‚¦ã‚¶ã‚’mechanize 0.1.x ã¨ 0.2.x ã®ä¸¡æ–¹ã‚’ã‚µãƒãƒ¼ãƒˆã™ã‚‹ã‚ˆã†
++  æ›´æ–°ã—ã¾ã—ãŸã€‚
++
++- LP #142226: HTTPResponseã®setCookieãƒ¡ã‚½ãƒƒãƒ‰ã«quotedã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰å¼•æ•°ãŒè¿½åŠ 
++  ã•ã‚Œã¾ã—ãŸã€‚ã“ã‚Œã¾ã§ã¯ã€setCookieã«æ¸¡ã™cookieã®å€¤ã¯è‡ªå‹•çš„ã«ãƒ€ãƒ–ãƒ«ã‚¯ã‚©ãƒ¼ãƒˆ
++  ã§æ‹¬ã‚‰ã‚Œã¦ã„ã¾ã—ãŸãŒã€quotedå¼•æ•°ã®æŒ‡å®šã«ã‚ˆã£ã¦ãƒ€ãƒ–ãƒ«ã‚¯ã‚©ãƒ¼ãƒˆã‚’ä»˜ä¸ã—ãªã„
++  ã‚ˆã†ã«ã§ãã¾ã™ã€‚
++
++
++2.12.6 (2010-05-17)
++-------------------
++
++å†æ§‹ç¯‰
+++++++++
++
++- Zope2 è‡ªèº«ãŒã‚‚ã£ã¦ã„ãŸ mkzeoinstance ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å‰Šé™¤ã—ã€æ–°ãŸã«
++  zope.mkzeoinstance ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’ä½¿ç”¨ã™ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++æ©Ÿèƒ½è¿½åŠ 
+++++++++++
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  - DateTime = 2.12.2
++  - distribute = 0.6.12
++  - ExtensionClass = 2.13.1
++  - initgroups = 2.13.0
++  - Missing = 2.13.0
++  - MultiMapping = 2.13.0
++  - Persistence = 2.13.1
++  - pytz = 2010h
++  - Record = 2.13.0
++  - RestrictedPython = 3.5.2
++  - ThreadLock = 2.13.0
++  - ZODB3 = 3.9.5
++  - zope.app.locales = 3.6.1
++  - zope.authentication = 3.7.1
++  - zope.browser = 1.3
++  - zope.cachedescriptors = 3.5.1
++  - zope.deferredimport = 3.5.1
++  - zope.i18n = 3.7.3
++  - zope.i18nmessageid = 3.5.2
++  - zope.lifecycleevent = 3.6.1
++  - zope.pagetemplate = 3.5.1
++  - zope.proxy = 3.6.0
++  - zope.security = 3.7.3
++
++ãƒã‚°ä¿®æ­£
+++++++++++
++
++- LP #142563:  ``AccessControl.User.NullUnrestrictedUserTests.__str__``
++  ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- SiteErrorLog(chameleonæº–æ‹ )ã«ãŠã‘ã‚‹ã„ãã¤ã‹ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã®ã‚¨ãƒ©ãƒ¼ã‚’
++  ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #267820: ``<dtml-in>`` ã‚¿ã‚°ã® ``sequence_sort`` ãƒ¡ã‚½ãƒƒãƒ‰ã§ä¾‹å¤–ãŒç™ºç”Ÿ
++  ã™ã‚‹å•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #351006: ``zExceptions.ExceptionFormatter`` ã‚’åˆ©ç”¨ã—ãŸéš›ã«ç”Ÿæˆã•ã‚Œã‚‹
++  HTMLã«ãŠã„ã¦ ``<p>`` ã‚¿ã‚°ãŒãƒã‚¹ãƒˆã™ã‚‹å•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #411837: ``.htm`` æ‹¡å¼µå­ã®ãƒªã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ­£ã—ããƒšãƒ¼ã‚¸ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
++  ãƒªã‚½ãƒ¼ã‚¹ã¨ã—ã¦æ‰±ã†ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- LP #435728: OFSP/help/sequence.py ã® docstring ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #574286: è¤‡æ•°ã®MailHostã§åŒä¸€ã®ãƒ¡ãƒ¼ãƒ«é…ä¿¡ã‚­ãƒ¥ãƒ¼ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä½¿ã†å ´åˆã«
++  é…ä¿¡å‡¦ç†ç”¨ã‚¹ãƒ¬ãƒƒãƒ‰ã‚‚å…±æœ‰ã™ã‚‹ã“ã¨ã«ã‚ˆã£ã¦ãƒ¡ãƒ¼ãƒ«ãŒ2é‡ã«é…ä¿¡ã•ã‚Œãªã„ã“ã¨ã‚’
++  ä¿è¨¼ã™ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- BaseRequest: 'traverseName' ã§ç™ºç”Ÿã—ãŸã‚¨ãƒ©ãƒ¼ã®æ‰±ã„ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++2.12.5 (2010-04-24)
++-------------------
++
++æ©Ÿèƒ½è¿½åŠ 
+++++++++++
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  - Acquisition = 2.13.3
++  - distribute = 0.6.10
++  - roman = 1.4.0
++  - zope.annotation = 3.5.0
++  - zope.app.cache = 3.6.0
++  - zope.app.dav = 3.5.1
++  - zope.app.i18n = 3.6.1
++  - zope.app.localpermission = 3.7.2
++  - zope.app.principalannotation = 3.7.0
++  - zope.app.publication = 3.8.1
++  - zope.app.publisher = 3.8.4
++  - zope.app.renderer = 3.5.1
++  - zope.app.security = 3.7.3
++  - zope.app.session = 3.6.1
++  - zope.app.testing = 3.7.3
++  - zope.app.wsgi = 3.6.0
++  - zope.app.zapi = 3.4.1
++  - zope.broken = 3.6.0
++  - zope.catalog = 3.8.1
++  - zope.formlib = 3.7.0
++  - zope.i18nmessageid = 3.5.1
++  - zope.index = 3.6.0
++  - zope.keyreference = 3.6.2
++  - zope.lifecycleevent = 3.6.0
++  - zope.location = 3.6.0
++  - zope.minmax = 1.1.2
++  - zope.securitypolicy = 3.6.1
++  - zope.viewlet = 3.6.1
++
++- ``manage_* is discouraged. You should use event subscribers instead``
++  ã¨ã„ã†è­¦å‘Šã®è¡¨ç¤ºã‚’ãƒ‡ãƒãƒƒã‚°æ™‚ã«ãƒ­ã‚°å‡ºåŠ›ã•ã‚Œã‚‹ã‚ˆã†ã«ãƒ€ã‚¦ãƒ³ã‚°ãƒ¬ãƒ¼ãƒ‰ã•ã›ã¾ã—ãŸã€‚
++  ã“ã®è­¦å‘ŠãŒè¡¨ç¤ºã•ã‚ŒãŸã‹ã‚‰ã¨è¨€ã£ã¦é–‹ç™ºè€…ãŒã‚³ãƒ¼ãƒ‰ã‚’ä¿®æ­£ã™ã‚‹å‹•æ©Ÿã«ãªã‚Šãˆãªã„
++  ãŸã‚ã§ã™ã€‚
++
++- zope.testing ã®å»ƒæ­¢ã«ä¼´ã„ã€æ¨™æº–ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®doctestã‚’ä½¿ã†ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- LP #143013: ConflictErrorç™ºç”Ÿæ™‚ã®æœ€å¤§ãƒªãƒˆãƒ©ã‚¤å›æ•°ã‚’è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã§å¤‰æ›´å‡ºæ¥ã‚‹
++  ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++ãƒã‚°ä¿®æ­£
+++++++++++
++
++- HTTPResponse: ãƒ¬ã‚¹ãƒãƒ³ã‚¹ã«unicodeãŒå«ã¾ã‚Œã‚‹å ´åˆã€ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã—ã‚ˆã†ã¨ã—ã¦
++  ã‚¨ãƒ©ãƒ¼ã¨ãªã‚‹å ´åˆãŒã‚ã‚‹å•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- zExceptions: ç„¡èªè¨¼çŠ¶æ…‹ã§ã®unicodeé–¢é€£ã®ã„ãã¤ã‹ã®å•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #372632, comments #15ff.: ç„¡èªè¨¼çŠ¶æ…‹ã®å‡¦ç†ã«é–¢ã™ã‚‹å›å¸°ãƒã‚°ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #563229: RFC 2965 / 2616 ã«é•åã™ã‚‹2é‡ã«ã‚¯ã‚©ãƒ¼ãƒˆã•ã‚ŒãŸ "é‚ªæ‚ªãª"
++  JSON cookie ã«é–¢ã™ã‚‹å‡¦ç†ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- æ´¾ç”Ÿã‚¯ãƒ©ã‚¹ã‹ã‚‰ä½¿ãˆã‚‹APIã¨ã—ã¦
++  ``Products.PluginIndexes.PathIndex.PathIndex.insertEntry``
++  ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’è¨˜è¼‰ã—ã¾ã—ãŸã€‚
++
++- Zope 2.12.4 ã§å°å…¥ã•ã‚Œã¦ã—ã¾ã£ãŸãƒªã‚½ãƒ¼ã‚¹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«é–¢ã™ã‚‹å›å¸°ãƒã‚°ã‚’
++  ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #143655: ãƒ‘ã‚¹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’ç”¨ã„ã¦ã‚½ãƒ¼ãƒˆå‡ºæ¥ã‚‹ã‚ˆã†ã«ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #142478: ``PLexicon.queryLexicon`` ã«Lexiconã®ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³
++  (ä¾‹ãˆã°å¤§æ–‡å­—å°æ–‡å­—ã®æ­£è¦åŒ–ã‚„ã€ã‚¹ãƒˆãƒƒãƒ—ãƒ¯ãƒ¼ãƒ‰ã®é™¤å»ãªã©)ã‚’ä½¿ã£ã¦
++  æ­£è¦åŒ–ã—ãŸå˜èªã‚’æ¸¡ã™ã‚ˆã†ã«ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- ä¾‹å¤–ç™ºç”Ÿæ™‚ã«ç™ºè¡Œã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®contextã‚’ãƒ©ãƒƒãƒ—ã™ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++
++2.12.4 (2010-04-05)
++-------------------
++
++å†æ§‹ç¯‰
+++++++++++++++
++
++- ãƒ¡ãƒ³ãƒ†ãƒŠãƒ³ã‚¹ã•ã‚Œã¦ã„ãªã„Windowså‘ã‘ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ©ã®ãƒ“ãƒ«ãƒ‰ã‚¹ã‚¯ãƒªãƒ—ãƒˆã¨
++  ``configure / make`` ãƒ“ãƒ«ãƒ‰ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚
++
++- ãƒªãƒã‚¸ãƒˆãƒªãƒãƒªã‚·ãƒ¼ã«åˆã†ã‚ˆã†ã«ã€ã‚³ãƒ”ãƒ¼ãƒ©ã‚¤ãƒˆã¨ãƒ©ã‚¤ã‚»ãƒ³ã‚¹æƒ…å ±ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚
++
++- ZopeUndo ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’åˆ¥ã®é…å¸ƒç‰©ã«åˆ†é›¢ã—ã¾ã—ãŸã€‚
++
++æ©Ÿèƒ½è¿½åŠ 
+++++++++++
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  - Acquisition = 2.13.2
++  - ExtensionClass = 2.13.0
++  - Persistence = 2.13.0
++  - pytz = 2010b
++
++- ã‚¤ãƒ™ãƒ³ãƒˆ ZPublisher.interfaces.IPubBeforeStreaming ãŒãƒ¬ã‚¹ãƒãƒ³ã‚¹ã®ã‚¹ãƒˆãƒªãƒ¼ãƒ 
++  ã« write() ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ç”¨ã„ã¦æœ€åˆã®ãƒãƒ£ãƒ³ã‚¯ã®å‡ºåŠ›ã‚’é–‹å§‹ã™ã‚‹ç›´å‰ã«ç™ºè¡Œã•ã‚Œã‚‹
++  ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸã€‚ã“ã‚Œã¯ãƒ¬ã‚¹ãƒãƒ³ã‚¹ãƒ˜ãƒƒãƒ€ãƒ¼ã‚’è¨­å®šã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã‚‹æœ€å¾Œã®
++  ãƒã‚¤ãƒ³ãƒˆã§ã™ã€‚
++
++
++ãƒã‚°ä¿®æ­£
+++++++++++
++
++- LP #142430: standard_error_message å†…ã§ä½¿ã£ã¦ã„ãŸ title_or_id ãƒ¡ã‚½ãƒƒãƒ‰
++  ã‚’ä½¿ã‚ãªã„ã‚ˆã†ã«ã—ãŸã€‚
++
++- LP #257675: QUERY_STRING ãŒç’°å¢ƒå¤‰æ•°ã«ç„¡ã„å ´åˆã« request.form
++  ã«å«ã¾ã‚Œã¦ã„ãŸ '-C':'' ã‚’å–ã‚Šé™¤ãã¾ã—ãŸã€‚
++
++- Zope 3 ã‚¹ã‚¿ã‚¤ãƒ«ã®ãƒªã‚½ãƒ¼ã‚¹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãŒ Unauthorized ã‚¨ãƒ©ãƒ¼ã‚’å‡ºåŠ›ã—ã¦ã„ãŸ
++  å•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚ã“ã®å•é¡Œã¯ãƒªã‚½ãƒ¼ã‚¹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ã‚µãƒ–ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«
++  ã‚ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã«å¯¾ã—ã¦ restrictedTraverse() ã‚’ä½¿ç”¨ã—ãŸå ´åˆã«ç™ºç”Ÿã—ã¾ã™ã€‚
++
++- templateãƒ™ãƒ¼ã‚¹ã®ãƒ–ãƒ©ã‚¦ã‚¶ãƒ“ãƒ¥ãƒ¼ã§ã€ 'macros' ã«å¯¾ã—ã¦æ¢ç´¢ãŒè¡Œãˆã‚‹æ©Ÿèƒ½
++  ã‚’å…ƒã«æˆ»ã—ã¾ã—ãŸã€‚
++
++- ZCTextIndex ãƒ—ãƒ­ãƒ€ã‚¯ãƒˆã®clearãƒ¡ã‚½ãƒƒãƒ‰ãŒç²å¾—ãƒ©ãƒƒãƒ‘ãƒ¼ã‚’æ‹’çµ¶ã—ã¦ã„ã¾ã—ãŸã€‚
++
++- LP #195761: ZMI XML export / import ã‚’ä¿®æ­£ã—UIã«å¾©æ´»ã•ã›ã¾ã—ãŸã€‚
++
++- MailHost ãŒ EHLO ã«å¤±æ•—ã—ãŸéš›ã« HELO ã‚’ä½¿ã†ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++
++2.12.3 (2010-01-12)
++-------------------
++
++ãƒã‚°ä¿®æ­£
+++++++++++
++
++- LP #491224: ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®è¡¨ç¤ºã‚’æ­£ã—ãã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã™ã‚‹ã‚ˆã†ä¿®æ­£
++
++- LP #246983: TALESã® "string:" è¡¨ç¾å†…ã§ã® unicode ã®è¡çªå›é¿ã®ä»•çµ„ã¿
++  ã‚’æœ‰åŠ¹ã«ã—ã¾ã—ãŸã€‚
++
++- ãƒãƒ«ãƒãƒ‘ãƒ¼ãƒˆã®emailé€ä¿¡ä¸­ã« TypeError ãŒç™ºç”Ÿã™ã‚‹å¯èƒ½æ€§ãŒã‚ã£ãŸå•é¡Œ
++  ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- ZEXP ã®ã‚¤ãƒ³ãƒãƒ¼ãƒˆç”¨ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã®ãƒ›ãƒ¼ãƒ ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
++  ã‹ã‚‰ã‚‚ã‚¤ãƒ³ãƒãƒ¼ãƒˆå‡ºæ¥ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚ã“ã‚Œã«ã‚ˆã£ã¦ buildout
++  ã§ä½œæˆã•ã‚ŒãŸZopeã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®å ´åˆã§ã‚‚ã‚¤ãƒ³ãƒãƒ¼ãƒˆå‡ºæ¥ã‚‹ã‚ˆã†ã«
++  ãªã‚Šã¾ã—ãŸã€‚
++
++- utilities/load_site.py ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®æ–‡æ³•ã‚¨ãƒ©ãƒ¼ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++
++æ©Ÿèƒ½è¿½åŠ 
+++++++++++
++
++- OFS.Image.File ã¨ OFS.Image.Image ãŒ IObjectModifiedEvent ã‚’ç™ºè¡Œ
++  ã™ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚ç™ºè¡Œã‚¿ã‚¤ãƒŸãƒ³ã‚°ã¯ã€ãƒ•ã‚¡ã‚¯ãƒˆãƒªçµŒç”±ã§ä½œæˆã™ã‚‹ã¨ãã‚„ã€
++  ZMI ã®ãƒ•ã‚©ãƒ¼ãƒ çµŒç”±ã§æ›´æ–°ã™ã‚‹ã¨ã (manage_edit() ã¨ manage_upload())
++  ã§ã™ã€‚
++
++- zope.formlib / zope.app.form ã®çµ±åˆã‚’ five.formlib ã¨ã„ã†åˆ¥ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸
++  ã§è¡Œã†ã‚ˆã†ã«ç§»å‹•ã—ã¾ã—ãŸã€‚
++
++
++2.12.2 (2009-12-22)
++-------------------
++
++æ©Ÿèƒ½è¿½åŠ 
++++++++++++++++
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  - ZODB3 = 3.9.4
++  - docutils = 0.6
++  - pytz = 2009r
++  - zope.dottedname = 3.4.6
++  - zope.i18n = 3.7.2
++  - zope.interface = 3.5.3
++  - zope.minmax = 1.1.1
++  - zope.security = 3.7.2
++  - zope.session = 3.9.2
++  - zope.tal = 3.5.2
++
++- DateRangeIndex ã‚’ experimental.daterangeindexoptimisations ã®ã‚¢ã‚¤ãƒ‡ã‚£ã‚¢
++  ã‚’å…ƒã«å†…éƒ¨æ‹¡å¼µã—ã¾ã—ãŸã€‚ã‚ã‚ŠãŒã¨ã† Matt Hamilton.
++
++- ``management_page_charset`` ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤ã‚’ iso-8859-1 ã‹ã‚‰ä»Šæ—¥ã§ã¯
++  ä¸€èˆ¬çš„ã«ãªã£ã¦ã„ã‚‹ utf-8 ã«æ›´æ–°ã—ã¾ã—ãŸã€‚
++
++- IPubBeforeCommit ã®å¯¾ã¨ãªã‚‹ IPubBeforeAbort ã‚¤ãƒ™ãƒ³ãƒˆã‚’è¿½åŠ ã—ã¾ã—ãŸã€‚
++  ã“ã®ã‚¤ãƒ™ãƒ³ãƒˆã¯ IPubFailure ã®å‰ã«ã®ã¿ç™ºè¡Œã•ã‚Œã¾ã™ãŒã€ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³
++  ãŒã“ã®æ™‚ã¯ã¾ã é–‹ã‹ã‚Œã¦ã„ã‚‹ã“ã¨ãŒä¿è¨¼ã•ã‚Œã¾ã™ã€‚
++
++- ZMI ç”»é¢ã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿(è¨³æ³¨: /Control_Panel/Database/main ã®
++  Cache Parametersã‚¿ãƒ–)ã«ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚µã‚¤ã‚ºã®byteä¸Šé™ã‚’å«ã‚ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- å…¬å¼ã«ã‚µãƒãƒ¼ãƒˆã™ã‚‹ Python ã‚’ 2.6 ã®ã¿ã«ã—ã¾ã—ãŸ (Python 2.5 ã¯éå…¬å¼
++  ã‚µãƒãƒ¼ãƒˆã¨ãªã‚Šã¾ã™)ã€‚ Python 2.4 ã¯å®Œå…¨ã«ã‚µãƒãƒ¼ãƒˆå¯¾è±¡ã‹ã‚‰å¤–ã‚Œã¾ã—ãŸã€‚
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- LP #143444: ã‚¤ãƒ³ãƒãƒ¼ãƒˆ / ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆ ãƒ•ã‚©ãƒ¼ãƒ ä¸Šã®ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹
++  ã¨ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã«ãƒ©ãƒ™ãƒ«ã‚’è¿½åŠ ã—ã¾ã—ãŸã€‚
++
++- LP #496941: ``standard_html_header`` ã¨ ``standard_html_footer``
++  ã®2ã¤ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆDTMLã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã¨ã€ã“ã‚Œã«é–¢é€£ã™ã‚‹å…¨ã¦ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚
++
++- Products.PageTemplates ã®ã‚¨ãƒ³ãƒã‚°(å›å¸°ãƒã‚°)ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++  ãƒ•ã‚¡ã‚¤ãƒ«ã‚·ã‚¹ãƒ†ãƒ ä¸Šã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆãŒ Products.Five.browser.pagetemplatefile
++  ã®å‡¦ç†ã§ TALES ãƒ‘ã‚¹è¡¨ç¾(pythonè¡¨ç¾ã§ã¯ãªã„)ã®å‡¦ç†ã‚³ãƒ¼ãƒ‰ãŒãƒ—ãƒ­ãƒ†ã‚¯ãƒˆ
++  ã•ã‚Œã¦ãŠã‚Šã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãƒ¼ãƒã‚§ãƒƒã‚¯ã«å¼•ã£ã‹ã‹ã£ã¦ã„ã¾ã—ãŸã€‚
++  ã‚ªãƒªã‚¸ãƒŠãƒ«ã®å•é¡Œã¯ä»¥ä¸‹ã‚’å‚ç…§ã—ã¦ãã ã•ã„:
++  http://codespeak.net/pipermail/z3-five/2007q2/002185.html
++
++- LP #491249: ZRDB ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ãƒ†ã‚¹ãƒˆãƒ•ã‚©ãƒ¼ãƒ ã® tabindex ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #490514:  DTML ãŒ ZPT ã‹ã‚‰å‘¼ã³å‡ºã•ã‚ŒãŸå ´åˆã®è„†å¼±æ€§æ±šæŸ“ã‹ã‚‰ä¿è­·ã™ã‚‹
++  ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- Products.Five.fiveconfigure ã® cleanUp() é–¢æ•°ã§ Products.meta_types ãŒ
++  ã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ãªã„æ™‚ã«ã€ãƒ†ã‚¹ãƒˆã® tear-down ä¸­ã«ç™ºç”Ÿã™ã‚‹å¯èƒ½æ€§ã®ã‚ã‚‹
++  ã‚¨ãƒ©ãƒ¼ã‚’æŠ‘æ­¢ã—ã¾ã—ãŸã€‚
++
++
++2.12.1 (2009-11-02)
++-------------------
++
++æ©Ÿèƒ½è¿½åŠ 
++++++++++++++++
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  - ZODB3 = 3.9.3  (ãƒã‚°ä¿®æ­£: blog ç«¶åˆã‚¨ãƒ©ãƒ¼ã«ã‚ˆã£ã¦ã‚³ãƒŸãƒƒãƒˆãŒåœæ­¢ã™ã‚‹å•é¡Œ)
++  - Acquisition = 2.12.4 (ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚µãƒãƒ¼ãƒˆã§ã®å•é¡Œã‚’ä¿®æ­£)
++  - setuptools = 0.6c11
++
++- LP #411732: ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã§ä¿è­·ã•ã‚ŒãŸã€Viewã«ãŠã‘ã‚‹ context ã¨ request
++  ã®ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãƒ¼å®£è¨€ã®è­¦å‘Šã‚’é™ã‹ã«ã—ã¾ã—ãŸã€‚
++
++- ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®æ§‹æˆã‚’ã‚¯ãƒªãƒ¼ãƒ³ãƒŠãƒƒãƒ—ã—ã€ Windows ã§ã‚‚ HTML ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ
++  ã‚’ãƒ“ãƒ«ãƒ‰ã§ãã‚‹ã‚ˆã†ã«ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’è¿½åŠ ã—ã¾ã—ãŸã€‚
++
++- Windows ã‚µãƒ¼ãƒ“ã‚¹é–¢é€£æ©Ÿèƒ½ã‚’ã€ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã® zopeservice.py ã‚’ä½¿ã‚ãšã«
++  æä¾›ã§ãã‚‹ã‚ˆã†ã«ãƒªãƒ•ã‚¡ã‚¯ã‚¿ãƒªãƒ³ã‚°ã—ã¾ã—ãŸã€‚
++  ã“ã‚Œã«ã‚ˆã‚Šã€ buildout ãƒ™ãƒ¼ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãŒ Windows ã§å‹•ä½œã™ã‚‹ã‚ˆã†ã«
++  ãªã‚Šã¾ã—ãŸã€‚
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- LP #440490: zopectl fg|adduser|run|debug ãŒWindowsã§å‹•ä½œã™ã‚‹ã‚ˆã†ã«ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #443005: zopectl stop ãŒWindowsã§å‹•ä½œã™ã‚‹ã‚ˆã†ã«ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #453723: zopectl start ãŒWindowsç’°å¢ƒä»¥å¤–ã§å‹•ä½œã—ãªã„å•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++2.12.0 (2009-10-01)
++--------------------
++
++æ©Ÿèƒ½è¿½åŠ 
++++++++++++++++
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  - ZODB3 = 3.9.0
++
++- ``zope.app.schema`` ã® ``ZopeVocabularyRegistry`` ã‚’ãƒãƒƒã‚¯ãƒãƒ¼ãƒˆã—ã€
++  Five ã®åˆæœŸåŒ–ä¸­ã«æ­£ã—ãç™»éŒ²ã•ã‚Œã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- ``ZServer`` ã®ä»£ã‚ã‚Šã« Twisted HTTP ã‚µãƒ¼ãƒãƒ¼ã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹å®Ÿé¨“çš„ãª
++  ã‚µãƒãƒ¼ãƒˆã®å‰Šé™¤ã‚’ãƒãƒƒã‚¯ãƒãƒ¼ãƒˆã—ã¾ã—ãŸã€‚
++
++- date ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒ†ã‚¹ãƒˆã®ã‚¿ã‚¤ãƒ ã‚¾ãƒ¼ãƒ³ã®å•é¡Œã®ä¿®æ­£ã‚’ trunk ã‹ã‚‰ãƒãƒƒã‚¯ãƒãƒ¼ãƒˆ
++  ã—ã¾ã—ãŸã€‚
++
++- LP #414757 (Zope trunk ã‹ã‚‰ã®ãƒãƒƒã‚¯ãƒãƒ¼ãƒˆ):
++  è¤‡è£½ã—ãŸãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’ã‚¯ãƒªã‚¢ã™ã‚‹ã¨ãã« IEndRequestEvent ã‚’å‡ºåŠ›ã—ãªã„ã‚ˆã†ã«
++  ã—ã¾ã—ãŸã€‚
++
++
++2.12.0c1 (2009-09-04)
++----------------------
++
++æ©Ÿèƒ½è¿½åŠ 
++++++++++++++++
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  - Acquisition = 2.12.3
++  - pytz = 2009l
++  - tempstorage = 2.11.2
++  - transaction = 1.0.0
++  - ZODB3 = 3.9.0c3
++  - zope.app.basicskin = 3.4.1
++  - zope.app.form = 3.8.1
++  - zope.component = 3.7.1
++  - zope.copypastemove = 3.5.2
++  - zope.i18n = 3.7.1
++  - zope.security = 3.7.1
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- version.txt ã¯ã‚‚ã¯ã‚„ä½¿ç”¨ã—ã¦ã„ãªã„ãŸã‚ã€ pkg_resources ã§ãƒãƒ¼ã‚¸ãƒ§ãƒ³
++  æƒ…å ±ã‚’å–å¾—ã—ã¦è¡¨ç¤ºã™ã‚‹ã‚ˆã†ã«ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++
++2.12.0b4 (2008-08-06)
++----------------------
++
++æ©Ÿèƒ½è¿½åŠ 
++++++++++++++++
++
++- MailHost ã® send ãƒ¡ã‚½ãƒƒãƒ‰ãŒ unicode ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¨
++  email.Message.Message ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å¯¾å¿œã—ã¾ã—ãŸã€‚
++  ã“ã‚Œã«ã‚ˆã‚Š charset ã¨ msg_type ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’æ¸¡ã™ã“ã¨ãŒå‡ºæ¥ã‚‹ã‚ˆã†ã«ãªã‚Šã€
++  æ–‡å­—åˆ—ã€ãƒ˜ãƒƒãƒ€ãƒ¼ã€æœ¬æ–‡ã®ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰æ™‚ã®åŠ©ã‘ã«ãªã‚Šã¾ã™ã€‚
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  - ZODB3 = 3.9.0b5
++  - zope.testing = 3.7.7
++
++- scripts: ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹èµ·å‹•ç”¨ã® 'runzope' ã¨ 'zopectl' ã‚’ ã‚¨ãƒ³ãƒˆãƒªãƒ¼
++  ãƒã‚¤ãƒ³ãƒˆã¨ã—ã¦è¿½åŠ ã—ã¾ã—ãŸã€‚
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- LP #418454: FTP ã‚µãƒ¼ãƒãƒ¼ãŒ Python 2.6.X ã§å‹•ä½œã—ãªã„å•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- PythonScript: å°ã•ãª Python 2.6 ã¨ã®äº’æ›ã‚»ã‚¤ãƒ³å•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- mkzopeinstance:
++  ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ã‚ˆã‚Š egg ãƒ™ãƒ¼ã‚¹ã«é©ã—ãŸå½¢ã«ã—ã¾ã—ãŸã€‚
++  ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã—ãŸ skel ã‚’ä½¿ç”¨ã—ã¦ã„ã‚‹å ´åˆã¯ã€æ›´æ–°ã—ã¦ãã ã•ã„ã€‚
++
++- Five: Zope 2.12.0a2 ã§è¿½åŠ ã•ã‚ŒãŸãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³ä½œæˆæ©Ÿèƒ½ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- LP #399633: ã‚¤ãƒ³ã‚¿ãƒ—ãƒªã‚¿ã®ãƒ‘ã‚¹ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- MailHost ã®ç®¡ç†ç”»é¢ã¯ user ã¨ password ã®ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã« None ãŒè¨­å®š
++  ã•ã‚Œã¦ã„ãŸå ´åˆã€ãã‚Œã‚’æ–‡å­—åˆ—ã¨ã—ã¦æ‰±ã‚ãªã„ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++
++2.12.0b3 (2009-07-15)
++----------------------
++
++æ©Ÿèƒ½è¿½åŠ 
++++++++++++++++
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  - ZConfig = 2.7.1
++  - ZODB = 3.9.0b2
++  - pytz = 2009j
++  - zope.app.component = 3.8.3
++  - zope.app.pagetemplate = 3.7.1
++  - zope.app.publisher = 3.8.3
++  - zope.app.zcmlfiles = 3.5.5
++  - zope.contenttype = 3.4.2
++  - zope.dublincore = 3.4.3
++  - zope.index = 3.5.2
++  - zope.interface = 3.5.2
++  - zope.testing = 3.7.6
++  - zope.traversing = 3.7.1
++
++- ã‚¤ãƒ³ãƒ‡ã‚¯ã‚·ãƒ³ã‚°ã«ãŠã„ã¦ã€ datetime å€¤ã®ã‚µãƒãƒ¼ãƒˆã‚’ PluginIndexes
++  DataRangeIndex ã«è¿½åŠ ã—ã¾ã—ãŸã€‚ DateIndex ã¯æ—¢ã«ã“ã®æ©Ÿèƒ½ã‚’æŒã£ã¦ã„ã¾ã™ã€‚
++
++å†æ§‹ç¯‰
+++++++++++++++
++
++- PluginIndexes: deprecated ã¨ãªã£ãŸ TextIndex ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚
++
++- HelpSys ãŒ deprecate ã¨ãªã£ãŸ TextIndex ã®ä»£ã‚ã‚Šã« ZCTextIndex
++  ã‚’ä½¿ã†ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸã€‚ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ›´æ–°ã®ãŸã‚ã«ã€ Zope ã®
++  ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒ‘ãƒãƒ«ã® Product ç™»éŒ²ã‹ã‚‰å‰Šé™¤ã—ã¦ã€ Zope ã‚’å†èµ·å‹•
++  ã—ã¦ãã ã•ã„ã€‚
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- LP #397861: "bin/zopectl adduser" ã«ãŠã‘ã‚‹å•é¡Œã®ä¿®æ­£ã®ãŸã‚ã«ã€
++  ç”Ÿæˆã—ãŸ 'zopectl' ã‚¹ã‚¯ãƒªãƒ—ãƒˆã§ $PYTHON ç’°å¢ƒå¤‰æ•°ã‚’è¨­å®šã™ã‚‹ã‚ˆã†ã«
++  ã—ã¾ã—ãŸã€‚
++
++- PluginIndexes: IPluggableIndex ã« 'indexSize' ã‚’è¿½åŠ ã—ã¾ã—ãŸã€‚
++
++- HelpSys: ProductHelp ã¯ PluginIndexes ã®åˆæœŸåŒ–ã«ä¾å­˜ã—ãªããªã‚Šã¾ã—ãŸã€‚
++
++- App.Product: ProductHelp ãŒ Zope 2.12.0a1 ã‹ã‚‰å£Šã‚Œã¦ã„ãŸå•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- ObjectManagerNameChooser ã‚’ BTreeFolder2 ã§ã‚‚å‹•ä½œã™ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- ZPublisherExceptionHook ä¾‹å¤–ã‚’æ­£ã—ãå‡¦ç†ã™ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++2.12.0b2 (2009-05-27)
++----------------------
++
++å†æ§‹ç¯‰
+++++++++++++++
++
++- ``zope.app.pagetemplate`` ã®åˆ©ç”¨ã‚’å…¨ã¦å–ã‚Šé™¤ãã¾ã—ãŸã€‚åˆ©ç”¨ã—ã¦ã„ãŸã‚³ãƒ¼ãƒ‰
++  ã¯ã‚·ãƒ³ãƒ—ãƒ«ã«ãªã‚Šã¾ã—ãŸã€‚
++
++- ``zope.app.pagetemplate.engine`` ã®ä»£ã‚ã‚Šã« ``zope.pagetemplate.engine`` 
++  ã‚’ä½¿ã†ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++  (update to versions 3.5.0 and 3.7.0, respectively, along with version 3.8.1
++  of ``zope.app.publisher``).
++
++- ``zope.publisher.interfaces.browser`` ã‚ˆã‚Šã‚‚ ``zope.browser.interfaces``
++  ã® ``IBrowserView`` ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ä½¿ã†ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- ``zope.app.container`` ã‚ˆã‚Šã‚‚ ``zope.browser.interfaces`` ã® ``IAdding``
++  ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ä½¿ã†ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- ``zope.processlifetime`` ã®ã‚¤ãƒ™ãƒ³ãƒˆå®Ÿè£…ã‚’ä½¿ã†ã‚ˆã†ã«ã—ã€
++  ``zope.app.appsetup`` ã¸ã®ä¾å­˜ã‚’ç„¡ãã—ã¾ã—ãŸã€‚
++
++æ©Ÿèƒ½è¿½åŠ 
++++++++++++++++
++
++- zExceptions.convertExceptionType:  new API, breaking out conversion of
++  exception names to exception types from 'upgradeException'.
++
++- Launchpad #374719: æ–°ã—ã„ ZPublisher ã®ã‚¤ãƒ™ãƒ³ãƒˆã‚’å°å…¥:
++  PubStart, PubSuccess, PubFailure, PubAfterTraversal, PubBeforeCommit.
++
++- Testing.ZopeTestCase: Python 2.6 ã§ DeprecationWarning ãŒå‡ºãªã„ã‚ˆã†ã«
++  ã™ã‚‹ãŸã‚ã«ã€ZODB.tests.warnhook ã®ã‚³ãƒ”ãƒ¼ã‚’å«ã‚ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°:
++
++  * python-gettext 1.0
++  * pytz 2009g
++  * zope.app.applicationcontrol = 3.5.0
++  * zope.app.appsetup 3.11
++  * zope.app.component 3.8.2
++  * zope.app.container 3.8.0
++  * zope.app.form 3.8.0
++  * zope.app.http 3.6.0
++  * zope.app.interface 3.5.0
++  * zope.app.pagetemplate 3.6.0
++  * zope.app.publication 3.7.0
++  * zope.app.publisher 3.8.0
++  * zope.browser 1.2
++  * zope.component 3.7.0
++  * zope.componentvocabulary 1.0
++  * zope.container 3.8.2
++  * zope.formlib 3.6.0
++  * zope.lifecycleevent 3.5.2
++  * zope.location 3.5.4
++  * zope.processlifetime 1.0
++  * zope.publisher 3.8.0
++  * zope.security 3.7.0
++  * zope.testing 3.7.4
++  * zope.traversing 3.7.0
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- Launchpad #374729: Firewall ã‚„ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãƒ¼ proxy ã‚’ä½¿ç”¨ã™ã‚‹ã¨ã€
++  cookie ã®å€¤ã®ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ãŒç„¡åŠ¹ã«ãªã‚‹å•é¡Œã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++- Launchpad #373583: ZODBMountPoint ã®ãƒã‚¦ãƒ³ãƒˆã®å‡¦ç†ãŒå£Šã‚Œã¦ã„ãŸå•é¡Œã‚’
++  ä¿®æ­£ã—ã€ãƒ†ã‚¹ãƒˆã‚’æ‹¡å¼µã—ã¾ã—ãŸã€‚
++
++- Launchpad #373621: ãƒ¯ãƒ¼ã‚«ãƒ¼ã‚¹ãƒ¬ãƒƒãƒ‰ãŒãƒªãƒ¼ã‚¯ã—ãŸå ´åˆã«ã€ä¾‹å¤–ã‚’æ•ã¾ãˆã¦
++  ãƒ­ã‚°å‡ºåŠ›ã™ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- Launchpad #373577: èµ·å‹•æ™‚ã®ã‚¨ãƒ©ãƒ¼ã‚’ã‚ˆã‚Šè©³ç´°ã«åˆ†æã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹ãŸã‚ã€
++  logging ã®ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—ã‚’ã“ã‚Œã¾ã§ã‚ˆã‚Šæ—©ã„æ™‚ç‚¹ã§è¡Œã†ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- Launchpad #373601:
++  ä¸»ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ãŒé–‰ã˜ãŸå¾Œã§æ°¸ç¶šãƒ‡ãƒ¼ã‚¿ãŒæ›´æ–°ã•ã‚Œã‚‹ã‚ˆã†ãªå ´åˆã«ã€
++  æ¥ç¶šãŒãƒªãƒ¼ã‚¯ã—ãªã„ã‚ˆã†ã«ã€æ¥ç¶šã‚’é–‰ã˜ã‚‹å‰ã«ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã‚’
++  ä¸­æ­¢ã™ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- Fix BBB regression which prevented setting browser ID cookies from
++  browser ID managers created before the ``HTTPOnly`` feature landed.
++  https://bugs.launchpad.net/bugs/374816
++
++- RESPONSE.handle_errors was wrongly set (to debug, should have been
++  ``not debug``). Also, the check for exception constructor arguments
++  didn't account for exceptions that didn't override the ``__init__``
++  (which are most of them). The combination of those two problems
++  caused the ``standard_error_message`` not to be called. Fixes
++  https://bugs.launchpad.net/zope2/+bug/372632 .
++
++- DocumentTemplate.DT_Raise:  'zExceptions.convertExceptionType' API
++  ã‚’ä½¿ç”¨ã™ã‚‹ã“ã¨ã«ã‚ˆã‚Šã€çµ„ã¿è¾¼ã¿ä¾‹å¤–ä»¥å¤–ã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ãªã£ãŸã€‚
++  https://bugs.launchpad.net/zope2/+bug/372629 ã§ã€å¼•æ•°ãŒãªã„
++  ã‚¹ã‚¯ãƒªãƒ—ãƒˆã® "Try" ã‚¿ãƒ–ã®è¡¨ç¤ºãŒå¦¨ã’ã‚‰ã‚Œã¦ã„ãŸå•é¡Œã‚’ä¿®æ­£ã—ãŸã€‚
++
++2.12.0b1 (2009-05-06)
++---------------------
++
++å†æ§‹ç¯‰
+++++++++++++++
++
++- ``zope.app.locales`` ã«ä¾å­˜ã—ãªã„ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚ Zope 2 ã¯å¤§æŠµã¯
++  å„ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãŒæä¾›ã™ã‚‹ç¿»è¨³ã‚’ä½¿ç”¨ã›ãšã€å¿…è¦ã¨ã‚‚ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
++  ã“ã®æ±ºå®šã«ã¯ã€ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³é–‹ç™ºè€…ã‹ã‚‰ locales ãŒç„¡ããªã£ãŸã€
++  ã¨ã„ã†æ„å‘³ã‚’å«ã‚“ã§ã„ã¾ã™ã€‚
++
++- ``zope.app.testing`` ã®ä¾å­˜ã‚’å–ã‚Šé™¤ãã€ ZopeTestCase ã®ä¸€éƒ¨ã§ã‚ã‚‹ã€
++  ã‚‚ã£ã¨å°ã•ã„ placeless setup ã‚’ä½¿ã†ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚
++
++- updated to ZODB 3.9.0b1
++
++æ©Ÿèƒ½è¿½åŠ 
++++++++++++++++
++- zExceptions.convertExceptionType:  new API, breaking out conversion of
++  exception names to exception types from ``upgradeException``.
++
++- Extended BrowserIdManager to expose the ``HTTPOnly`` attribute for its
++  cookie. Also via https://bugs.launchpad.net/zope2/+bug/367393 .
++
++- Added support for an optional ``HTTPOnly`` attribute of cookies (see
++  http://www.owasp.org/index.php/HTTPOnly).  Patch from Stephan Hofmockel,
++  via https://bugs.launchpad.net/zope2/+bug/367393 .
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- ZPublisher response.setBody:
++  ã™ã§ã« header ã«ã‚ã‚‹å ´åˆã€ Accept-Encoding ã‚’ç ´æ£„ã—ãªã„ã‚ˆã†ã«ä¿®æ­£ã€‚
++  ã“ã®å•é¡Œã¯ã‚­ãƒ£ãƒƒã‚·ãƒ¥è¨­å®šã‚’é›£ã—ãã—ã¦ã„ãŸã€‚
++
++2.12.0a4 (2009-04-24)
++---------------------
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹æ§‹é€ ã®ä½œæˆã®ãŸã‚ã® zope.z2release ã§ä½¿ã‚ã‚Œã‚‹ã€
++  versions.cfg ã‚’ä¿®æ­£ã—ã¾ã—ãŸã€‚
++
++2.12.0a3 (2009-04-19)
++---------------------
++
++2.12.0a2 ã®ã‚½ãƒ¼ã‚¹ãƒªãƒªãƒ¼ã‚¹ã®ãŸã‚ã® Tarball ã¯å®Œå…¨ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚
++setuptools ã¨ Subversion 1.6 ã®éäº’æ›æ€§ã®å•é¡Œã‚’å«ã‚“ã§ã„ã¾ã™ã€‚
++
++å†æ§‹ç¯‰
+++++++++++++++
++
++- å¤ã„ Zope ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã§ä½œã‚‰ã‚ŒãŸãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚’è‡ªå‹•çš„ã«ãƒã‚¤ã‚°ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³
++  ã™ã‚‹æ©Ÿèƒ½ã‚’è¿½åŠ ã€‚ ``Control_Panel`` ã® ``Versions`` ç”»é¢ã¯ã€è‡ªå‹•çš„ã«
++  Zope èµ·å‹•æ™‚ã«å‰Šé™¤ã•ã‚Œã¾ã™ã€‚
++
++- Globals.VersionNameName ã‚’å«ã‚€ã€ä½¿ã‚ã‚Œã¦ã„ãªã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ç®¡ç†æ©Ÿèƒ½ã®ã‚³ãƒ¼ãƒ‰
++  ã‚’å–ã‚Šé™¤ãã¾ã—ãŸã€‚
++
++
++2.12.0a2 (2009-04-19)
++---------------------
++
++å†æ§‹ç¯‰
+++++++++++++++
++
++- ãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³ã‚’å®šç¾©ã™ã‚‹ <permission /> ZCML ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–ãŒç„¡ã„å ´åˆã€
++  ãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³ã‚’è‡ªå‹•çš„ã«ä½œæˆã™ã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯ã€
++  Manager ãƒ­ãƒ¼ãƒ«ã®ã¿ãŒè¨±å¯ã•ã‚Œã¾ã™ã€‚ã“ã‚Œã¯ã€æ–°ã—ã„ãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³ãŒ ZCML
++  ã§ã®ã¿ä½œæˆå‡ºæ¥ã‚‹ã¨ã„ã†æ„å‘³ã§ã™ã€‚æ—¢å­˜ã®ãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³ã¯ã“ã®æ–¹æ³•ã§ã¯
++  å¤‰æ›´ã•ã‚Œã¾ã›ã‚“ã€‚
++
++- <class /> ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–ã§ä½¿ã‚ã‚Œã‚‹ <require set_schema="..." /> ã‚„
++  <require set_attributes="..." /> ãŒç™ºã—ã¦ã„ãŸã‚¨ãƒ©ãƒ¼ã¯ã€ä»Šå¾Œã¯è­¦å‘Š
++  ã«ãªã‚Šã¾ã™ã€‚ Zope 2 ã«ã¯ 'set' ã‚’ãƒ—ãƒ­ãƒ†ã‚¯ãƒˆã™ã‚‹ã¨ã„ã†ã‚³ãƒ³ã‚»ãƒ—ãƒˆã¯
++  ã‚ã‚Šã¾ã›ã‚“ãŒã€ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«å†åˆ©ç”¨æ€§ã‚’é«˜ã‚ã‚‹ãŸã‚ã«ã‚‚å®šç¾©ãŒæ›¸ã‹ã‚Œã¦
++  ã„ã¦ã‚‚ã‚¨ãƒ©ãƒ¼ã«ã—ã¾ã›ã‚“ã€‚
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°: Acquisition 2.12.1.
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°: DateTime 2.12.0.
++
++- ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸æ›´æ–°: ZODB 3.9.0a12.
++
++- ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’æ˜ç¤ºçš„ã«ã¯è¦æ±‚ã™ã‚‹ ``getPackages`` ãƒ©ãƒƒãƒ‘ãƒ¼ã‚’ setup.py
++  ã‹ã‚‰å–ã‚Šé™¤ãã¾ã—ãŸã€‚
++  ã“ã‚Œã«ã‚ˆã‚Šã€ä¾å­˜ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã®ã‚ˆã‚Šæ–°ã—ã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’åˆ©ç”¨ã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™ã€‚
++  ä»Šå¾Œã¯ã€ã“ã®ã‚ˆã†ãª KGS ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±ã¯ä»–ã®æ–¹æ³•ã§è¡¨ã™å¿…è¦ãŒæœ‰ã‚Šã¾ã™ã€‚
++
++- ``extras_require`` ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã‚’ setup.py ã‹ã‚‰å–ã‚Šé™¤ãã¾ã—ãŸã€‚
++  (ã“ã‚Œã¯å¤ã„ã‚³ãƒ¼ãƒ‰ã‚’å£Šã™å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã—ãŸ).
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- Launchpad #348223: catalog ã‚¯ã‚¨ãƒªã‚’æœ€é©åŒ–: ã‚¯ã‚¨ãƒªçµæœãŒç©ºã®çŠ¶æ…‹ã«ãªã£ãŸã‚‰ã€
++  çŸ­æ™‚é–“ã§ index æ¤œç´¢ã‚’æŠœã‘ã‚‹ã‚ˆã†ã«ã—ãŸã€‚
++
++- Launchpad #344098: ``skel/etc/zope.conf.ing`` ã§ã€ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã‚³ãƒ¡ãƒ³ãƒˆã‚¢ã‚¦ãƒˆ
++  ã•ã‚Œã¦ã„ã‚‹ ``read-only-database`` ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚ã“ã‚Œã¯æ—¢ã«
++  deprecated ã§ã‚ã‚Šã€ ZODB ã® ``component.xml`` ã§å®šç¾©ã•ã‚Œã¦ã„ã¾ã™ã€‚
++  ``zserver-read-only-mode`` ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–ã®æ­£ã—ã„æ›¸å¼ (suppressing log
++  / pid / lock files) ã«ã¤ã„ã¦èª¬æ˜ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚
++  ``read-only-database`` ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã«ã¤ã„ã¦ã€ deprecation ã‚’è¿½åŠ ã—ã¾ã—ãŸã€‚
++  ã“ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯ Zope 2.6 ã‹ã‚‰è¨­å®šã—ã¦ã‚‚åŠ¹æœãŒç„¡ã„ã‚‚ã®ã§ã—ãŸã€‚
++
++- "Permission tab":
++  ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³è¡¨ç¤ºã®é–“é•ã£ãŸãƒ•ã‚©ãƒ¼ãƒ ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ä¿®æ­£ã€‚
++
++- PageTemplates: PreferredCharsetResolver ã‚’æ–°ã—ã„ç¨®é¡ã® context ã§ã‚‚
++  å‹•ä½œã™ã‚‹ã‚ˆã†ã«ã—ã¾ã—ãŸã€‚ã“ã® context ã¯ Acquisition ãƒ©ãƒƒãƒ‘ãƒ¼ã§
++  ãƒ©ãƒƒãƒ—ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
++
++- Object managers should evaluate to True in a boolean test.
++
++2.12.0a1 (2009-02-26)
++---------------------
++
++å†æ§‹ç¯‰
+++++++++++++++
++
++- Switched Products.PageTemplates to directly use zope.i18n.translate and
++  removed the GlobalTranslationService hook.
++
++- Removed bridging code from Product.Five for PlacelessTranslationService
++  and Localizer. Neither of the two is actually using this anymore.
++
++- Removed the specification of ``SOFTWARE_HOME`` and ``ZOPE_HOME`` from the
++  standard instance scripts.
++  [hannosch]
++
++- Made the specification of ``SOFTWARE_HOME`` and ``ZOPE_HOME`` optional. In
++  addition ``INSTANCE_HOME`` is no longer required to run the tests of a
++  source checkout of Zope.
++
++- Removed the ``test`` command from zopectl. The test.py script it was relying
++  on does no longer exist.
++
++- Updated to ZODB 3.9.0a11. ZODB-level version support has been
++  removed and ZopeUndo now is part of Zope2.
++
++- The Zope2 SVN trunk is now a buildout pulling in all dependencies as
++  actual released packages and not SVN externals anymore.
++
++- Make use of the new zope.container and zope.site packages.
++
++- Updated to newer versions of zope packages. Removed long deprecated
++  layer and skin ZCML directives.
++
++- Disabled the XML export on the UI level - the export functionality
++  however is still available on the Python level.
++
++- No longer show the Help! links in the ZMI, if there is no help
++  available. The help system depends on the product registry.
++
++- Updated the quick start page and simplified the standard content.
++  The default index_html is now a page template.
++
++- Removed deprecated Draft and Version support from Products.OFSP.
++  Also removed version handling from the control panel. Versions are
++  no longer supported on the ZODB level.
++
++- Removed left-overs of the deprecated persistent product distribution
++  mechanism.
++
++- The persistent product registry is not required for starting Zope
++  anymore. ``enable-product-installation`` can be set to off if you don't
++  rely on the functionality provided by the registry.
++
++- ZClasses have been deprecated for two major releases. They have been
++  removed in this version of Zope.
++
++- Avoid deprecation warnings for the md5 and sha modules in Python 2.6
++  by adding conditional imports for the hashlib module.
++
++- Replaced imports from the 'Globals' module throughout the 
++  tree with imports from the actual modules;  the 'Globals' module
++  was always intended to be an area for shared data, rather than
++  a "facade" for imports.  Added zope.deferred.deprecation entries
++  to 'Globals' for all symbols / modules previously imported directly.
++
++- Protect against non-existing zope.conf path and products directories.
++  This makes it possible to run a Zope instance without a Products or
++  lib/python directory.
++
++- Moved exception MountedStorageError from ZODB.POSExceptions
++  to Products.TemporaryFolder.mount (now its only client).
++
++- Moved Zope2-specific module, ZODB/Mount.py, to
++  Products/TemporaryFolder/mount.py (its only client is
++  Products/TemporaryFolder/TemporaryFolder.py).
++
++- Removed spurious import-time dependencies from
++  Products/ZODBMountPoint/MountedObject.py.
++
++- Removed Examples.zexp from the skeleton. The TTW shopping cart isn't
++  any good example of Zope usage anymore.
++
++- Removed deprecated ZTUtil.Iterator module
++
++- Removed deprecated StructuredText module
++
++- Removed deprecated TAL module
++
++- Removed deprecated modules from Products.PageTemplates.
++
++- Removed deprecated ZCML directives from Five including the whole
++  Five.site subpackage.
++
++æ©Ÿèƒ½è¿½åŠ 
++++++++++++++++
++
++- OFS.ObjectManager now fully implements the zope.container.IContainer
++  interface. For the last Zope2 releases it already claimed to implement the
++  interface, but didn't actually full-fill the interface contract. This means
++  you can start using more commonly used Python idioms to access objects
++  inside object managers. Complete dictionary-like access and container
++  methods including iteration are now supported. For each class derived from
++  ObjectManager you can use for any instance om: ``om.keys()`` instead of
++  ``om.objectIds()``, ``om.values()`` instead of ``om.objectValues()``, but
++  also ``om.items()``, ``ob.get('id')``, ``ob['id']``, ``'id' in om``,
++  ``iter(om)``, ``len(om)``, ``om['id'] = object()`` instead of
++  ``om._setObject('id', object())`` and ``del ob['id']``. Should contained
++  items of the object manager have ids equal to any of the new method names,
++  the objects will override the method, as expected in Acquisition enabled
++  types. Adding new objects into object managers by those new names will no
++  longer work, though. The added methods call the already existing methods
++  internally, so if a derived type overwrote those, the new interface will
++  provide the same functionality.
++
++- Acquisition has been made aware of ``__parent__`` pointers. This allows
++  direct access to many Zope 3 classes without the need to mixin
++  Acquisition base classes for the security to work.
++
++- MailHost: now uses zope.sendmail for delivering the mail. With this
++  change MailHost integrates with the Zope transaction system (avoids
++  sending dupe emails in case of conflict errors). In addition
++  MailHost now provides support for asynchronous mail delivery. The
++  'Use queue' configuration option will create a mail queue on the
++  filesystem (under 'Queue directory') and start a queue thread that
++  checks the queue every three seconds. This decouples the sending of
++  mail from its delivery.  In addition MailHosts now supports
++  encrypted connections through TLS/SSL.
++
++- SiteErrorLog now includes the entry id in the information copied to
++  the event log. This allowes you to correlate a user error report with
++  the event log after a restart, or let's you find the REQUEST
++  information in the SiteErrorLog when looking at a traceback in the
++  event log.
++
++ãƒã‚°ä¿®æ­£
++++++++++++
++
++- Launchpad #332168: Connection.py: do not expose DB connection strings
++  through exceptions
++
++- Specified height/width of icons in ZMI listings so the table doesn't
++  jump around while loading.
++
++- After the proper introduction of parent-pointers, it's now
++  wrong to acquisition-wrap content providers. We will now use
++  the "classic" content provider expression from Zope 3.
++
++- Ported c69896 to Five. This fix makes it possible to provide a
++  template using Python, and not have it being set to ``None`` by
++  the viewlet manager directive.
++
++- Made Five.testbrowser compatible with mechanize 0.1.7b.
++
++- Launchpad #280334: Fixed problem with 'timeout'
++  argument/attribute missing in testbrowser tests.
++
++- Launchpad #267834: proper separation of HTTP header fields   
++  using CRLF as requested by RFC 2616.
++
++- Launchpad #257276: fix for possible denial-of-service attack
++  in PythonScript when passing an arbitrary module to the encode()
++  or decode() of strings.
++
++- Launchpad #257269: 'raise SystemExit' with a PythonScript could shutdown
++  a complete Zope instance
++
++- Switch to branch of 'zope.testbrowser' external which suppresses
++  over-the-wire tests.
++
++- Launchpad #143902: Fixed App.ImageFile to use a stream iterator to
++  output the file. Avoid loading the file content when guessing the
++  mimetype and only load the first 1024 bytes of the file when it cannot
++  be guessed from the filename.
++
++- Changed PageTemplateFile not to load the file contents on Zope startup
++  anymore but on first access instead. This brings them inline with the
++  zope.pagetemplate version and speeds up Zope startup.
++
++- Collector #2278: form ':record' objects did not implement enough
++  of the mapping protocol.
++
++- "version.txt" file was being written to the wrong place by the
++  Makefile, causing Zope to report "unreleased version" even for
++  released versions.
++
++- Five.browser.metaconfigure.page didn't protect names from interface
++  superclasses (http://www.zope.org/Collectors/Zope/2333)
++
++- DAV: litmus "notowner_modify" tests warn during a MOVE request
++  because we returned "412 Precondition Failed" instead of "423
++  Locked" when the resource attempting to be moved was itself
++  locked.  Fixed by changing Resource.Resource.MOVE to raise the
++  correct error.
++
++- DAV: litmus props tests 19: propvalnspace and 20:
++  propwformed were failing because Zope did not strip off the
++  xmlns: attribute attached to XML property values.  We now strip
++  off all attributes that look like xmlns declarations.
++
++- DAV: When a client attempted to unlock a resource with a token
++  that the resource hadn't been locked with, in the past we
++  returned a 204 response.  This was incorrect.  The "correct"
++  behavior is to do what mod_dav does, which is return a '400
++  Bad Request' error.  This was caught by litmus
++  locks.notowner_lock test #10.  See
++  http://lists.w3.org/Archives/Public/w3c-dist-auth/2001JanMar/0099.html
++  for further rationale.
++
++- When Zope properties were set via DAV in the "null" namespace
++  (xmlns="") a subsequent PROPFIND for the property would cause the
++  XML representation for that property to show a namespace of
++  xmlns="None".  Fixed within OFS.PropertySheets.dav__propstat.
++
++- integrated theuni's additional test from 2.11 (see r73132)
++
++- Relaxed requirements for context of
++  Products.Five.browser.pagetemplatefile.ZopeTwoPageTemplateFile,
++  to reduce barriers for testing renderability of views which
++  use them.
++  (http://www.zope.org/Collectors/Zope/2327)
++
++- PluginIndexes: Fixed 'parseIndexRequest' for false values.
++
++- Collector #2263: 'field2ulines' did not convert empty string
++  correctly.
++
++- Collector #2198: Zope 3.3 fix breaks Five 1.5 test_getNextUtility
++
++- Prevent ZPublisher from insering incorrect <base/> tags into the
++  headers of plain html files served from Zope3 resource directories.
++
++- Changed the condition checking for setting status of
++  HTTPResponse from to account for new-style classes.
++
++- The Wrapper_compare function from tp_compare to tp_richcompare.
++  Also another function Wrapper_richcompare is added.
++
++- The doc test has been slightly changed in ZPublisher to get
++  the error message extracted correctly.
++
++- The changes made in Acquisition.c in Implicit Acquisition
++  comparison made avail to Explicit Acquisition comparison also.
++
++- zopedoctest no longer breaks if the URL contains more than one
++  question mark. It broke even when the second question mark was
++  correctly quoted.
++
++ãã®ä»–ã®å¤‰æ›´
+++++++++++++++
++
++- Added lib/python/webdav/litmus-results.txt explaining current
++  test results from the litmus WebDAV torture test.
++
++- DocumentTemplate.DT_Var.newline_to_br(): Simpler, faster
++  implementation.
++
++.. rubric:: (Translated by Shimizukawa, `r110302 <http://svn.zope.org/Zope/branches/2.12/doc/CHANGES.rst?rev=110302&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/CHANGES.html>`_)
++  :class: translator
++
+Index: ja/2.12.7/doc/DEBUGGING.rst
+===================================================================
+--- ja/2.12.7/doc/DEBUGGING.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/DEBUGGING.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,25 @@
++Zopeã®ãƒ‡ãƒãƒƒã‚°ãƒ¢ãƒ¼ãƒ‰
++=====================
++
++Zope ã‚’ãƒ‡ãƒãƒƒã‚°ãƒ¢ãƒ¼ãƒ‰ã§èµ·å‹•ã™ã‚‹ã«ã¯ã€è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã® 'debug-mode' ã‚’ 'on' ã«è¨­å®šã—ã¾ã™(ã“ã‚ŒãŒãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã™)ã€‚ã“ã‚Œã«ã‚ˆã£ã¦ä»¥ä¸‹ã®åŠ¹æœãŒã‚ã‚Šã¾ã™:
++
++- UNIX ã§ã¯ã€ Zope ãŒã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã‹ã‚‰åˆ‡ã‚Šé›¢ã•ã‚Œãªããªã‚Šã¾ã™ã€‚
++
++- Z_DEBUG_MODE ç’°å¢ƒå¤‰æ•°ãŒã‚»ãƒƒãƒˆã•ã‚Œã€ã“ã‚Œã«ã‚ˆã‚Šã€ Zope ã®æŒ™å‹•ãŒé–‹ç™º
++  å‘ãã«ãªã‚Šã¾ã™ã€‚
++  è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã® 'debug-mode' ã®èª¬æ˜ã«è©³ã—ã„æƒ…å ±ã‚’è¨˜è¼‰ã—ã¦ã„ã¾ã™ã€‚
++
++'zopectl debug' ã‚’ä½¿ã†
++-----------------------
++
++ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ›ãƒ¼ãƒ ã« 'zopectl' ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ãƒ¼ãŒç”¨æ„ã•ã‚Œã¦ã„ã¾ã™ã€‚ã“ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã« 'debug' ã¨ã„ã†å¼•æ•°ã‚’æ¸¡ã™ã“ã¨ã«ã‚ˆã£ã¦ã€ Python ã®å¯¾è©±ãƒ¢ãƒ¼ãƒ‰ã‚’èµ·å‹•ã—ã€ Zope ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®å®Ÿè¡Œæ™‚ã®çŠ¶æ…‹ã‚’åˆ†æã™ã‚‹äº‹ãŒå‡ºæ¥ã¾ã™ã€‚ 'æœ€ä¸Šä½' ã® Zope ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ (ãƒ«ãƒ¼ãƒˆãƒ•ã‚©ãƒ«ãƒ€) ã¯ 'app' ã¨ã„ã†åå‰ã§ã‚¤ãƒ³ã‚¿ãƒ—ãƒªã‚¿ã§æä¾›ã•ã‚Œã¾ã™ã€‚ Python ã®æ¨™æº–çš„ãªé–¢æ•°ãªã©ã‚’ä½¿ã£ã¦ app ã‚’æ“ä½œã—ãŸã‚Šã€è¿”å€¤ã‚’åˆ†æã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™::
++
++    [chrism@james Trunk]$ bin/zopectl debug
++    Starting debugger (the name "app" is bound to the top-level Zope object)
++    >>> app.objectIds()
++    ['acl_users', 'Control_Panel', 'temp_folder', 'browser_id_manager', 'session_data_manager', 'error_log', 'index_html', 'standard_error_message']
++    >>> 
++
++.. rubric:: (Translated by Shimizukawa, `r105416 <http://svn.zope.org/Zope/tags/2.12.1/doc/DEBUGGING.rst?rev=105416&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/DEBUGGING.html>`_)
++  :class: translator
++
+Index: ja/2.12.7/doc/INSTALL-buildout.rst
+===================================================================
+--- ja/2.12.7/doc/INSTALL-buildout.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/INSTALL-buildout.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,193 @@
++``zc.buildout`` ã‚’ç”¨ã„ãŸ Zope ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
++=============================================
++
++.. highlight:: bash
++
++ã“ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã¯ ``zc.buildout`` ã‚’ç”¨ã„ãŸ Zope ã®å§‹ã‚æ–¹ã«ã¤ã„ã¦
++èª¬æ˜ã—ã¦ã„ã¾ã™ã€‚
++
++``zc.buildout`` ã¨ã¯
++---------------------
++
++`zc.buildout <http://www.buildout.org/>`_ ã¯ã€ä¸ãˆã‚‰ã‚ŒãŸã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã®
++è¨­å®šã¨ç’°å¢ƒã«ã¤ã„ã¦åŒã˜ã‚‚ã®ã‚’ç¹°ã‚Šè¿”ã—æ§‹ç¯‰ã™ã‚‹ã“ã¨ã‚’ã‚µãƒãƒ¼ãƒˆã™ã‚‹
++å¼·åŠ›ãªãƒ„ãƒ¼ãƒ«ã§ã™ã€‚ Zope ã®é–‹ç™ºè€…ã¯ Zope é–‹ç™ºã«éš›ã—ã¦ ``zc.buildout``
++ã¨é–¢é€£ã™ã‚‹ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’ä½¿ã£ã¦ã„ã¾ã™ã€‚
++
++
++å‰æ
++-----
++
++Zope ã‚’ä½¿ã†ãŸã‚ã«ã¯ã€ä»¥ä¸‹ã®å‰ææ¡ä»¶ã‚’ãã‚ãˆã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™:
++
++- ZopeãŒã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã‚‹ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®Pythonã€ã‚·ã‚¹ãƒ†ãƒ ãƒ¬ãƒ™ãƒ«ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸
++  ã‹ã‚‰ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã„ã‚‹å ´åˆã¯é–‹ç™ºã‚µãƒãƒ¼ãƒˆã‚‚å«ã¿ã¾ã™ã€‚ã‚µãƒãƒ¼ãƒˆãƒãƒ¼ã‚¸ãƒ§ãƒ³
++  ã¯ä»¥ä¸‹ã®é€šã‚Š:
++
++  * 2.6.x
++
++- Zopeã¯Pythonã® ``zlib`` ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒã‚¤ãƒ³ãƒãƒ¼ãƒˆå‡ºæ¥ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
++  Pythonã‚’ã‚½ãƒ¼ã‚¹ã‹ã‚‰ãƒ“ãƒ«ãƒ‰ã™ã‚‹ã®ã§ã‚ã‚Œã°ã€å…ˆã«ã‚·ã‚¹ãƒ†ãƒ ã® ``zlib`` 
++  ãƒ˜ãƒƒãƒ€ãƒ¼ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãŠã„ã¦ãã ã•ã„ã€‚
++
++- Pythonã®æ‹¡å¼µãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ãƒ“ãƒ«ãƒ‰ã§ãã‚‹ C ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ãƒ¼ã€‚ (gcc ã‚’æ¨å¥¨). 
++  ã“ã®é …ç›®ã¯ Windows ã§ã¯å¿…é ˆã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚ Windows ã®å ´åˆã€ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«
++  ãŒå¿…è¦ãªéƒ¨åˆ†ã«ã¤ã„ã¦ã¯å¸¸ã«ãƒã‚¤ãƒŠãƒªã§ã®ãƒªãƒªãƒ¼ã‚¹ãŒæä¾›ã•ã‚Œã¦ã„ã¾ã™ã€‚
++
++- Windows ã§ Zope ã‚’ã‚µãƒ¼ãƒ“ã‚¹ç™»éŒ²ã—ãŸã„å ´åˆã€ `pywin32`__ ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’
++  ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãŠã„ã¦ãã ã•ã„ã€‚
++
++  __ https://sourceforge.net/projects/pywin32/
++
++
++zc.buildoutã«ã‚ˆã‚‹Zopeã®ã‚¹ã‚¿ãƒ³ãƒ‰ã‚¢ãƒ­ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
++---------------------------------------------------
++
++ã“ã“ã§ã®è¨­å®šæ–¹æ³•ã§ã¯ã€ ``zc.buildout`` ã‚’ä½¿ã£ã¦ Zope ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã‚’
++ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¾ã™ãŒã€ã‚µãƒ¼ãƒãƒ¼ã® "ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹" ã¯ buildout
++ç’°å¢ƒã®å¤–ã«ç”Ÿæˆã—ã¾ã™ã€‚
++
++Zope ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
++::::::::::::::::::::::::::::::::
++
++Zope ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¯ã€ ``zc.buildout`` ã‚’ä½¿ã£ã¦ã€
++ä»¥ä¸‹ã®æ‰‹é †ã§è¡Œã„ã¾ã™:
++
++- Zope 2 ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã® `PyPI`__ ã‹ã‚‰ã®ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰
++
++  __ http://pypi.python.org/pypi/Zope2
++
++- buildout ç’°å¢ƒã®åˆæœŸåŒ– (bootstrap)
++
++- buildout ã®å®Ÿè¡Œ
++
++Linux ã§ã¯ã€ä»¥ä¸‹ã®ã‚ˆã†ã«è¡Œã„ã¾ã™::
++
++  $ wget http://pypi.python.org/packages/source/Z/Zope2/Zope2-<Zope version>.tar.gz
++  $ tar xfvz Zope2-<Zope version>.tar.gz
++  $ cd Zope2-<Zope version>
++  $ /path/to/your/python bootstrap/bootstrap.py
++  $ bin/buildout
++
++ã“ã‚Œã§ Zope ã¯ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã€æ¬¡ã¯
++:ref:`ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ä½œæˆ <classic-instances>` ã‚’è¡Œã†å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
++
++
++Zope ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä½œæˆ
++::::::::::::::::::::::::
++
++Zope ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ãŒçµ‚ã‚ã£ãŸã‚‰ã€æ¬¡ã¯ "ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ›ãƒ¼ãƒ " ã®ä½œæˆã‚’
++è¡Œã„ã¾ã™ã€‚ã“ã‚Œã¯ Zope ã‚µãƒ¼ãƒãƒ¼ãƒ—ãƒ­ã‚»ã‚¹ãŒä½¿ç”¨ã™ã‚‹è¨­å®šã¨ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‚’
++ç½®ããƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã§ã™ã€‚ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ›ãƒ¼ãƒ ã¯ ``mkzopeinstance`` ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
++ã§ä»¥ä¸‹ã®ã‚ˆã†ã«ã—ã¦ä½œæˆã—ã¾ã™::
++
++  $ bin/mkzopeinstance
++
++ãªãŠã€å¿…è¦ã§ã‚ã‚Œã° Python ã‚¤ãƒ³ã‚¿ãƒ—ãƒªã‚¿ã‚’æ˜ç¤ºçš„ã«æŒ‡å®šã™ã‚‹ã“ã¨ã‚‚å‡ºæ¥ã¾ã™::
++
++  $ bin/mkzopeinstance --python=$PWD/bin/zopepy
++
++``mkzopeinstance`` ã®å®Ÿè¡Œä¸­ã«ç®¡ç†è€…ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã®ãƒ¦ãƒ¼ã‚¶ãƒ¼åã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
++ã®å…¥åŠ›ã‚’æ±‚ã‚ã‚‰ã‚Œã‚‹ã§ã—ã‚‡ã†ã€‚ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®è©³ç´°ã‚’è¦‹ã‚‹ãŸã‚
++ã«ã¯ã€ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ ``--help`` ã‚ªãƒ—ã‚·ãƒ§ãƒ³ä»˜ãã§å®Ÿè¡Œã—ã¾ã™::
++
++  $ bin/mkzopeinstance --help
++
++.. note::
++  å¾“æ¥ã®ã‚ˆã†ãª"åŒä¸€ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª(inplace)"ã§ã®ãƒ“ãƒ«ãƒ‰ã¯ã‚µãƒãƒ¼ãƒˆã•ã‚Œã¾ã›ã‚“ã€‚
++  ``mkzopeinstance`` ã¯ buildout ç’°å¢ƒã®å¤–ã§è¡Œã£ã¦ãã ã•ã„ã€‚
++
++
++buildout ãƒ™ãƒ¼ã‚¹ã® Zope ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä½œæˆ
++========================================
++
++ã“ã“ã¾ã§ã¯ã€ Zope æœ¬ä½“ã¨ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’åˆ†ã‘ã¦ç”¨æ„ã™ã‚‹æ–¹æ³•ã‚’èª¬æ˜ã—ã¦ãã¾ã—ãŸãŒã€
++ã‚‚ã†ä¸€ã¤ã®æ–¹æ³•ã¨ã—ã¦ã€ ``zc.buildout`` ã‚’ä½¿ã£ã¦ buildout ç’°å¢ƒã®ä¸­ã«
++Zope ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã¨ã€è¨­å®šã¨ã€ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ‡ãƒ¼ã‚¿ã‚’ä¸€æ‹¬ã§ç”¨æ„ã™ã‚‹äº‹ã‚‚å‡ºæ¥ã¾ã™ã€‚
++ã“ã®ãŸã‚ã«ã¯ä»¥ä¸‹ã®æ‰‹é †ã§ç’°å¢ƒã‚’æ§‹ç¯‰ã—ã¦ä¸‹ã•ã„:
++
++- buildoutç”¨ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä½œæˆã—ã¾ã™ã€‚ã“ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«ã¯
++  ``etc``, ``logs``, ``var`` ã®å„ã‚µãƒ–ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä½œæˆã—ã¾ã™ã€‚
++
++- buildout ã® bootstrap ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ buildout ç’°å¢ƒå†…ã«å–å¾—ã—ã¦ç½®ãã¾ã™ã€‚
++
++- ä»¥ä¸‹ã®å†…å®¹ã§ buildout è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã—ã¾ã™:
++
++.. topic:: buildout.cfg
++ :class: file
++
++ ::
++
++   [buildout]
++   parts = instance 
++   extends = http://download.zope.org/Zope2/index/<Zope version>/versions.cfg
++
++   [instance]
++   recipe = zc.recipe.egg
++   eggs = Zope2
++   interpreter = py
++   scripts = runzope zopectl
++   initialization =
++     import sys
++     sys.argv[1:1] = ['-C',r'${buildout:directory}/etc/zope.conf']
++
++ã“ã‚Œã¯æœ€å°ã®ã€ã—ã‹ã— buildout ã®å…¨ã¦ã®æœ‰æ„ãªæŠ€è¡“ã‚’ä½¿ç”¨ã—ã¦ã„ã‚‹ä¾‹ã§ã™ã€‚
++
++- buildout ç’°å¢ƒã®åˆæœŸåŒ– (bootstrap)
++
++- buildout ã®å®Ÿè¡Œ
++
++- Zope ã®è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ä½œæˆã—ã¾ã™ã€‚ä»¥ä¸‹ã¯æœ€å°ç‰ˆã®ä¾‹ã§ã™:
++
++.. topic:: etc/zope.cfg
++ :class: file
++
++ ::
++
++   %define INSTANCE <ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ãƒ‘ã‚¹>
++
++   python $INSTANCE/bin/py[.exe Windowsã§]
++ 
++   instancehome $INSTANCE
++
++
++Zope2ã®eggã®ä¸­ã«ã¯ã€å®Œå…¨ãªzope.cfgã®è¨­å®šãŒå«ã¾ã‚Œã¦ã„ã¾ã™::
++
++   $ cat eggs/Zope2--*/Zope2/utilities/skel/etc/zope.conf.in
++
++   <zope.confã®ä»–ã®è¨­å®šã€ä¾‹ãˆã°ã€ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚„ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ãªã©>
++
++.. highlight:: bash
++
++ç’°å¢ƒã‚’æ§‹ç¯‰ã™ã‚‹ä¾‹ã¯ä»¥ä¸‹ã®ã‚ˆã†ã«ãªã‚Šã¾ã™::
++
++   $ mkdir /path/to/instance
++   $ cd /path/to/instance
++   $ mkdir etc logs var
++   $ wget http://svn.zope.org/zc.buildout/trunk/bootstrap/bootstrap.py
++   $ vi buildout.cfg
++   $ /path/to/your/python bootstrap.py
++   $ bin/buildout
++   $ cat eggs/Zope2--*/Zope2/utilities/skel/etc/zope.conf.in > etc/zope.conf
++   $ vi etc/zope.conf  # replace <<INSTANCE_HOME>> with buildout directory
++   $ bin/zopectl start
++
++ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªå†…ã® ``bin`` ã‚µãƒ–ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«ã€
++ã“ã‚Œä»¥é™ä½¿ã£ã¦ã„ãã“ã¨ã«ãªã‚‹ ``runzope`` ã¨ ``zopectl``
++ã‚¹ã‚¯ãƒªãƒ—ãƒˆãŒä½œæˆã•ã‚Œã¾ã™ã€‚
++
++``zopectl`` ã¯å¼•æ•°ç„¡ã—ã§èµ·å‹•ã™ã‚‹äº‹ã§å¯¾è©±ãƒ¢ãƒ¼ãƒ‰ã§ä½¿ç”¨ã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
++``help`` ã‚„ ``help <command>`` ã¨å…¥åŠ›ã™ã‚Œã°ã€å„ç¨®ã‚³ãƒãƒ³ãƒ‰ã‚’èª¿ã¹ã‚‹
++ã“ã¨ãŒã§ãã¾ã™ã€‚ã“ã‚Œã‚‰ã®ã‚³ãƒãƒ³ãƒ‰ã¯ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‹ã‚‰ã‚‚ä½¿ç”¨ã§ãã¾ã™ã€‚
++
++ãªãŠã€ `plone.recipe.zope2instance
++<http://pypi.python.org/pypi/plone.recipe.zope2instance>`_
++ãªã©ã®ãƒ¬ã‚·ãƒ”ã‚’ä½¿ã†ã“ã¨ã§ã€å‰è¿°ã®æ‰‹é †ã‚’è‡ªå‹•åŒ–ã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™ã€‚
++
++ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ãŒå®Œäº†ã—ãŸã‚‰ã€ :doc:`operation` ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’å‚ç…§ã—ã¦ã€
++Zope ã®è¨­å®šã‚’è¡Œã„ã€å®Ÿè¡Œã—ã¾ã—ã‚‡ã†ã€‚
++
++
++.. rubric:: (Translated by Shimizukawa, `r110522 <http://svn.zope.org/Zope/branches/2.12/doc/INSTALL-buildout.rst?rev=110522&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/INSTALL-buildout.html>`_)
++  :class: translator
++
+Index: ja/2.12.7/doc/make.bat
+===================================================================
+--- ja/2.12.7/doc/make.bat	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/make.bat	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,100 @@
++@ECHO OFF
++
++REM Command file for Sphinx documentation
++
++set SPHINXBUILD=..\bin\sphinx-build
++set ALLSPHINXOPTS=-d .build/doctrees %SPHINXOPTS% .
++if NOT "%PAPER%" == "" (
++	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%
++)
++
++if "%1" == "" goto help
++
++if "%1" == "help" (
++	:help
++	echo.Please use `make ^<target^>` where ^<target^> is one of
++	echo.  html      to make standalone HTML files
++	echo.  dirhtml   to make HTML files named index.html in directories
++	echo.  pickle    to make pickle files
++	echo.  json      to make JSON files
++	echo.  htmlhelp  to make HTML files and a HTML help project
++	echo.  latex     to make LaTeX files, you can set PAPER=a4 or PAPER=letter
++	echo.  changes   to make an overview over all changed/added/deprecated items
++	echo.  linkcheck to check all external links for integrity
++	echo.  doctest   to run all doctests embedded in the documentation if enabled
++	goto end
++)
++
++if "%1" == "clean" (
++	for /d %%i in (.build\*) do rmdir /q /s %%i
++	del /q /s .build\*
++	goto end
++)
++
++if "%1" == "html" (
++	%SPHINXBUILD% -b html %ALLSPHINXOPTS% .build/html
++	echo.
++	echo.Build finished. The HTML pages are in .build/html.
++	goto end
++)
++
++if "%1" == "dirhtml" (
++	%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% .build/dirhtml
++	echo.
++	echo.Build finished. The HTML pages are in .build/dirhtml.
++	goto end
++)
++
++if "%1" == "pickle" (
++	%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% .build/pickle
++	echo.
++	echo.Build finished; now you can process the pickle files.
++	goto end
++)
++
++if "%1" == "json" (
++	%SPHINXBUILD% -b json %ALLSPHINXOPTS% .build/json
++	echo.
++	echo.Build finished; now you can process the JSON files.
++	goto end
++)
++
++if "%1" == "htmlhelp" (
++	%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% .build/htmlhelp
++	echo.
++	echo.Build finished; now you can run HTML Help Workshop with the ^
++.hhp project file in .build/htmlhelp.
++	goto end
++)
++
++if "%1" == "latex" (
++	%SPHINXBUILD% -b latex %ALLSPHINXOPTS% .build/latex
++	echo.
++	echo.Build finished; the LaTeX files are in .build/latex.
++	goto end
++)
++
++if "%1" == "changes" (
++	%SPHINXBUILD% -b changes %ALLSPHINXOPTS% .build/changes
++	echo.
++	echo.The overview file is in .build/changes.
++	goto end
++)
++
++if "%1" == "linkcheck" (
++	%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% .build/linkcheck
++	echo.
++	echo.Link check complete; look for any errors in the above output ^
++or in .build/linkcheck/output.txt.
++	goto end
++)
++
++if "%1" == "doctest" (
++	%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% .build/doctest
++	echo.
++	echo.Testing of doctests in the sources finished, look at the ^
++results in .build/doctest/output.txt.
++	goto end
++)
++
++:end
+Index: ja/2.12.7/doc/SETUID.rst
+===================================================================
+--- ja/2.12.7/doc/SETUID.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/SETUID.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,39 @@
++ZopeãŒå‹•ä½œã™ã‚‹éš›ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼æ¨©é™ã‚’è¨­å®š
++======================================
++
++.. note:: 
++  Apache, Squid, Varnish ã®ã‚ˆã†ãª ãƒªãƒãƒ¼ã‚¹Proxy ã®èƒŒå¾Œã§ Zope
++  ã‚’ç¨¼åƒã•ã›ã‚‹ã®ã¯è‰¯ã„æ‰‹æ³•ã§ã™ã€‚ã“ã®å ´åˆã€ Zope ã‚’ root
++  æ¨©é™ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã‚„èµ·å‹•ã™ã‚‹å¿…è¦ã¯ãªãã€ ãƒªãƒãƒ¼ã‚¹Proxy
++  ãŒ80ç•ªãƒãƒ¼ãƒˆã‚’æä¾›ã—ã¦ãã‚Œã€å…¨ã¦ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’ç‰¹æ¨©ã®å¿…è¦ãªã„
++  ãƒãƒ¼ãƒˆã§èµ·å‹•ã—ã¦ã„ã‚‹ Zope ã«ä¸­ç¶™ã—ã¦ãã‚Œã¾ã™ã€‚
++
++Zope ã¯ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ã‚µãƒ¼ãƒ“ã‚¹ã¨ã—ã¦ã€ 21 (FTP) ã‚„ 80 (HTTP) ãªã©ã®ä½ã„
++ç•ªå·ã®ãƒãƒ¼ãƒˆã‚’ä½¿ç”¨ã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™ã€‚ä½ã„ç•ªå·ã®ãƒãƒ¼ãƒˆã‚’ä½¿ã†å ´åˆã€
++Zope ã¯ root æ¨©é™ã§èµ·å‹•ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚ã¨ã¯ã„ãˆã€ Zope ãŒ root
++æ¨©é™ã‚’å¿…è¦ã¨ã™ã‚‹ã®ã¯ãã®ã‚ˆã†ãªä½ã„ç•ªå·ã®ãƒãƒ¼ãƒˆã‚’é–‹ãã¨ã“ã‚ã¾ã§ã§ã€
++ãã®å¾Œã¯ç‰¹æ¨©ã®ç„¡ã„ãƒ¦ãƒ¼ã‚¶ãƒ¼ã« setuid ã—ã‚ˆã†ã¨è©¦ã¿ã¾ã™ã€‚
++
++Zope ãŒ setuid ã«ä½¿ç”¨ã™ã‚‹ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚’ zope.conf ã® 'effective-user'
++ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã«è¨­å®šã—ã¦ãã ã•ã„ã€‚ãƒ¦ãƒ¼ã‚¶ãƒ¼ã¯å­˜åœ¨ã™ã‚‹ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‹ã€ UID
++ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚å…¨ã¦ã®å®Ÿè¡Œä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯ãã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®æ¨©é™ã§
++æ›¸ãè¾¼ã¾ã‚Œã¾ã™ã€‚ã‚‚ã— 'effective-user' ã‚’è¨­å®šã›ãšã« Zope ã‚’èµ·å‹•ã—ã‚ˆã†ã¨
++ã—ãŸå ´åˆã€èµ·å‹•ã™ã‚‹ã“ã¨ã¯å‡ºæ¥ãªã„ã§ã—ã‚‡ã†ã€‚
++
++ã‚‚ã— 'nobody' ã‚’æŒ‡å®šã—ãŸå ´åˆã€ Zope ã¯è­¦å‘Šãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã—ã¾ã™ã€‚
++ã“ã®è­¦å‘Šãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®è¡¨ç¤ºã«ã¯æ ¹æ‹ ãŒã‚ã‚Šã¾ã™ã€‚æ­´å²çš„ã«å¤šãã® UNIX
++ã‚µãƒ¼ãƒ“ã‚¹ãŒ root ã§ã®èµ·å‹•å¾Œã«å®Ÿè¡Œæ¨©é™ã‚’ 'nobody' ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã«è½ã¨ã—ãŸ
++ãŸã‚ã€ãã®ã‚ˆã†ãªã‚µãƒ¼ãƒ“ã‚¹ã¯ã©ã‚Œã§ã‚‚ 'nobody' æ¨©é™ã‚’å¾—ã‚‹ã“ã¨ãŒå‡ºæ¥ã€
++ã‚·ã‚¹ãƒ†ãƒ å†…ã§ 'nobody' æ¨©é™ã¨ã—ã¦ã‚¢ã‚¯ã‚»ã‚¹æ¨©ã‚’å¾—ã¦ã—ã¾ã†ã¨ã„ã†
++ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãƒ¼ä¸Šã®æ¬ é™¥ãŒã‚ã‚Šã¾ã™ã€‚
++ã‚‚ã—èª°ã‹ã« 'nobody' ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã‚’å¥ªã‚ã‚ŒãŸå ´åˆã€å½¼ã‚‰ã¯ Zope ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’
++è‡ªç”±ã«å‡ºæ¥ã¦ã—ã¾ã„ã¾ã™ã€‚
++
++'effective-user' ã‚µãƒãƒ¼ãƒˆã«ã¤ã„ã¦è¦šãˆã¦ãŠã„ã¦æ¬²ã—ã„æœ€ã‚‚é‡è¦ãªã“ã¨ã¯ã€
++ä½ã„ç•ªå·ã®ãƒãƒ¼ãƒˆ (ãƒãƒ¼ãƒˆ 1024 ä»¥ä¸‹) ã‚’ä½¿ã‚ãªã‘ã‚Œã° Zope ã‚’ root æ¨©é™
++ã§èµ·å‹•ã™ã‚‹å¿…è¦ã¯ãªã„ã¨è¨€ã†ã“ã¨ã§ã™ã€‚å¿…è¦ãªã„ã®ã§ã‚ã‚Œã°ã€ Zope ã‚’
++å°‚ç”¨ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã§èµ·å‹•ã™ã‚‹ã®ãŒã‚ˆã‚Šè‰¯ã„ã§ã—ã‚‡ã†ã€‚
++
++.. rubric:: (Translated by Shimizukawa, `r105416 <http://svn.zope.org/Zope/tags/2.12.1/doc/SETUID.rst?rev=105416&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/SETUID.html>`_)
++  :class: translator
++
+Index: ja/2.12.7/doc/SIGNALS.rst
+===================================================================
+--- ja/2.12.7/doc/SIGNALS.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/SIGNALS.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,30 @@
++ã‚·ã‚°ãƒŠãƒ« (POSIX ã®ã¿)
++=======================
++
++ã‚·ã‚°ãƒŠãƒ«ã¯ POSIX ã®ãƒ—ãƒ­ã‚»ã‚¹é–“é€šä¿¡ã®ä»•çµ„ã¿ã§ã™ã€‚
++Windows ã‚’ä½¿ã£ã¦ã„ã‚‹å ´åˆã€ã“ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®å†…å®¹ã¯é©ç”¨å‡ºæ¥ã¾ã›ã‚“ã€‚
++
++Zope ã¯ '$INSTANCE_HOME/var/Z2.pid' ã«ä¿å­˜ã•ã‚Œã¦ã„ã‚‹ãƒ—ãƒ­ã‚»ã‚¹IDã«é€ã‚‰ã‚ŒãŸã‚·ã‚°ãƒŠãƒ«ã«å¿œã˜ã¦å‹•ä½œã—ã¾ã™::
++
++    SIGHUP  - é–‹ã„ã¦ã„ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šã‚’é–‰ã˜ã¦ã€ã‚µãƒ¼ãƒãƒ¼ã‚’å†èµ·å‹•ã—ã¾ã™ã€‚
++              Zope ã‚µãƒ¼ãƒãƒ¼ã‚’å†èµ·å‹•ã™ã‚‹ã‚¤ãƒ‡ã‚£ã‚ªãƒ ã¯ä»¥ä¸‹ã®ã‚ˆã†ã«ãªã‚Šã¾ã™:
++
++              kill -HUP `cat $INSTANCE_HOME/var/z2.pid`
++
++    SIGTERM - é–‹ã„ã¦ã„ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šã‚’é–‰ã˜ã¦ã€ã‚µãƒ¼ãƒãƒ¼ã‚’çµ‚äº†ã—ã¾ã™ã€‚
++              Zope ã‚µãƒ¼ãƒãƒ¼ã‚’çµ‚äº†ã™ã‚‹ã‚¤ãƒ‡ã‚£ã‚ªãƒ ã¯ä»¥ä¸‹ã®ã‚ˆã†ã«ãªã‚Šã¾ã™:
++
++              kill -TERM `cat $INSTANCE_HOME/var/Z2.pid`
++
++    SIGINT  - SIGTERM ã¨åŒã˜æ„å‘³ã§ã™ã€‚
++
++    SIGUSR2 - å…¨ã¦ã® Zope ã®ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¸€åº¦é–‰ã˜ã¦å†åº¦é–‹ãã¾ã™
++              (z2.log, event log, detailed log.)
++              Zope ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ­ãƒ¼ãƒ†ãƒ¼ãƒˆã—ãŸå¾Œã«ä»¥ä¸‹ã‚’å®Ÿè¡Œã—ã¾ã™:
++
++              kill -USR2 `cat $INSTANCE_HOME/var/z2.pid`
++
++
++.. rubric:: (Translated by Shimizukawa, `r105416 <http://svn.zope.org/Zope/tags/2.12.1/doc/SIGNALS.rst?rev=105416&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/SIGNALS.html>`_)
++  :class: translator
++
+Index: ja/2.12.7/doc/WHATSNEW.rst
+===================================================================
+--- ja/2.12.7/doc/WHATSNEW.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/WHATSNEW.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,321 @@
++Zope 2.12 ã®æ–°æ©Ÿèƒ½
++====================
++
++ã“ã®ãƒšãƒ¼ã‚¸ã§ã¯ã€ã“ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã® Zope 2 ã®æ–°ã—ã„é«˜åº¦ãªæ©Ÿèƒ½ã¨å¤‰æ›´ç‚¹ã«ã¤ã„ã¦
++èª¬æ˜ã—ã¾ã™ã€‚
++
++æ–°æ©Ÿèƒ½ã‚„ãƒã‚°ä¿®æ­£ã®ç´°ç›®ã«ã¤ã„ã¦ã¯ã€ `å¤‰æ›´ã®è©³ç´° <CHANGES.html>`_
++ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
++
++
++æ–°ã—ã„Pythonãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®ã‚µãƒãƒ¼ãƒˆ
++---------------------------------
++
++Zope 2 ã¯2006å¹´ã®å¤é ƒã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³2.9ã‹ã‚‰ Python 2.4 ã‚’ã‚µãƒãƒ¼ãƒˆã—ã€ã¾ãŸ
++å¿…é ˆã¨ã—ã¦ãã¾ã—ãŸã€‚Pythonã®ãã‚Œä»¥é™ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¯é•·ã„é–“ Zope 2 ã§ã¯
++ã‚µãƒãƒ¼ãƒˆå¤–ã§ã—ãŸã€‚
++
++ã“ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã® Zope 2 ã¯ Python 2.6 ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã¾ã™ã€‚
++Python 2.4, 2.5 ã¯ä»Šå¾Œã¯å…¬å¼ã‚µãƒãƒ¼ãƒˆã‚’è¡Œã„ã¾ã›ã‚“ã€‚
++64-bit ç‰ˆã® Python 2.4 ã§ã¯ Zope 2.12 ã¯å‹•ä½œã—ãªã„ã“ã¨ãŒåˆ†ã‹ã£ã¦ã„ã¾ã™ã€‚
++32-bit ç‰ˆã® Python 2.4 ã«ã¤ã„ã¦ã¯å‹•ä½œã™ã‚‹ã¨æ€ã„ã¾ã™ãŒã€è‡ªå·±è²¬ä»»ã§ãŠé¡˜ã„ã—ã¾ã™ã€‚
++Python 2.5 ã«ã¤ã„ã¦ã¯ä»Šã®ã¨ã“ã‚éäº’æ›éƒ¨åˆ†ã¯ã‚ã‚Šã¾ã›ã‚“ãŒã€æ¨å¥¨ã—ã¾ã›ã‚“ã€‚
++
++Python 3 ã¯å¾Œæ–¹äº’æ›æ€§ã‚’æŒãŸãªã„ãƒªãƒªãƒ¼ã‚¹ã§ã™ã€‚ Python 3 ã‚’æ¡ç”¨ã™ã‚‹ãŸã‚ã®
++æ˜ç¢ºãªãƒ­ãƒ¼ãƒ‰ãƒãƒƒãƒ—ã¯ã¾ã ã‚ã‚Šã¾ã›ã‚“ã€‚
++Zope 2 ãŒè¤‡æ•°ã®ãƒ¡ã‚¸ãƒ£ãƒ¼ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ãƒªãƒªãƒ¼ã‚¹ã™ã‚‹ã‹ã€ã‚ã‚‹ã„ã¯ä½•å¹´ã‚‚ã‹ã‹ã‚‹
++å•é¡Œã ã¨äºˆæƒ³ã—ã¦ã„ã¾ã™ã€‚
++
++
++å®Œå…¨ãªeggåŒ–
++--------------
++
++Zope 2 ã¯å®Œå…¨ãªeggåŒ–ãŒå®Œäº†ã—ã€ `setuptools
++<http://pypi.python.org/pypi/setuptools>`_ ã¨ã®äº’æ›æ€§ã‚’æ‰‹ã«å…¥ã‚Œã¾ã—ãŸã€‚
++ä»Šå¾Œã¯ `easy_install <http://peak.telecommunity.com/DevCenter/EasyInstall>`_
++ã‚„ `zc.buildout <http://pypi.python.org/pypi/zc.buildout>`_ ã¨ã„ã£ãŸ
++ä¸€èˆ¬çš„ãªãƒ„ãƒ¼ãƒ«ã‚’ä½¿ç”¨ã—ã¦ Zope 2 ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™ã€‚
++
++Zope 2 ã®ãƒªãƒªãƒ¼ã‚¹ç‰ˆã‚„ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã¯ Python package index 
++http://pypi.python.org/pypi/Zope2 ã«ã‚ã‚Šã¾ã™ã€‚
++
++Zope 2 ã®eggåŒ–ã‚„ãƒ•ã‚¡ã‚¤ãƒ«ã‚·ã‚¹ãƒ†ãƒ ä¸Šã§ã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆå¤‰æ›´ã«åˆã‚ã›ã¦ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãƒ³ã‚°
++ã«ã„ãã¤ã‹ã®å¤‰æ›´ã‚’è¡Œã„ã¾ã—ãŸã€‚ç’°å¢ƒå¤‰æ•° `SOFTWARE_HOME` ã¨ `ZOPE_HOME` ã¯
++ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆå†…ã§ä½¿ç”¨ã•ã‚Œãªããªã‚Šã¾ã—ãŸã€‚ Zope 2 ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸å†…ã§
++ãƒ‡ãƒ¼ã‚¿ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹å¿…è¦ãŒã‚ã‚‹å ´åˆã€ä¾‹ãˆã°
++`import os, OFS; os.path.dirname(OFS.__file__)` ã¨ã„ã£ãŸæ–¹æ³•ã§ OFS
++ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸å†…ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚¢ã‚¯ã‚»ã‚¹ã—ã¦ãã ã•ã„ã€‚
++
++ä¸€èˆ¬çš„ã«ã¯ã€ã“ã‚Œã¾ã§ã®ã‚ˆã†ã« `lib/python` ã‚„ `Products` ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«
++ã‚³ãƒ¼ãƒ‰ãŒã‚ã‚‹ã“ã¨ã‚’æœŸå¾…ã—ã¦ã¯ã„ã‘ã¾ã›ã‚“ã€‚ã“ã‚Œã‚‰ã®ä»•çµ„ã¿è‡ªä½“ã¯ã“ã‚Œã‹ã‚‰ã‚‚
++æ©Ÿèƒ½ã—ã¾ã™ãŒã€ distutils ã‚„ setuptools ã‚’ä½¿ç”¨ã—ã¦ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’ç®¡ç†ã—ã€ãã‚Œã‚‰
++ã®ä»•çµ„ã¿ã§ `sys.path` ã«ãƒ‘ã‚¹ãŒè¿½åŠ ã•ã‚Œã€ Python ã®æ¨™æº–ã®ä»•çµ„ã¿ã§å‹•ä½œã™ã‚‹
++ã‚ˆã†ã«ã™ã‚‹ã“ã¨ã‚’å‹§ã‚ã¾ã™ã€‚ç‹¬ç«‹ã—ãŸ Python ç’°å¢ƒã‚’ä½œæˆã™ã‚‹ãŸã‚ã«
++`zc.buildout <http://pypi.python.org/pypi/zc.buildout>`_ ã¨ `virtualenv
++<http://pypi.python.org/pypi/virtualenv>`_ ãŒåºƒãä½¿ã‚ã‚Œã¦ã„ã¾ã™ã€‚
++
++
++Zope 3
++------
++
++This version of Zope 2 does no longer includes a full version of the Zope 3
++application server nor a specific release of it. Instead it includes a minimal
++set of packages from the former Zope 3 project. Only those packages actually
++used by Zope 2 itself are still included. Examples of such packages include
++zope.interface, zope.component, zope.i18n, zope.tal and many more.
++
++Zope 2.12 marks a transitionary release, where a number of zope.app packages
++are still included. An ongoing effort to refactor those packages into more
++reusable and minimal packages is going on and will result in no zope.app
++packages being used or shipped with anymore as part of Zope 2. Based on
++current progress Zope 2.13 will no longer ship with any zope.app packages.
++
++If you are using zope.app packages inside your own codebase, you should make
++sure to declare these as dependencies of your packages or otherwise follow the
++refactoring effort and remove your dependency on these packages.
++
++As a result of this refocussing on more minimal dependencies, the number of
++packages included by Zope 2 could be dramatically reduced from about 120
++additional packages to just over 70. The total code size of Zope 2 and its
++dependencies has decreased by over 200,000 lines of code as a result.
++
++
++ZODB 3.9
++--------
++
++ã“ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã® Zope 2 ã¯æœ€æ–°ã® `ZODB (3.9)
++<http://pypi.python.org/pypi/ZODB3>`_ ãŒå«ã¾ã‚Œã¦ã„ã¾ã™ã€‚
++ã“ã‚Œã«ã¯å¤šãã®æ–°ã—ã„è¨­å®šã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¨ã€ä¸å…·åˆä¿®æ­£ãŒå«ã¾ã‚Œã¦ã„ã¾ã™ã€‚
++ãƒ•ã‚¡ã‚¤ãƒ«ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ã«ã¯blobã‚µãƒãƒ¼ãƒˆãŒè¿½åŠ ã•ã‚Œã€demo ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ã¯
++å¤§ããæ‹¡å¼µã•ã‚Œã¾ã—ãŸã€‚ å¤§è¦æ¨¡ç’°å¢ƒã«ãŠã‘ã‚‹ZEOã‚µãƒ¼ãƒãƒ¼ã¨ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚’
++ãƒãƒ¥ãƒ¼ãƒ‹ãƒ³ã‚°ã—ãŸã‚Šã€ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã®ç„¡åŠ¹åŒ–ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã€åºƒç¯„å›²ã§ã®
++ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãƒ³ã‚°ã®åº¦åˆã„ãªã©ã€æ•°å¤šãã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãŒè¿½åŠ ã•ã‚Œã¾ã—ãŸã€‚
++
++ãƒãƒ¼ã‚¸ãƒ§ãƒ³ 3.9 ã®å¤‰æ›´ã®è©³ç´°ã«ã¤ã„ã¦ã¯ `ZODB3 change log
++<http://pypi.python.org/pypi/ZODB3>`_ ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
++
++
++ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ã‚¯ãƒªãƒ¼ãƒ³ãƒŠãƒƒãƒ—
++---------------------------
++
++Zope 2 ã®ã“ã‚Œã¾ã§ã®ãƒªãƒªãƒ¼ã‚¹ã¨åŒæ§˜ã«ã€ã“ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã§ã‚‚ã€å‰ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã§
++Deprecation æ‰±ã„ã¨ãªã£ãŸæ§˜ã€…ãªãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’å‰Šé™¤ã—ã¦ã„ã¾ã™ã€‚
++
++ç‰¹ã« ZClasses ã¨ãã‚Œã«é–¢é€£ã™ã‚‹ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒ Zope 2 ã‹ã‚‰å®Œå…¨ã«å‰Šé™¤ã•ã‚Œã¾ã—ãŸã€‚
++ã“ã‚Œã«ã‚ˆã£ã¦ã€æ°¸ç¶šãƒ—ãƒ­ãƒ€ã‚¯ãƒˆç™»éŒ²(persistent product registry)ã¯ã‚ªãƒ—ã‚·ãƒ§ãƒ³
++æ‰±ã„ã¨ãªã‚Šã¾ã—ãŸãŒã€ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯ã¾ã æœ‰åŠ¹ã§ã™ã€‚
++ã‚‚ã—ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ãŒã“ã®æ©Ÿèƒ½ã«ä¾å­˜ã—ã¦ã„ãªã„ã®ã§ã‚ã‚Œã°ã€ `zope.conf` ã§
++ä»¥ä¸‹ã®ã‚ˆã†ã«ã—ã¦è¨­å®šã‚’ç„¡åŠ¹åŒ–ã§ãã¾ã™::
++
++  enable-product-installation off
++
++ã“ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ã‚ªãƒ•ã«ã™ã‚‹ã“ã¨ã§ã€ Zope ã¯ä»Šå¾Œå¤šãã®å ´åˆã«ãŠã„ã¦ã€èµ·å‹•ä¸­ã«
++ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã¸ã®æ›¸ãè¾¼ã¿ã‚’è¡Œã‚ãªã„ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚
++
++ZODB 3.9 ã«ã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰ã—ãŸã“ã¨ã«ã‚ˆã‚Šã€ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ãƒ¬ãƒ™ãƒ«ã§ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
++æ©Ÿèƒ½ãŒã‚µãƒãƒ¼ãƒˆã•ã‚Œãªããªã‚Šã¾ã—ãŸã€‚ çµæœã¨ã—ã¦ã€ `Products.OFSP` å†…ã®å¤šãã®
++ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒå‰Šé™¤ã•ã‚Œã¾ã—ãŸã€‚ã¾ãŸã€ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‹ã‚‰ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
++ãŸã‚ã®ä½ãƒ¬ã‚¤ãƒ¤ã® API ã‹ã‚‰ãƒãƒ¼ã‚¸ãƒ§ãƒ³æŒ‡å®šã®å¼•æ•°ãŒå‰Šé™¤ã•ã‚Œã¾ã—ãŸã€‚
++
++
++ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®æ›´æ–°
++---------------------
++
++Zope 2 ã¯ `Sphinx <http://sphinx.pocoo.org/>`_ ã‚’ä½¿ç”¨ã—ã¦ HTML ã«ã‚ˆã‚‹
++ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆãƒšãƒ¼ã‚¸ã®ç”Ÿæˆã‚’è¡Œã†ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸã€‚
++å…¬å¼ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’ Sphinx ã§ä½œæˆã—ã¦ http://docs.zope.org/ ã§å…¬é–‹
++ã™ã‚‹å–ã‚Šçµ„ã¿ãŒé€²è¡Œä¸­ã§ã™ã€‚
++
++ã“ã‚Œã¾ã§ã®ã¨ã“ã‚ã€ Zope 2 Book, Zope Developers Guide, ãã®ä»–å¤šãã®
++ç´°ã‹ãªæ–‡ç« ãŒ reStructuredText ã«æ›¸ãæ›ãˆã‚‰ã‚Œã€æ›´æ–°ã•ã‚Œã¦ã„ã¾ã™ã€‚
++
++
++Acquisition redux
++-----------------
++
++ã“ã®å¤‰æ›´ã‚’æŠ€è¡“çš„ã«ä¸€è¨€ã§èª¬æ˜ã™ã‚‹ã¨ã€ "ç²å¾— (Acquisition) ã®æ©Ÿèƒ½ã¨ã—ã¦
++__parent__ ãƒã‚¤ãƒ³ã‚¿ã‚’å°å…¥ã—ãŸ" ã§ã™ã€‚å°ã•ãªå¤‰æ›´ã®ã‚ˆã†ã«èã“ãˆã¾ã™ãŒã€
++ã“ã‚Œã¯ Zope ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆæŠ€è¡“ã‚’ Zope 2 ã«çµ±åˆã™ã‚‹ãŸã‚ã®ä¸»è¦ãªï¼‘ã‚¹ãƒ†ãƒƒãƒ—ã§ã™ã€‚
++
++Zope ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚¢ãƒ¼ã‚­ãƒ†ã‚¯ãƒãƒ£ã¨ã€ä»˜éšã™ã‚‹å¤šãã®ã‚³ãƒ³ã‚»ãƒ—ãƒˆã‚’
++Zope 2 ã® Five (Zope 2 + 3) ã¨å‘¼ã°ã‚Œã‚‹çµ±åˆãƒ¬ã‚¤ãƒ¤ã«çµ„ã¿è¾¼ã‚“ã§ã„ã¾ã™ã€‚
++ã“ã®ã‚ˆã†ãªçµ±åˆãƒ¬ã‚¤ãƒ¤ãŒå¿…è¦ã§ã‚ã‚‹ä¸»ãªç†ç”±ã®ä¸€ã¤ãŒã€ Zope 2 ãŒç²å¾—
++(Acquisition) ã®ã‚³ãƒ³ã‚»ãƒ—ãƒˆã¨å¯†æ¥ã«é–¢ä¿‚ã—ã¦ã„ã‚‹ã“ã¨ã§ã™ã€‚
++å…¨ã¦ã®ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãƒ¼ã®ä»•çµ„ã¿ã‚„ã€ object traversal (è¨³æ³¨:URLéšå±¤ã«åˆã‚ã›ã¦
++ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¾¿ã‚‹ä»•çµ„ã¿)ã€ publication ãªã©ãŒã“ã®æŠ€è¡“ã«ä¾å­˜ã—ã¦ã„ã¾ã™ã€‚
++
++Zope 2 ã®ä¸­ã§å‹•ä½œã™ã‚‹å…¨ã¦ã®ã‚¯ãƒ©ã‚¹ã¯ Acquisition ã‚¯ãƒ©ã‚¹ã¾ãŸã¯ãã®æ´¾ç”Ÿã‚¯ãƒ©ã‚¹
++ã‚’ç¶™æ‰¿ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã—ãŸã€‚ãã®çµæœã€ã»ã¨ã‚“ã©ã©ã‚“ãªå¤–éƒ¨ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚‚
++çµ±åˆãƒ¬ã‚¤ãƒ¤ãªã—ã§ã¯ Zope 2 ã®ä¸­ã§ç›´æ¥å‹•ã‹ã™ã“ã¨ãŒå‡ºæ¥ã¾ã›ã‚“ã§ã—ãŸã€‚
++
++ã“ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã® Zope 2 ã§ã¯ã€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¯ Zope ã® API ã«ãƒ­ã‚±ãƒ¼ã‚·ãƒ§ãƒ³
++ã‚’ç¤ºã™ãŸã‚ã®æ–°ã—ã„ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’æŒã¤ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸã€‚ã“ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯
++``__parent__`` å±æ€§ã§æ˜ç¤ºçš„ã«è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æŒ‡ã—ç¤ºã—ã€ 
++`zope.location <http://pypi.python.org/pypi/zope.location>`_ ã® ILocation
++API ã¨ã»ã¼åŒã˜ä»•æ§˜ã§ã™ã€‚ Browser views (è¨³æ³¨: Zope ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
++ã‚¢ãƒ¼ã‚­ãƒ†ã‚¯ãƒãƒ£ã®ä¸€ã¤) ã‚„ã€ä»–ã®ãƒ­ã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã«ä¾å­˜ã—ãŸã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
++ã¯æ—¢ã« ILocation ã‚’å®Ÿè£…ã—ã¦ã„ã¾ã™ã€‚
++
++ã“ã®è¦ç´„ã‚’å®ˆã£ã¦ã„ã‚‹ã‚¯ãƒ©ã‚¹ãŒã‚³ãƒ³ãƒ†ãƒŠã®ä¸­ã«æ ¼ç´ã•ã‚Œã‚‹ã¨ã€ `__parent__` ã«ãã®ã‚³ãƒ³ãƒ†ãƒŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¸ã®ãƒã‚¤ãƒ³ã‚¿ãŒè¨­å®šã•ã‚Œã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚ãã—ã¦ãã®ã‚ˆã†ã«å®Ÿè£…ã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¯ã€ __parent__ ã‚’ä½¿ã£ã¦ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆéšå±¤ã‚’è¦ªæ–¹å‘ã«è¾¿ã£ã¦ã„ãã“ã¨ãŒã§ãã¾ã™ã€‚ Acquisition ã‚¯ãƒ©ã‚¹ã‚’ãƒ™ãƒ¼ã‚¹ã¨ã—ã¦ã„ã‚‹ã‚¯ãƒ©ã‚¹ã®å ´åˆã€ã“ã‚Œã«é–¢ã™ã‚‹æƒ…å ±ã‚’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«æ ¼ç´ã—ã¦ã„ãªãã¦ã‚‚ã€ Acquisition ãƒ©ãƒƒãƒ‘ãƒ¼ãŒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä»£ã‚ã‚Šã«ã‚„ã£ã¦ãã‚Œã‚‹ãŸã‚ã€ã‚³ãƒ³ãƒ†ãƒŠã¸ã®å‚ç…§ã¯ãƒ©ãƒƒãƒ‘ãƒ¼ã«ä¿æŒã•ã‚Œã‚‹ã“ã¨ã«ãªã‚Šã¾ã™ã€‚ Acquisition ãƒ©ãƒƒãƒ‘ãƒ¼ãŒ `__of__` ãƒ¡ã‚½ãƒƒãƒ‰ã‚’æä¾›ã—ã€ Acquisition ã‚’åŸºåº•ã¨ã™ã‚‹ã‚¯ãƒ©ã‚¹ã¯ã“ã‚Œã§è¡Œã„ã¾ã™ã€‚
++
++ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®è¦ªã‚³ãƒ³ãƒ†ãƒŠã‚’å–å¾—ã™ã‚‹æœ€ã‚‚ä¸€èˆ¬çš„ãªæ–¹æ³•ã¯ä»¥ä¸‹ã®å‘¼ã³å‡ºã—ã§ã™::
++
++  from Acquisition import aq_parent
++  
++  container = aq_parent(instance)
++
++ILocation ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’å®Ÿè£…ã—ã¦ã„ã‚‹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®å ´åˆã¯ä»¥ä¸‹ã®æ–¹æ³•ã§ã™::
++
++  container = instance.__parent__
++
++ã‚³ãƒ³ãƒ†ãƒŠéšå±¤ã®ä½ç½®ã‚’è¡¨ã™ãŸã‚ã®ã€æ§˜ã€…ãªç›®çš„ã«åˆã‚ã›ãŸã€æ§˜ã€…ãª `aq_*` ãƒ¡ã‚½ãƒƒãƒ‰ãŒã‚ã‚Šã¾ã™ã€‚ä»Šã®ã¨ã“ã‚ã€ Zope 2 ã®å…¨ã¦ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¯ä»®æƒ³çš„ã« Acquisition ã‚¯ãƒ©ã‚¹ã«å±ã—ã¦ã„ã¾ã™ã€‚å‰¯ä½œç”¨ã¨ã—ã¦ã€å¤šãã®äººãŸã¡ãŒå½¼ã‚‰ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã« Acquisition ãƒ©ãƒƒãƒ‘ãƒ¼ãŒã‚ã‚‹ã“ã¨ã‚’æœŸå¾…ã—ã¦ã„ã¾ã™ã€‚ã“ã®ãŸã‚ã€ã‚³ãƒ¼ãƒ‰ãŒ `aq_*` ãƒ¡ã‚½ãƒƒãƒ‰ã«å±æ€§ã¨ã—ã¦ã‚¢ã‚¯ã‚»ã‚¹ã§ãã‚‹ã“ã¨ã«ä¾å­˜ã—ã¦ã„ã¾ã™::
++
++  container = instance.aq_parent
++
++æ—¢å­˜ã®å…¨ã¦ã® API ã¯ã“ã‚Œã§å‹•ä½œã—ã¦ã„ã¾ã—ãŸãŒã€ Acquisition ã¯ `__parent__` ãƒã‚¤ãƒ³ã‚¿ã‚’ä½¿ã£ã¦ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒæ ¼ç´ã•ã‚Œã¦ã„ã‚‹ã‚³ãƒ³ãƒ†ãƒŠã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚ãã—ã¦ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã® `__of__` ãƒ¡ã‚½ãƒƒãƒ‰å‘¼ã³å‡ºã—ã‚’ç„¡æ¡ä»¶ã«å‘¼ã³å‡ºã™å‡¦ç†ã¯ã€ä»Šå¾Œè¡Œã‚ã‚Œãªããªã‚Šã€ã¾ãšã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã®å®Ÿè£…ãŒã‚ã‚‹ã‹ã‚’ç¢ºèªã—ã¾ã™::
++
++  from Acquisition.interfaces import IAcquirer
++
++  if IAcquirer.providedBy(instance):
++      instance = instance.__of__(container)
++
++ã“ã‚Œã¯ã€ä»Šå¾Œã¯ `aq_*` ãƒ¡ã‚½ãƒƒãƒ‰ãŒã‚ã‚‹ã“ã¨ã‚’å‰æã¨ã—ã¦ã¯ã„ã‘ãªã„ã€ã¨è¨€ã†ã“ã¨ã§ã‚‚ã‚ã‚Šã¾ã™ã€‚ Zope 2 å†…ã®å…¨ã¦ã®ã‚³ãƒ¼ãƒ‰ã¯ã¾ã ã“ã‚Œã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã¾ã™ãŒã€ä»Šå¾Œã¯ã“ã‚Œã«ä¾å­˜ã›ãšã€ Acquisition ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãŒæä¾›ã—ã¦ã„ã‚‹æ©Ÿèƒ½ã‚’ä½¿ã†ã“ã¨ã«ãªã‚Šã¾ã™ã€‚
++
++ä»¥ä¸‹ã¯ã€æ–°æ—§ä¸¡æ–¹ã®ã‚¢ãƒ—ãƒ­ãƒ¼ãƒã®ç›¸äº’ä½œç”¨ã‚’ç†è§£ã™ã‚‹ãŸã‚ã®å°ã•ãªä¾‹ã§ã™::
++
++  >>> class Location(object):
++  ...     def __init__(self, name):
++  ...         self.__name__ = name
++  ...     def __repr__(self):
++  ...         return self.__name__
++
++  # Acquisition å‹ã®ã‚¯ãƒ©ã‚¹ã‚’ä½œæˆ:
++
++  >>> import Acquisition
++  >>> class Implicit(Location, Acquisition.Implicit):
++  ...     pass
++
++  # ï¼’ã¤ã® Implicit ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆ:
++
++  >>> root = Implicit('root')
++  >>> folder = Implicit('folder')
++
++  # ãã—ã¦ï¼’ã¤ã® Acquisition ã¨é–¢é€£ã—ãªã„ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆ:
++
++  >>> container = Location('container')
++  >>> item = Location('item')
++
++  # åŒ…å«çŠ¶æ…‹ã‚’å„ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã«è¨­å®š:
++
++  >>> folder = folder.__of__(root)
++  >>> container.__parent__ = folder
++  >>> item.__parent__ = container
++
++  # åŒ…å«çŠ¶æ…‹ã®é€£é–ã‚’ç¢ºèª:
++
++  >>> from Acquisition import aq_parent
++  >>> aq_parent(container)
++  folder
++
++  >>> from Acquisition import aq_chain
++  >>> aq_chain(item)
++  [item, container, folder, root]
++
++  # æ˜ç¤ºçš„ãªãƒã‚¤ãƒ³ã‚¿ãŒ Acquisition ãƒ©ãƒƒãƒ‘ãƒ¼ã‚ˆã‚Šã‚‚å„ªå…ˆã•ã‚Œã‚‹:
++
++  >>> item2 = Implicit('item2')
++  >>> item2 = item2.__of__(folder)
++  >>> item2.__parent__ = container
++
++  >>> aq_chain(item2)
++  [item2, container, folder, root]
++
++ã‚‚ã†å°‘ã—å…·ä½“çš„ãªä¾‹ã¨ã—ã¦ã€ä»Šã¾ã§ã¯ä»¥ä¸‹ã®ã‚ˆã†ã«å®Ÿè£…ã—ã¦ã„ã¾ã—ãŸ::
++
++  >>> from Acquisition import aq_inner
++  >>> from Acquisition import aq_parent
++  >>> from Products import Five
++
++  >>> class MyView(Five.browser.BrowserView):
++  ...
++  ...     def do_something(self):
++  ...         container = aq_parent(aq_inner(self.context))
++
++ä»Šå¾Œã¯ä»¥ä¸‹ã®ã‚ˆã†ã«å‡ºæ¥ã¾ã™::
++
++  >>> import zope.publisher.browser
++
++  >>> class MyView(zope.publisher.browser.BrowserView):
++  ...
++  ...     def do_something(self):
++  ...         container = aq_parent(self.context)
++
++ã“ã®ã‚ˆã†ã« zope.publisher ã® BrowserView ã¯ ILocation ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ãŠã‚Šã€è‡ªå‹•çš„ã«å‹•ä½œã—ã¾ã™ã€‚ã“ã®ã‚ˆã†ã«è¦ªã®å–å¾—ã¯ã“ã‚Œã¾ã§åŒæ§˜ã«å‹•ä½œã—ã¦ã„ã¾ã™ãŒã€ä»Šå¾Œã¯ Acquisition ã®ä»•çµ„ã¿ã‚’ä½¿ã†ãŸã‚ã« Acquisition ãƒ©ãƒƒãƒ‘ãƒ¼ã‚’ä½¿ã†å¿…è¦ã¯ãªããªã‚Šã¾ã—ãŸã€‚ã“ã®ã“ã¨ã¯ã€ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’å†åˆ©ç”¨ã—ãŸã‚Šã€è‡ªåˆ†ã®ã‚³ãƒ¼ãƒ‰ Zope 2 ã®å¤–ã§ã‚‚å†åˆ©ç”¨ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹ã®ã«éå¸¸ã«åŠ¹æœãŒã‚ã‚Šã¾ã™ã€‚
++
++
++Objectãƒãƒãƒ¼ã‚¸ãƒ£ã¨IContainer
++------------------------------
++
++Zope 2 ã®åŸºæœ¬çš„ãªè¦ç´ ã¨ã—ã¦ã€ `OFS` ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã¨ã—ã¦å®Ÿè£…ã•ã‚Œã¦ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚·ã‚¹ãƒ†ãƒ ãŒã‚ã‚Šã¾ã™ã€‚ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã®ä¸­å¿ƒçš„ãªè¦ç´ ã« `ObjectManager` ã‚¯ãƒ©ã‚¹ãŒã‚ã‚Šã¾ã™ã€‚ã“ã‚Œã¯æ¨™æº–ã® `Folder` ã‚¯ãƒ©ã‚¹ã®ãƒ™ãƒ¼ã‚¹ã‚¯ãƒ©ã‚¹ã¨ã—ã¦ä½¿ç”¨ã•ã‚Œã€Folderã‚¯ãƒ©ã‚¹ã¯å¤šãã®ã‚³ãƒ³ãƒ†ãƒŠå‹ã‚¯ãƒ©ã‚¹ã¨ã—ã¦ Zope 2 å†…éƒ¨ã§ä½¿ç”¨ã•ã‚Œã¦ã„ã¾ã™ã€‚
++
++Object ãƒãƒãƒ¼ã‚¸ãƒ£ã®ã€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ãŸã‚ã® API ã‚„ã€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿½åŠ ã™ã‚‹ãŸã‚ã® API ã¯ã€æ›¸ã‹ã‚Œã¦ã‹ã‚‰ä½•å¹´æŒã£ãŸã£ã¦ã„ã¾ã™ã€‚ã“ã‚Œã¾ã§ã®é–“ã€ Python ãŒã‚³ãƒ³ãƒ†ãƒŠå†…ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ãŸã‚ã®æ¨™æº–çš„ãªå®Ÿè£…ã‚’æä¾›ã™ã‚‹ãŸã³ã«ã€å”èª¿å‹•ä½œã™ã‚‹ã‚ˆã†ã«ã—ã¦ãã¾ã—ãŸã€‚ã“ã†ã„ã£ãŸ Python ã® API ã¯å¤šãã® Zope ã‚’æ‰±ã†é–‹ç™ºè€…ãŸã¡ã«ã¨ã£ã¦ã‚‚ã€è¦ªã—ã¿ã‚„ã™ã„ã‚‚ã®ã§ã—ãŸã€‚ Zope ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ©ã‚¤ãƒ–ãƒ©ãƒªã¯ã€ãã†ã„ã£ãŸ API ã‚’æ­£å¼ãªã‚‚ã®ã¨ã—ã¦ zope.container ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã® IContainer ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã§è¦å®šã—ã¾ã—ãŸã€‚ã“ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã® Zope 2 ã®æ¨™æº–ã® OFS ObjectManager ã¯å¾“æ¥ã® API ã®ä»–ã« IContainer ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’å®Œå…¨ã«å®Ÿè£…ã—ã¦ã„ã¾ã™ã€‚
++
++ >>> from zope.container.interfaces import IContainer
++ >>> from OFS.ObjectManager import ObjectManager
++ >>> IContainer.implementedBy(ObjectManager)
++ True
++
++ã“ã®ãŸã‚ã€ã‚³ãƒ¼ãƒ‰ã‚’æ›¸ãã¨ãã« Object ãƒãƒãƒ¼ã‚¸ãƒ£ã«åˆã‚ã›ãŸå®Ÿè£…ã‚’è¡Œã†ã®ã§ã¯ãªãã€ IContainer ã‚’å®Ÿè£…ã—ãŸä»»æ„ã®ã‚¯ãƒ©ã‚¹ã‚’å®Ÿè£…ã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™ã€‚ã“ã®å¤‰æ›´ã¯ã€å‰è¿°ã® Acquisition ã®å¤‰æ›´ã¨åˆã‚ã›ã‚‹ã¨ã€ã¨ã¦ã‚‚ã€æ—¢å­˜ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’å†åˆ©ç”¨ã—ã‚„ã™ãã€ Zope 2 ã®ãŸã‚ã«ç‰¹åŒ–ã—ãŸå®Ÿè£…ã‚’ã›ãšã«æ¸ˆã‚€ã‚ˆã†ã«ã—ã¦ãã‚Œã¾ã™ã€‚
++
++ã“ã“ã«ã€Objectãƒãƒãƒ¼ã‚¸ãƒ£ã‚’ä½¿ã†éš›ã®ä»¥å‰ã®å®Ÿè£…ä¾‹ãŒã‚ã‚Šã¾ã™::
++
++  >>> from OFS.Folder import Folder
++  >>> from OFS.SimpleItem import SimpleItem
++
++  >>> folder = Folder('folder')
++  >>> item1 = SimpleItem('item1')
++  >>> item2 = SimpleItem('item2')
++
++  >>> result = folder._setObject('item1', item1)
++  >>> result = folder._setObject('item2', item2)
++
++  >>> folder.objectIds()
++  ['item1', 'item2']
++
++  >>> folder.objectValues()
++  [<SimpleItem at folder/>, <SimpleItem at folder/>]
++
++  >>> if folder.hasObject('item2')
++  ...     folder._delObject('item2')
++
++ã“ã®ã‚ˆã†ãªå°‚ç”¨APIã‚’ä½¿ã‚ãšã«ã€ä»Šå¾Œã¯ä»¥ä¸‹ã®ã‚ˆã†ã«æ›¸ãã“ã¨ãŒå‡ºæ¥ã¾ã™::
++
++  >>> from OFS.Folder import Folder
++  >>> from OFS.SimpleItem import SimpleItem
++
++  >>> folder = Folder('folder')
++  >>> item1 = SimpleItem('item1')
++  >>> item2 = SimpleItem('item2')
++
++  >>> folder['item1'] = item1
++  >>> folder['item2'] = item2
++
++  >>> folder.keys()
++  ['item1', 'item2']
++
++  >>> folder.values()
++  [<SimpleItem at folder/>, <SimpleItem at folder/>]
++
++  >>> folder.get('item1')
++  <SimpleItem at folder/>
++
++  >>> if 'item2' in folder:
++  ...     del folder['item2']
++
++  >>> folder.items()
++  [('item1', <SimpleItem at folder/>)]
++
++
++.. rubric:: (Translated by Shimizukawa, `r105416 <http://svn.zope.org/Zope/tags/2.12.1/doc/WHATSNEW.rst?rev=105416&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/WHATSNEW.html>`_)
++  :class: translator
++
+Index: ja/2.12.7/doc/operation.rst
+===================================================================
+--- ja/2.12.7/doc/operation.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/operation.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,154 @@
++Zope ã®è¨­å®šã¨å®Ÿè¡Œ
++==================
++
++.. highlight:: bash
++
++
++Zope ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨ã‚µãƒ¼ãƒãƒ¼ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ä½œæˆã‚’ã©ã®æ–¹æ³•ã§è¡Œã£ã¦ã‚‚ã€
++æœ€å¾Œã«è¨­å®šã™ã‚‹å†…å®¹ã¨æ‰‹é †ã¯åŒã˜ã«ãªã‚Šã¾ã™ã€‚ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•ã«ã¤ã„ã¦ã¯ã€
++:doc:`INSTALL` ã‚„ :doc:`INSTALL-buildout` ã‚’å‚ç…§ã—ã¦ä¸‹ã•ã„ã€‚
++
++
++Zope ã®è¨­å®š
++------------
++
++ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®è¨­å®šã¯ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹å†…ã® ``etc/zope.conf`` ãƒ•ã‚¡ã‚¤ãƒ«ã§è¡Œã„ã¾ã™ã€‚
++ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯æ‰‹å‹•ã§ä½œæˆã—ãªãã¦ã‚‚ã€å„è¨­å®šã®ä¾‹ãŒã™ã¹ã¦å«ã¾ã‚Œã¦ã„ã¾ã™ã€‚
++
++ã¾ãŸã€åˆ¥ã«ç”¨æ„ã—ãŸè¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã§æ˜ç¤ºçš„ã«æŒ‡å®šã™ã‚‹ã“ã¨ã‚‚
++å‡ºæ¥ã¾ã™::
++
++  $ /path/to/zope/instance/bin/zopectl -c /tmp/other.conf show
++  ...
++  Config file:  /tmp/other.conf
++
++Zope ã‚’èµ·å‹•ã—ãŸã¨ãã«ã€ãƒãƒ¼ãƒˆãŒä½¿ç”¨ã•ã‚Œã¦ã„ã‚‹ã¨ã„ã†ã‚¨ãƒ©ãƒ¼ãŒè¡¨ç¤ºã•ã‚ŒãŸå ´åˆã¯ã€
++Zope ãŒä½¿ç”¨ã™ã‚‹ HTTP ã‚„ FTP ã®ãƒãƒ¼ãƒˆè¨­å®šã‚’å¤‰æ›´ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
++Zope ãŒãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ä½¿ç”¨ã™ã‚‹ HTTP ã¨ FTP ã®ãƒãƒ¼ãƒˆã¯8080ã¨8021ã§ã™ã€‚
++ã“ã®ãƒãƒ¼ãƒˆç•ªå·ã¯ ./etc/zope.conf ã‚’ç·¨é›†ã—ã¦å¤‰æ›´ã™ã‚‹äº‹ãŒå‡ºæ¥ã¾ã™ã€‚
++
++ãƒãƒ¼ãƒˆç•ªå·ã‚’è¨­å®šã™ã‚‹ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã¯ä»¥ä¸‹ã®ç®‡æ‰€ã§ã™::
++
++  <http-server>
++    # valid keys are "address" and "force-connection-close"
++    address 8080
++    # force-connection-close on
++  </http-server>
++
++ä¸Šè¨˜ã® address ã®éƒ¨åˆ†ã«ã¯ãƒãƒ¼ãƒˆç•ªå·ã®ã¿ã‚’æ›¸ãã»ã‹ã«ã€ host:port ã¨ã„ã†
++å½¢å¼ã§è¨˜è¼‰ã™ã‚‹äº‹ã§ç‰¹å®šã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã¨ã®ã¿ãƒã‚¤ãƒ³ãƒ‰ã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™ã€‚
++
++è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®è¨˜è¿°ã‚’å¤‰æ›´ã—ãŸã‚‰ã€å¤‰æ›´ã—ãŸå†…å®¹ã‚’åæ˜ ã™ã‚‹ãŸã‚ã« Zope
++ã‚µãƒ¼ãƒãƒ¼ã‚’å†èµ·å‹•ã—ã¦ãã ã•ã„ã€‚
++
++
++Zope ã‚’ãƒ•ã‚©ã‚¢ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰èµ·å‹•ã™ã‚‹
++--------------------------------
++
++Zope ã‚’ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã‹ã‚‰åˆ‡ã‚Šé›¢ã•ãšã«å®Ÿè¡Œã™ã‚‹ã«ã¯ã€ ``fg`` (``foreground``
++ã®çŸ­ç¸®å½¢) ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ç”¨ã—ã¾ã™::
++
++  $ /path/to/zope/instance/bin/zopectl fg
++
++ã“ã®ãƒ¢ãƒ¼ãƒ‰ã§ã¯ã€ Zope ã®ãƒ­ã‚°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã«å‡ºåŠ›ã•ã‚Œã€ã‚¿ãƒ¼ãƒŸãƒŠãƒ«
++ã‹ã‚‰ã¯åˆ‡ã‚Šé›¢ã•ã‚Œã¾ã›ã‚“ã€‚
++
++
++Zope ã‚’ãƒ‡ãƒ¼ãƒ¢ãƒ³èµ·å‹•ã™ã‚‹
++-------------------------
++
++ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ›ãƒ¼ãƒ ã‚’ä½œæˆã—ãŸã‚‰ã€ä»¥ä¸‹ã®ã‚³ãƒãƒ³ãƒ‰ã§Zopeã‚µãƒ¼ãƒãƒ¼ã‚’èµ·å‹•ã™ã‚‹
++ã“ã¨ãŒå‡ºæ¥ã¾ã™::
++
++  $ /path/to/zope/instance/bin/zopectl start
++
++Zopeèµ·å‹•ä¸­ã«ã€ `/path/to/zope/instance/log/event.log` ã«ãƒ­ã‚°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’
++å‡ºåŠ›ã—ã¾ã™ã€‚ã‚‚ã—ã€Zopeèµ·å‹•ä¸­ã«ä½•ã‚‰ã‹ã®ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆã«ã¯ã€ä»»æ„ã®ãƒ„ãƒ¼ãƒ«
++(``cat``, ``more``, ``tail``, ä»–)ã‚’ç”¨ã„ã¦å†…å®¹ã‚’ç¢ºèªã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
++
++.. highlight:: none
++.. note::
++
++  Windows ã§ã“ã®ãƒ¢ãƒ¼ãƒ‰ã‚’ä½¿ç”¨ã™ã‚‹å ´åˆã€ Zope ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ã‚µãƒ¼ãƒ“ã‚¹
++  ã¨ã—ã¦ç™»éŒ²ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚ä»¥ä¸‹ã®ã‚ˆã†ã«å®Ÿè¡Œã—ã¾ã™::
++
++    bin\zopectl install
++
++  ã‚µãƒ¼ãƒ“ã‚¹ã‹ã‚‰å‰Šé™¤ã™ã‚‹å ´åˆã¯ä»¥ä¸‹ã®ã‚ˆã†ã«ã—ã¾ã™::
++
++    bin\zopectl remove
++
++  Windowsã‚µãƒ¼ãƒ“ã‚¹ã¨ã—ã¦ã®å…¨ã¦ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¡¨ç¤ºã™ã‚‹ã«ã¯ä»¥ä¸‹ã®ã‚ˆã†ã«
++  å®Ÿè¡Œã—ã¾ã™::
++
++    bin\zopectl install --help
++
++.. highlight:: bash
++
++
++ã‚·ã‚¹ãƒ†ãƒ ã®èµ·å‹•ã«çµ„ã¿è¾¼ã‚€
++--------------------------
++
++zopectl ã‚’linuxã‚„ä»–ã®System V unixã®rc-scriptã¨ã—ã¦ãƒªãƒ³ã‚¯ã—ã¦ä½¿ç”¨ã™ã‚‹
++ã“ã¨ã‚‚ã§ãã¾ã™ã€‚
++
++``zopectl`` ã¯å¼•æ•°ç„¡ã—ã§èµ·å‹•ã™ã‚‹äº‹ã§å¯¾è©±ãƒ¢ãƒ¼ãƒ‰ã§ä½¿ç”¨ã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
++``help`` ã‚„ ``help <command>`` ã¨å…¥åŠ›ã™ã‚Œã°ã€å„ç¨®ã‚³ãƒãƒ³ãƒ‰ã‚’èª¿ã¹ã‚‹
++ã“ã¨ãŒã§ãã¾ã™ã€‚ã“ã‚Œã‚‰ã®ã‚³ãƒãƒ³ãƒ‰ã¯ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‹ã‚‰ã‚‚ä½¿ç”¨ã§ãã¾ã™ã€‚
++
++.. note::
++
++  Windows ã§ã¯ä»¥ä¸‹ã®æ–¹æ³•ã§ã‚µãƒ¼ãƒ“ã‚¹ç™»éŒ²ã¨è‡ªå‹•èµ·å‹•ã‚’åŒæ™‚ã«è¨­å®šå‡ºæ¥ã¾ã™:
++
++  .. code-block:: none
++
++    bin\zopectl install --startup=auto
++
++
++Zope ã®ãƒ­ã‚°è¨˜éŒ²
++----------------
++
++Zopeã‚’èµ·å‹•ã—ãŸã‚‰ã€Zopeã‚¦ã‚§ãƒ–ã‚µãƒ¼ãƒãƒ¼ã«æ¥ç¶šã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™ã€‚
++ãƒ–ãƒ©ã‚¦ã‚¶ã§ä»¥ä¸‹ã®URLã«ã‚¢ã‚¯ã‚»ã‚¹ã—ã¦ãã ã•ã„::
++
++  http://yourhost:8080/manage
++
++'yourhost' ã¯ZopeãŒå‹•ä½œã—ã¦ã„ã‚‹ã‚µãƒ¼ãƒãƒ¼ã®DNSåã‹IPã‚¢ãƒ‰ãƒ¬ã‚¹ã§ç½®ãæ›ãˆã¦
++ãã ã•ã„ã€‚ã‚‚ã—HTTPãƒãƒ¼ãƒˆã‚’å¤‰æ›´ã—ã¦ã„ã‚‹ã®ã§ã‚ã‚Œã°è¨­å®šã—ãŸãƒãƒ¼ãƒˆã§ã‚¢ã‚¯ã‚»ã‚¹
++ã—ã¦ãã ã•ã„ã€‚
++
++ãƒ¦ãƒ¼ã‚¶ãƒ¼åã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®å…¥åŠ›ã‚’æ±‚ã‚ã‚‰ã‚Œã¾ã™ã€‚ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ä½œæˆæ™‚ã«
++æŒ‡å®šã—ãŸãƒ¦ãƒ¼ã‚¶ãƒ¼åã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚
++
++ã†ã¾ãã„ã‘ã°ã€ãƒ•ãƒ¬ãƒ¼ãƒ ã§ï¼’ã¤ã«åˆ†å‰²ã•ã‚ŒãŸZopeã®ç®¡ç†ç”»é¢ãŒè¡¨ç¤ºã•ã‚Œã¾ã™ã€‚
++å·¦ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã¯Zopeã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ç”¨ã§ã€å³ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã¯
++ã¯ä¸Šéƒ¨ã«ã‚¿ãƒ–ãŒã‚ã‚Šã€å„ã‚¿ãƒ–ã§ãã‚Œãã‚Œç•°ãªã‚‹ç®¡ç†æ©Ÿèƒ½ã‚’æä¾›ã—ã¾ã™ã€‚
++
++ã‚‚ã—ã¾ã Zopeã‚’ä½¿ã£ãŸã“ã¨ãŒãªã„ã®ã§ã‚ã‚Œã°ã€Zopeã®Webã‚µã‚¤ãƒˆã§è‰²ã€…ãª
++ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’èª­ã‚€ã“ã¨ã‚’å‹§ã‚ã¾ã™ã€‚Zopeãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚»ã‚¯ã‚·ãƒ§ãƒ³ã¯
++å§‹ã‚ã«èª­ã‚€ã®ã«é©ã—ã¦ã„ã¾ã™ã€‚ä»¥ä¸‹ã®URLã§ã‚¢ã‚¯ã‚»ã‚¹ã—ã¦ãã ã•ã„
++http://docs.zope.org/
++
++ãƒˆãƒ©ãƒ–ãƒ«ã‚·ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ³ã‚°
++----------------------
++
++- ã“ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®Zopeã¯Python 2.6.4ä»¥é™ãŒå¿…è¦ã§ã™ã€‚
++  Python 3.x ã§ã¯å‹•ä½œã—ã¾ã›ã‚“ã€‚
++
++- Zopeã§ä½¿ç”¨ã™ã‚‹Pythonã¯ *å¿…ãš* threadå¯¾å¿œã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ã¦ãã ã•ã„ã€‚
++  (which is the case for a vanilla build).
++  æ³¨æ„: Zopeã¯ ``libpth`` ã‚’ä½¿ç”¨ã—ã¦ã„ã‚‹Pythonã§ã¯å‹•ä½œã—ã¾ã›ã‚“ã€‚
++  *ã‹ãªã‚‰ãš* ``libpthread`` ã‚’ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚
++
++- Pythonæ‹¡å¼µãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ãƒ“ãƒ«ãƒ‰ã™ã‚‹å ´åˆã«æ³¨æ„ã™ã‚‹ã¹ãæƒ…å ±ãŒã‚ã‚Šã¾ã™ã€‚
++  ã‚‚ã—Pythonã‚’RPMã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã„ã‚‹å ´åˆã€python-devel (ã‚ã‚‹ã„ã¯
++  python-dev)ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚‚ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„ã€‚
++  Pythonã‚’ã‚½ãƒ¼ã‚¹ã‹ã‚‰ãƒ“ãƒ«ãƒ‰ã—ã¦ã„ã‚‹å ´åˆã«ã¤ã„ã¦ã¯ã“ã®ãƒšãƒ¼ã‚¸ã®èª¬æ˜ã‚’
++  å‚ç…§ã—ã¦ãã ã•ã„ã€‚
++
++- ã“ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®Zopeã«ã¤ã„ã¦ã®é‡è¦ãªæƒ…å ±ãŒ :doc:`CHANGES`
++  ã«ã‚ã‚Šã¾ã™ã€‚å‚ç…§ã—ã¦ãã ã•ã„ã€‚
++
++.. rubric:: (Translated by Shimizukawa, `r110522 <http://svn.zope.org/Zope/branches/2.12/doc/operation.rst?rev=110522&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/operation.html>`_)
++  :class: translator
++
+Index: ja/2.12.7/doc/USERS.rst
+===================================================================
+--- ja/2.12.7/doc/USERS.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/USERS.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,86 @@
++ç‰¹åˆ¥ãªãƒ¦ãƒ¼ã‚¶ãƒ¼
++===============
++
++Zope ã¯Webã‚’é€šã—ã¦ç®¡ç†ã™ã‚‹ãŸã‚ã€ãƒ¦ãƒ¼ã‚¶ãƒ¼åã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯ Zope 
++ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã«å¯¾ã—ã¦å¤‰æ›´ã‚’åŠ ãˆã‚‹æ¨©é™ã‚’ä¸ãˆã¦ã‚‚ã‚ˆã„äººã«ã®ã¿ä¸ãˆã‚‹ã€
++ã¨ã„ã†ã“ã¨ã‚’ç¢ºå®Ÿã«è¡Œã‚ãªã‘ã‚Œã°ã„ã‘ã¾ã›ã‚“ã€‚
++
++ç®¡ç†è€…ã®ç™»éŒ²
++---------------
++
++æ—¢å­˜ã® Zope ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã«ç®¡ç†è€…ã‚’è¿½åŠ ã™ã‚‹å ´åˆã¯ã€ `zopectl` ã‚’ä»¥ä¸‹ã®
++ã‚ˆã†ã«å®Ÿè¡Œã—ã¾ã™::
++
++  zopectl adduser `name` `password`
++
++åˆæœŸãƒ¦ãƒ¼ã‚¶ãƒ¼
++----------------
++
++æœ€åˆã®ç®¡ç†ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚’ Zope ã«ç™»éŒ²ã™ã‚‹ãŸã‚ã€"èµ·å‹•æ™‚"ã«ãƒ¦ãƒ¼ã‚¶ãƒ¼ã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒ  
++å¿…è¦ã«ãªã‚Šã¾ã™ã€‚ã“ã‚Œã¯ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ›ãƒ¼ãƒ ç›´ä¸‹ã«ç½®ã‹ã‚ŒãŸ 'inituser' ãƒ•ã‚¡ã‚¤ãƒ«
++ã‚’é€šã—ã¦æ¸¡ã•ã‚Œã¾ã™ã€‚
++
++Zope ã¯ä¸€ç•ªæœ€åˆã®èµ·å‹•æ™‚ã«ã€(Zopeå†…ã®)ãƒ«ãƒ¼ãƒˆã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ•ã‚©ãƒ«ãƒ€ã«
++ã‚¢ã‚«ã‚¦ãƒ³ãƒˆãŒä¸€ã¤ã‚‚ãªã„ã“ã¨ã‚’æ¤œçŸ¥ã™ã‚‹ã¨ã€ 'inituser' ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ¢ã—ã¦ã€
++ãƒ•ã‚¡ã‚¤ãƒ«ãŒã‚ã‚Œã°ãã®ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ã‚’(Zopeå†…ã®)ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ•ã‚©ãƒ«ãƒ€ã«è¿½åŠ ã—ã¾ã™ã€‚
++
++é€šå¸¸ã€ 'inituser' ã¯ Zope ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆã§ä½œæˆã•ã‚Œã¾ã™ã€‚
++ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ™‚ã«ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®å…¥åŠ›ã‚’æ±‚ã‚ã‚‰ã‚Œã‚‹ã‹ã€è‡ªå‹•çš„ã«ãƒ©ãƒ³ãƒ€ãƒ ãª
++ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’ç”Ÿæˆã—ã¦ãƒ“ãƒ«ãƒ‰ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®å®Œäº†æ™‚ã«è¡¨ç¤ºã—ã¾ã™ã€‚
++
++'zpasswd.py' ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ä½¿ãˆã°ã€ 'inituser' ã‚’è‡ªåˆ†ã§ä½œæˆã™ã‚‹ã“ã¨ã‚‚
++ã§ãã¾ã™ã€‚ 'zpasswd.py' ã®å®Ÿè¡Œã¯ä»¥ä¸‹ã®ã‚ˆã†ã«è¡Œã„ã¾ã™::
++
++    python zpasswd.py inituser
++
++ã‚¹ã‚¯ãƒªãƒ—ãƒˆã¯ãƒ¦ãƒ¼ã‚¶ãƒ¼åã€ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã€ãã—ã¦è¨±å¯ã™ã‚‹ãƒ‰ãƒ¡ã‚¤ãƒ³ã®å…¥åŠ›ã‚’
++æ±‚ã‚ã¾ã™ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯ SHA ã«ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã•ã‚Œã‚‹ã®ã§ã€
++ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯å¿˜ã‚Œãªã„ã‚ˆã†ã«ã—ã¦ãã ã•ã„ã€‚ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å¾©å…ƒã™ã‚‹æ–¹æ³•ã¯
++ã‚ã‚Šã¾ã›ã‚“ã€‚ (ã‚ã‚‹ã„ã¯ 'zpasswd.py' ã§ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’ãƒªã‚»ãƒƒãƒˆã—ã¦ãã ã•ã„)
++
++ç·Šæ€¥ãƒ¦ãƒ¼ã‚¶ãƒ¼
++-------------
++
++è‰¯ãã‚ã‚‹çŠ¶æ³ã¨ã—ã¦ã€ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å¿˜ã‚ŒãŸã‚Šã€ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãƒ¼è¨­å®šã‚’é–“é•ãˆã‚‹
++ãªã©ã®ãŸã‚ã«é€šå¸¸ã®ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãƒ¼ã‚’ãƒã‚¤ãƒ‘ã‚¹ã—ãŸã„ã¨ã„ã†ã“ã¨ãŒã‚ã‚Šã¾ã™ã€‚
++Zope ã¯ "emergency user" (ç·Šæ€¥ãƒ¦ãƒ¼ã‚¶ãƒ¼) ã¨ã„ã†ä»•çµ„ã¿ã‚’æä¾›ã—ã¦ãŠã‚Šã€
++ã“ã®ä»•çµ„ã¿ã‚’ä½¿ã£ã¦ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’ãƒªã‚»ãƒƒãƒˆã—ãŸã‚Šã€æ­£ã—ã„ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãƒ¼è¨­å®š
++ã«ã—ãŸã‚Šå‡ºæ¥ã¾ã™ã€‚
++
++ç·Šæ€¥ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®å¤–ã§å®šç¾©ã•ã‚Œã¾ã™ã€‚
++'access' ã¨ã„ã†åå‰ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ Zope ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«ç½®ã„ã¦ãã ã•ã„ã€‚
++ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯ Zope ãŒç¨¼åƒã™ã‚‹ãƒ¦ãƒ¼ã‚¶ãƒ¼æ¨©é™ã§ã®ã¿ã€èª­ã¿è¾¼ã‚ã‚‹ã‚ˆã†ã«
++ã™ã‚‹ã¹ãã§ã™ã€‚
++
++ç·Šæ€¥ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚’ä½œã‚‹ã«ã¯ 'zpasswd.py' ã‚’ä½¿ã£ã¦ä»¥ä¸‹ã®ã‚ˆã†ã«ã—ã¦ 'access'
++ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã—ã¾ã™::
++
++    python zpasswd.py access
++
++ã‚‚ã£ã¨é«˜ã„ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãƒ¼ã®è¦æ±‚ãŒã‚ã‚‹å ´åˆã®ãŸã‚ã«ã€ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯
++SHA-1 ã‚„ UNIX crypt ãªã©ã„ãã¤ã‹ã®ç•°ãªã‚‹æ–¹æ³•ã§ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã™ã‚‹ã“ã¨ãŒ
++å‡ºæ¥ã¾ã™(Pythonã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ™‚ã«çµ„ã¿è¾¼ã¾ã‚Œã¦ã„ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™)ã€‚
++ç‰¹åˆ¥ãªè¦æ±‚(ä»¥ä¸‹ã‚’å‚ç…§)ãŒãªã‘ã‚Œã°ã€ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã® SHA-1 ã‚’ä½¿ã†ã®ãŒ
++è‰¯ã„ã§ã—ã‚‡ã†ã€‚
++
++'inituser' ã¨ 'access' ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
++---------------------------------------
++
++ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãƒ•ã‚¡ã‚¤ãƒ«ã¯ä»¥ä¸‹ã®å½¢å¼ã§1è¡Œã®ã¿è¨˜è¼‰ã•ã‚Œã¦ã„ã¾ã™::
++
++    name:password
++
++3ã¤ç›®ã®è¦ç´ ã¨ã—ã¦ã€ãƒ‰ãƒ¡ã‚¤ãƒ³ã®åˆ¶é™ã‚’ä»˜ã‘åŠ ãˆã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™::
++
++    mario:nintendoRules:*.mydomain.com
++
++ã“ã‚Œã§ã€ç·Šæ€¥ãƒ¦ãƒ¼ã‚¶ãƒ¼ã¯ `*.mydomain.com` ã‹ã‚‰ã®ã‚¢ã‚¯ã‚»ã‚¹ã®ã¿è¨±å¯ã•ã‚Œã‚‹
++ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚ã“ã®å ´åˆã€æ­£ã—ã„ç·Šæ€¥ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®åå‰ã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’ä½¿ã£ã¦ã‚‚ã€
++ä»–ã®ãƒ‰ãƒ¡ã‚¤ãƒ³ã‹ã‚‰ã®ã‚¢ã‚¯ã‚»ã‚¹ã¯å¤±æ•—ã—ã¾ã™ã€‚
++
++æ³¨æ„ã—ã¦æ¬²ã—ã„ç‚¹ã¨ã—ã¦ã€ ZServer ãƒ¢ãƒ‹ã‚¿ãƒ¼æ©Ÿèƒ½ã‚’ä½¿ç”¨ã™ã‚‹å ´åˆã¯ã€
++crear text ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’ä½¿ç”¨ã™ã‚‹å¿…è¦ãŒã‚ã‚‹ã§ã—ã‚‡ã†ã€‚
++
++.. rubric:: (Translated by Shimizukawa, `r105416 <http://svn.zope.org/Zope/tags/2.12.1/doc/SECURITY.rst?rev=105416&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/SECURITY.html>`_)
++  :class: translator
++
+Index: ja/2.12.7/doc/conf.py
+===================================================================
+--- ja/2.12.7/doc/conf.py	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/conf.py	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,190 @@
++# -*- coding: utf-8 -*-
++#
++# Zope docs documentation build configuration file, created by
++# sphinx-quickstart on Fri Feb 20 16:22:03 2009.
++#
++# This file is execfile()d with the current directory set to its containing dir.
++#
++# The contents of this file are pickled, so don't put values in the namespace
++# that aren't pickleable (module imports are okay, they're removed automatically).
++#
++# Note that not all possible configuration values are present in this
++# autogenerated file.
++#
++# All configuration values have a default; values that are commented out
++# serve to show the default.
++
++import sys, os
++
++# If your extensions are in another directory, add it here. If the directory
++# is relative to the documentation root, use os.path.abspath to make it
++# absolute, like shown here.
++#sys.path.append(os.path.abspath('.'))
++
++# General configuration
++# ---------------------
++
++# Add any Sphinx extension module names here, as strings. They can be extensions
++# coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
++extensions = []
++
++# Add any paths that contain templates here, relative to this directory.
++templates_path = ['.templates']
++
++# The suffix of source filenames.
++source_suffix = '.rst'
++
++# The encoding of source files.
++#source_encoding = 'utf-8'
++
++# The master toctree document.
++master_doc = 'index'
++
++# General information about the project.
++project = u'Zope 2 ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ'
++copyright = u'2009, The Zope Developers Community'
++
++# The version info for the project you're documenting, acts as replacement for
++# |version| and |release|, also used in various other places throughout the
++# built documents.
++#
++# The short X.Y version.
++version = '2.12.0'
++# The full version, including alpha/beta/rc tags.
++release = '2.12.0'
++
++# The language for content autogenerated by Sphinx. Refer to documentation
++# for a list of supported languages.
++#language = None
++
++# There are two options for replacing |today|: either, you set today to some
++# non-false value, then it is used:
++#today = ''
++# Else, today_fmt is used as the format for a strftime call.
++#today_fmt = '%B %d, %Y'
++
++# List of documents that shouldn't be included in the build.
++#unused_docs = []
++
++# List of directories, relative to source directory, that shouldn't be searched
++# for source files.
++exclude_trees = ['.build']
++
++# The reST default role (used for this markup: `text`) to use for all documents.
++#default_role = None
++
++# If true, '()' will be appended to :func: etc. cross-reference text.
++#add_function_parentheses = True
++
++# If true, the current module name will be prepended to all description
++# unit titles (such as .. function::).
++#add_module_names = True
++
++# If true, sectionauthor and moduleauthor directives will be shown in the
++# output. They are ignored by default.
++#show_authors = False
++
++# The name of the Pygments (syntax highlighting) style to use.
++pygments_style = 'sphinx'
++
++
++# Options for HTML output
++# -----------------------
++
++# The style sheet to use for HTML and HTML Help pages. A file of that name
++# must exist either in Sphinx' static/ path, or in one of the custom paths
++# given in html_static_path.
++html_style = 'default.css'
++
++# The name for this set of Sphinx documents.  If None, it defaults to
++# "<project> v<release> documentation".
++#html_title = None
++
++# A shorter title for the navigation bar.  Default is the same as html_title.
++#html_short_title = None
++
++# The name of an image file (relative to this directory) to place at the top
++# of the sidebar.
++#html_logo = None
++
++# The name of an image file (within the static path) to use as favicon of the
++# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
++# pixels large.
++#html_favicon = None
++
++# Add any paths that contain custom static files (such as style sheets) here,
++# relative to this directory. They are copied after the builtin static files,
++# so a file named "default.css" will overwrite the builtin "default.css".
++html_static_path = ['.static']
++
++# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
++# using the given strftime format.
++#html_last_updated_fmt = '%b %d, %Y'
++
++# If true, SmartyPants will be used to convert quotes and dashes to
++# typographically correct entities.
++#html_use_smartypants = True
++
++# Custom sidebar templates, maps document names to template names.
++#html_sidebars = {}
++
++# Additional templates that should be rendered to pages, maps page names to
++# template names.
++#html_additional_pages = {}
++
++# If false, no module index is generated.
++#html_use_modindex = True
++
++# If false, no index is generated.
++#html_use_index = True
++
++# If true, the index is split into individual pages for each letter.
++#html_split_index = False
++
++# If true, the reST sources are included in the HTML build as _sources/<name>.
++#html_copy_source = True
++
++# If true, an OpenSearch description file will be output, and all pages will
++# contain a <link> tag referring to it.  The value of this option must be the
++# base URL from which the finished HTML is served.
++#html_use_opensearch = ''
++
++# If nonempty, this is the file name suffix for HTML files (e.g. ".xhtml").
++#html_file_suffix = ''
++
++# Output file base name for HTML help builder.
++htmlhelp_basename = 'Zopedocsdoc'
++
++
++# Options for LaTeX output
++# ------------------------
++
++# The paper size ('letter' or 'a4').
++#latex_paper_size = 'letter'
++
++# The font size ('10pt', '11pt' or '12pt').
++#latex_font_size = '10pt'
++
++# Grouping the document tree into LaTeX files. List of tuples
++# (source start file, target name, title, author, document class [howto/manual]).
++latex_documents = [
++  ('index', 'Zope2docs.tex', ur'Zope 2 ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ',
++   ur'Zope Developers Community', 'manual'),
++]
++
++# The name of an image file (relative to this directory) to place at the top of
++# the title page.
++#latex_logo = None
++
++# For "manual" documents, if this is true, then toplevel headings are parts,
++# not chapters.
++#latex_use_parts = False
++
++# Additional stuff for the LaTeX preamble.
++#latex_preamble = ''
++
++# Documents to append as an appendix to all manuals.
++#latex_appendices = []
++
++# If false, no module index is generated.
++#latex_use_modindex = True
+
+‘®«‚É•ÏX‚ª‚ ‚Á‚½ƒpƒX: ja\2.12.7\doc\conf.py
+___________________________________________________________________
+’Ç‰Á: svn:keywords
+   + Id
+’Ç‰Á: svn:eol-style
+   + native
+
+Index: ja/2.12.7/doc/INSTALL.rst
+===================================================================
+--- ja/2.12.7/doc/INSTALL.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/INSTALL.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,85 @@
++Zope ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
++====================
++
++.. highlight:: bash
++
++ã“ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã¯ Zope ã®å§‹ã‚æ–¹ã«ã¤ã„ã¦èª¬æ˜ã—ã¦ã„ã¾ã™ã€‚
++
++å‰æ
++-----
++
++Zope ã‚’ä½¿ã†ãŸã‚ã«ã¯ã€ä»¥ä¸‹ã®å‰ææ¡ä»¶ã‚’ãã‚ãˆã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™:
++
++- ZopeãŒã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã‚‹ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®Pythonã€ã‚·ã‚¹ãƒ†ãƒ ãƒ¬ãƒ™ãƒ«ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸
++  ã‹ã‚‰ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã„ã‚‹å ´åˆã¯é–‹ç™ºã‚µãƒãƒ¼ãƒˆã‚‚å«ã¿ã¾ã™ã€‚ã‚µãƒãƒ¼ãƒˆãƒãƒ¼ã‚¸ãƒ§ãƒ³
++  ã¯ä»¥ä¸‹ã®é€šã‚Š:
++
++  * 2.6.x
++
++- Zopeã¯Pythonã® ``zlib`` ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒã‚¤ãƒ³ãƒãƒ¼ãƒˆå‡ºæ¥ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
++  Pythonã‚’ã‚½ãƒ¼ã‚¹ã‹ã‚‰ãƒ“ãƒ«ãƒ‰ã™ã‚‹ã®ã§ã‚ã‚Œã°ã€å…ˆã«ã‚·ã‚¹ãƒ†ãƒ ã® ``zlib`` 
++  ãƒ˜ãƒƒãƒ€ãƒ¼ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãŠã„ã¦ãã ã•ã„ã€‚
++
++- Pythonã®æ‹¡å¼µãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ãƒ“ãƒ«ãƒ‰ã§ãã‚‹ C ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ãƒ¼ã€‚ (gcc ã‚’æ¨å¥¨). 
++  ã“ã®é …ç›®ã¯ Windows ã§ã¯å¿…é ˆã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚ Windows ã®å ´åˆã€ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«
++  ãŒå¿…è¦ãªéƒ¨åˆ†ã«ã¤ã„ã¦ã¯å¸¸ã«ãƒã‚¤ãƒŠãƒªã§ã®ãƒªãƒªãƒ¼ã‚¹ãŒæä¾›ã•ã‚Œã¦ã„ã¾ã™ã€‚
++
++- Windows ã§ Zope ã‚’ã‚µãƒ¼ãƒ“ã‚¹ç™»éŒ²ã—ãŸã„å ´åˆã€ `pywin32`__ ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’
++  ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãŠã„ã¦ãã ã•ã„ã€‚
++
++  __ https://sourceforge.net/projects/pywin32/
++
++
++
++Zope ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
++--------------------
++
++æ¨å¥¨ã•ã‚Œã‚‹ Zope ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•ã¯ ``virtualenv`` ã‚’ç”¨ã„ãŸä»®æƒ³ Python
++ç’°å¢ƒã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹æ–¹æ³•ã§ã€ä»¥ä¸‹ã®ã‚ˆã†ã«è¡Œã„ã¾ã™::
++
++  $ virtualenv --no-site-packages my_zope
++  $ cd my_zope
++  $ bin/easy_install -i http://download.zope.org/Zope2/index/<Zope version> Zope2
++
++
++ã‚‚ã—ã€ã‚·ã‚¹ãƒ†ãƒ ã«ã¾ã  ``virtualenv`` ãŒã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ãªã„ã®ã§ã‚ã‚Œã°ã€
++æœ€æ–°ç‰ˆã‚’ `virtualenv PyPI page <http://pypi.python.org/pypi/virtualenv>`_
++ã‹ã‚‰å–å¾—ã—ã¦ä»¥ä¸‹ã®ã‚ˆã†ã«ã—ã¦ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„::
++
++  $ wget http://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.4.6.tar.gz
++  $ tar xzf virtualenv-1.4.6.tar.gz
++  $ cd virtuaenv-1.4.6
++  $ /path/to/python2.6 setup.py install
++
++virtualenv ã§ã¯ãªã buildout ã‚’ä½¿ã£ã¦ Zope ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç®¡ç†ã—ãŸã„ã®ã§
++ã‚ã‚Œã°ã€ :doc:`INSTALL-buildout` ã‚’å‚ç…§ã—ã¦ä¸‹ã•ã„ã€‚
++
++
++Zope ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä½œæˆ
++----------------------
++
++Zope ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ãŒçµ‚ã‚ã£ãŸã‚‰ã€æ¬¡ã¯ "ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ›ãƒ¼ãƒ " ã®ä½œæˆã‚’
++è¡Œã„ã¾ã™ã€‚ã“ã‚Œã¯ Zope ã‚µãƒ¼ãƒãƒ¼ãƒ—ãƒ­ã‚»ã‚¹ãŒä½¿ç”¨ã™ã‚‹è¨­å®šã¨ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‚’
++ç½®ããƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã§ã™ã€‚ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ›ãƒ¼ãƒ ã¯ ``mkzopeinstance`` ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
++ã§ä»¥ä¸‹ã®ã‚ˆã†ã«ã—ã¦ä½œæˆã—ã¾ã™::
++
++  $ bin/mkzopeinstance
++
++``mkzopeinstance`` ã®å®Ÿè¡Œä¸­ã«ç®¡ç†è€…ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã®ãƒ¦ãƒ¼ã‚¶ãƒ¼åã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
++ã®å…¥åŠ›ã‚’æ±‚ã‚ã‚‰ã‚Œã‚‹ã§ã—ã‚‡ã†ã€‚ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®è©³ç´°ã‚’è¦‹ã‚‹ãŸã‚
++ã«ã¯ã€ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ ``--help`` ã‚ªãƒ—ã‚·ãƒ§ãƒ³ä»˜ãã§å®Ÿè¡Œã—ã¾ã™::
++
++  $ bin/mkzopeinstance --help
++
++.. note::
++   å¾“æ¥ã®ã‚ˆã†ãªâ€åŒä¸€ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª(inplace)â€ã§ã®ãƒ“ãƒ«ãƒ‰ã¯ã‚µãƒãƒ¼ãƒˆã•ã‚Œã¾ã›ã‚“ã€‚
++   virtualenv ã®ç’°å¢ƒå¤–ã§ ``mkzopeinstance`` ã‚’ä½¿ç”¨ã—ã¦ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆ
++   ã—ã¦ãã ã•ã„ã€‚
++
++ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ãŒå®Œäº†ã—ãŸã‚‰ã€è¨­å®šã‚’è¡Œã£ã¦ã‹ã‚‰ Zope ã‚’å®Ÿè¡Œã—ã¾ã™ã€‚
++è©³ã—ãã¯ :doc:`operation` ã‚’å‚ç…§ã—ã¦ä¸‹ã•ã„ã€‚
++
++
++.. rubric:: (Translated by Shimizukawa, `r110522 <http://svn.zope.org/Zope/branches/2.12/doc/INSTALL.rst?rev=110522&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/INSTALL.html>`_)
++  :class: translator
++
+Index: ja/2.12.7/doc/Makefile
+===================================================================
+--- ja/2.12.7/doc/Makefile	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/Makefile	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,75 @@
++# Makefile for Sphinx documentation
++#
++
++# You can set these variables from the command line.
++SPHINXOPTS    =
++SPHINXBUILD   = sphinx-build
++PAPER         =
++
++# Internal variables.
++PAPEROPT_a4     = -D latex_paper_size=a4
++PAPEROPT_letter = -D latex_paper_size=letter
++ALLSPHINXOPTS   = -d .build/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
++
++.PHONY: help clean html web pickle htmlhelp latex changes linkcheck
++
++help:
++	@echo "Please use \`make <target>' where <target> is one of"
++	@echo "  html      to make standalone HTML files"
++	@echo "  pickle    to make pickle files"
++	@echo "  json      to make JSON files"
++	@echo "  htmlhelp  to make HTML files and a HTML help project"
++	@echo "  latex     to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
++	@echo "  changes   to make an overview over all changed/added/deprecated items"
++	@echo "  linkcheck to check all external links for integrity"
++
++clean:
++	-rm -rf .build/*
++
++html:
++	mkdir -p .build/html .build/doctrees
++	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) .build/html
++	@echo
++	@echo "Build finished. The HTML pages are in .build/html."
++
++pickle:
++	mkdir -p .build/pickle .build/doctrees
++	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) .build/pickle
++	@echo
++	@echo "Build finished; now you can process the pickle files."
++
++web: pickle
++
++json:
++	mkdir -p .build/json .build/doctrees
++	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) .build/json
++	@echo
++	@echo "Build finished; now you can process the JSON files."
++
++htmlhelp:
++	mkdir -p .build/htmlhelp .build/doctrees
++	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) .build/htmlhelp
++	@echo
++	@echo "Build finished; now you can run HTML Help Workshop with the" \
++	      ".hhp project file in .build/htmlhelp."
++
++latex:
++	mkdir -p .build/latex .build/doctrees
++	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) .build/latex
++	@echo
++	@echo "Build finished; the LaTeX files are in .build/latex."
++	@echo "Run \`make all-pdf' or \`make all-ps' in that directory to" \
++	      "run these through (pdf)latex."
++
++changes:
++	mkdir -p .build/changes .build/doctrees
++	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) .build/changes
++	@echo
++	@echo "The overview file is in .build/changes."
++
++linkcheck:
++	mkdir -p .build/linkcheck .build/doctrees
++	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) .build/linkcheck
++	@echo
++	@echo "Link check complete; look for any errors in the above output " \
++	      "or in .build/linkcheck/output.txt."
+
+‘®«‚É•ÏX‚ª‚ ‚Á‚½ƒpƒX: ja\2.12.7\doc\Makefile
+___________________________________________________________________
+’Ç‰Á: svn:keywords
+   + Id
+’Ç‰Á: svn:eol-style
+   + native
+
+Index: ja/2.12.7/doc/SECURITY.rst
+===================================================================
+--- ja/2.12.7/doc/SECURITY.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/SECURITY.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,22 @@
++ãƒ•ã‚¡ã‚¤ãƒ«ã‚·ã‚¹ãƒ†ãƒ  ãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³
++=================================
++
++Zope ã® ãƒ‡ãƒ¼ã‚¿æ ¼ç´ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³ã‚’è¨­å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã€
++ã“ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã¯é€šå¸¸ã§ã¯ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹Homeã® `var` ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã§ã™ã€‚
++Zope ã¯ã“ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«èª­ã¿æ›¸ãä¸¡æ–¹ã‚’è¡Œã†å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
++Zope ã‚’èµ·å‹•ã™ã‚‹å‰ã« Zope ã®å®Ÿè¡Œãƒ¦ãƒ¼ã‚¶ãƒ¼æ¨©é™ã§ã“ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«
++ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹å¿…è¦ååˆ†ãªè¨­å®šã‚’ã—ã¦ãŠã„ã¦ãã ã•ã„ã€‚
++
++Zope ã‚’ã©ã®ã‚ˆã†ã«å®Ÿè¡Œã™ã‚‹ã‹ã«ã‚ˆã£ã¦ã¯ã€ ã“ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«ç•°ãªã‚‹
++ãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³ã‚’è¨­å®šã™ã‚‹å¿…è¦ãŒã‚ã‚‹ã§ã—ã‚‡ã†ã€‚æ—¢å­˜ã®ã‚µãƒ¼ãƒãƒ¼ã«
++å…¥ã£ã¦ã„ã‚‹ Zope ã‚’ä½¿ç”¨ã™ã‚‹å ´åˆãªã©ã«ã¯ã€ãŠãã‚‰ã Zope ã¯ 'nobody'
++æ¨©é™ã§å‹•ä½œã™ã‚‹ã§ã—ã‚‡ã†ã‹ã‚‰ã€ã“ã®å ´åˆã¯ 'nobody' ãƒ¦ãƒ¼ã‚¶ãƒ¼ã«å¯¾ã—ã¦
++èª­ã¿æ›¸ãã‚’è¨±å¯ã™ã‚‹ã‚ˆã†ã«ã“ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«è¨­å®šã—ã¾ã™ã€‚
++
++Zope ã®å®Ÿè¡Œæ–¹æ³•ã‚’å¤‰æ›´ã—ãŸå ´åˆã€ãã‚Œã«åˆã‚ã›ã¦ var ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã¨
++ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚¢ã‚¯ã‚»ã‚¹æ¨©é™ã‚’è¨­å®šã—ã¦ã€ Zope ãŒãã‚Œã‚‰ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«
++æ–°ã—ãè¨­å®šã—ãŸ userid ã§èª­ã¿æ›¸ãå‡ºæ¥ã‚‹ã‚ˆã†ã«ã—ã¦ãã ã•ã„ã€‚
++
++.. rubric:: (Translated by Shimizukawa, `r105416 <http://svn.zope.org/Zope/tags/2.12.1/doc/SECURITY.rst?rev=105416&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/SECURITY.html>`_)
++  :class: translator
++
+Index: ja/2.12.7/doc/index.rst
+===================================================================
+--- ja/2.12.7/doc/index.rst	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/doc/index.rst	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,24 @@
++
++Zope 2.12 ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ
++=======================
++
++ã‚³ãƒ³ãƒ†ãƒ³ãƒ„:
++
++.. toctree::
++   :maxdepth: 2
++
++   WHATSNEW.rst
++   INSTALL.rst
++   INSTALL-buildout.rst
++   operation.rst
++   USERS.rst
++   SECURITY.rst
++   SETUID.rst
++   SIGNALS.rst
++   DEBUGGING.rst
++   CHANGES.rst
++
++
++.. rubric:: (`r110302 <http://svn.zope.org/Zope/branches/2.12/doc/index.rst?rev=110302&view=markup>`_, `original-site <http://docs.zope.org/zope2/releases/2.12/>`_)
++  :class: translator
++
+Index: ja/2.12.7/src/Zope2/utilities/skel/etc/zope.conf
+===================================================================
+--- ja/2.12.7/src/Zope2/utilities/skel/etc/zope.conf	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/src/Zope2/utilities/skel/etc/zope.conf	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,1093 @@
++###############################################################################
++# Zope 2 ‚Ö‚æ‚¤‚±‚»
++###############################################################################
++#
++# ‚±‚ê‚ÍZope‚Ìİ’èƒtƒ@ƒCƒ‹‚Å‚·BZopeİ’èƒtƒ@ƒCƒ‹‚ÍƒfƒtƒHƒ‹ƒg‚Ìİ’è
++# ƒfƒBƒŒƒNƒeƒBƒu‚ÆAŠeƒfƒBƒŒƒNƒeƒBƒu‚Ìg‚¢•û‚Ì—á‚ğ¦‚µ‚Ä‚¢‚Ü‚·
++# ƒfƒBƒŒƒNƒeƒBƒu‚ğéŒ¾‚·‚é‚É‚ÍA'#'‚Ån‚Ü‚ç‚È‚¢s‚ğ’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B
++# ’ˆÓ“_‚Æ‚µ‚ÄAƒRƒƒ“ƒg‚ğƒfƒBƒŒƒNƒeƒBƒus‚Ì“r’†‚©‚ç‘‚«n‚ß‚é‚±‚Æ‚Í
++# o—ˆ‚Ü‚¹‚ñBs“ª‚©‚ç‚Ì‚İg—p‚Å‚«‚Ü‚·B
++#
++# ŠJ”­ÒŒü‚¯‚Ì’ˆÓ
++# ===================
++#
++# ‚±‚Ìƒtƒ@ƒCƒ‹‚Í©“®¶¬u‚³‚ê‚Ü‚¹‚ñvB‚à‚µV‚½‚ÈƒfƒBƒŒƒNƒeƒBƒu‚ğ’Ç‰Á‚·‚é
++# ‚Ì‚Å‚ ‚ê‚ÎA‚»‚ÌƒfƒBƒŒƒNƒeƒBƒu‚Ìg—p—á‚à‚±‚Ìƒtƒ@ƒCƒ‹‚ÉŠÜ‚ß‚Ä‚­‚¾‚³‚¢B
++#
++# İ’è‚ğ•ÏX‚·‚é‚½‚ß‚É'zope.conf.in'‚ğC³‚µ‚È‚¢‚Å‚­‚¾‚³‚¢BŒë‚Á‚½C³‚ğ
++# zope.conf.inƒtƒ@ƒCƒ‹‚É‹Lq‚·‚éŠëŒ¯‚ğ–`‚·‚»‚Ì‘ã‚í‚è‚ÉA'zope.conf'‚ÆŒ¾‚¤
++# –¼‘O‚ÌƒRƒs[‚ğì¬‚µ‚Ä•ÏX‚ğ‰Á‚¦‚Ä‚­‚¾‚³‚¢B
++
++# ZConfig ‚Í define ‚Å’è‹`‚³‚ê‚½•¶š—ñ‚ğŒã‚Åg—p‚µ‚Ü‚·B
++
++%define INSTANCE <<INSTANCE_HOME>>
++
++# ƒfƒBƒŒƒNƒeƒBƒu: instancehome
++#
++# ŠT—v:
++#     Zope‚©‚çg—p‚·‚éƒf[ƒ^ƒtƒ@ƒCƒ‹Eƒ[ƒJƒ‹ƒvƒƒ_ƒNƒgƒtƒ@ƒCƒ‹E
++#     ƒCƒ“ƒ|[ƒgƒfƒBƒŒƒNƒgƒŠEExtensionƒfƒBƒŒƒNƒgƒŠ‚Ö‚ÌƒpƒXB
++#
++# È—ª•s‰Â (ƒfƒtƒHƒ‹ƒg’l‚Í‚ ‚è‚Ü‚¹‚ñ)
++#
++# —á:
++#
++#    instancehome /home/chrism/projects/sessions
++
++instancehome $INSTANCE
++
++# ƒfƒBƒŒƒNƒeƒBƒu: clienthome
++#
++# ŠT—v:
++#     Zope‚ÌƒvƒƒZƒXID‚ğŠi”[‚·‚éƒtƒ@ƒCƒ‹‚ğ’u‚­ƒfƒBƒŒƒNƒgƒŠB
++#
++# ƒfƒtƒHƒ‹ƒg’l: $INSTANCE/var
++#
++# —á:
++#
++#    clienthome /home/chrism/projects/sessions/var
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: path
++#
++# ŠT—v:
++#     Python‚Ìƒ‚ƒWƒ…[ƒ‹ŒŸõƒpƒX‚Ì‘æˆêŒó•â‚Éİ’è‚³‚ê‚éƒfƒBƒŒƒNƒgƒŠ–¼B
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚Í•K—v‚È‚¾‚¯•À‚×‚Ä’è‹`‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B
++#     ’è‹`‚³‚ê‚½ƒfƒBƒŒƒNƒgƒŠ‚Í’è‹`‚³‚ê‚½‡‚Éƒ‚ƒWƒ…[ƒ‹ŒŸõƒpƒX‚Ìæ“ª‚É
++#     ’Ç‰Á‚³‚ê‚Ü‚·B‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ª—LŒø‚É‚È‚é‚æ‚è‚à‘O‚Éƒ‚ƒWƒ…[ƒ‹ƒpƒX
++#     ‚Ìİ’è‚ğ—˜—p‚·‚éê‡‚Í’ˆÓ‚ª•K—v‚Å‚·B‚»‚Ì‚æ‚¤‚Èê‡‚É‚ÍAŠÂ‹«•Ï”
++#     PYTHONPATH‚Éİ’è‚ğ’Ç‰Á‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: $INSTANCE/lib/python
++#
++# —á:
++#
++#    path $INSTANCE/mypymodules
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: products
++#
++# ŠT—v:
++#     ’Ç‰Á‚Ìƒvƒƒ_ƒNƒgƒpƒbƒP[ƒW‚ğŠi”[‚·‚éƒfƒBƒŒƒNƒgƒŠ–¼‚ğİ’è‚µ‚Ü‚·B
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚Í•K—v‚È‚¾‚¯•À‚×‚Ä’è‹`‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B
++#     ŠeƒfƒBƒŒƒNƒgƒŠ‚Í’è‹`‚³‚ê‚½‡‚Éƒvƒƒ_ƒNƒgƒpƒbƒP[ƒW‚Ì__path__‚É
++#     ’Ç‰Á‚³‚ê‚Ü‚·B‘S‚Ä‚Ìƒvƒƒ_ƒNƒg‚Íƒvƒƒ_ƒNƒg–¼‚ÌƒAƒ‹ƒtƒ@ƒxƒbƒg‡‚É
++#     ‰Šú‰»‚³‚ê‚Ü‚·B‚à‚µ“¯‚¶–¼‘O‚Ìƒvƒƒ_ƒNƒg‚ªŒ©‚Â‚©‚Á‚½ê‡A‚±‚Ì
++#     ƒfƒBƒŒƒNƒeƒBƒu‚Ì’è‹`‡‚ªæ‚ÌƒfƒBƒŒƒNƒgƒŠ‚É‚ ‚éƒpƒbƒP[ƒW‚ªƒ[ƒh
++#     ‚³‚ê‚Ü‚·BÅ‰‚Éƒ[ƒh‚³‚ê‚éƒ}ƒXƒ^[ƒvƒƒ_ƒNƒgƒfƒBƒŒƒNƒgƒŠ‚ª
++#     Zope‚Ìƒ\ƒtƒgƒEƒFƒAƒz[ƒ€‚É‚ ‚èA‚±‚ê‚ğƒvƒƒ_ƒNƒgƒpƒX‚©‚çœŠO‚·‚é
++#     ‚±‚Æ‚Ío—ˆ‚Ü‚¹‚ñBi‚»‚µ‚Ä‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚Åİ’è‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
++#
++# ƒfƒtƒHƒ‹ƒg’l: $INSTANCE/Products
++#
++# —á:
++#
++#    products /home/chrism/projects/myproducts
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: environment
++#
++# ŠT—v:
++#     Zope‚ª‹N“®‚µ‚Ä‚¢‚éŠÔ—˜—p‚Å‚«‚éŠÂ‹«•Ï”‚Æ‚µ‚ÄAKey‚Ævalue‚ÌƒyƒA‚ğ’è‹`
++#     ‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B‚½‚¾‚µA‚±‚ê‚ÍPYTHONPATH‚Ì‚æ‚¤‚ÈƒVƒXƒeƒ€‚ÉŠÖ˜A‚·‚é
++#     ŠÂ‹«•Ï”‚Ì‘ã‚í‚è‚É‚Í‚È‚è‚Ü‚¹‚ñB
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    <environment>
++#      MY_PRODUCT_ENVVAR foobar
++#    </environment>
++
++# ƒfƒBƒŒƒNƒeƒBƒu: debug-mode
++#
++# ŠT—v:
++#     Zope‚ğŠJ”­‚·‚éã‚Å—L—p‚Èî•ñ‚ğ•\¦‚·‚éƒ‚[ƒh‚Ìon/off‚ğØ‚è‘Ö‚¦‚Ü‚·B
++#     ƒfƒoƒbƒOƒ‚[ƒh‚ªon‚Ìê‡ˆÈ‰º‚ÌŒø‰Ê‚ª‚ ‚è‚Ü‚·:
++#
++#     - ƒvƒƒZƒX‚ªƒRƒ“ƒgƒ[ƒ‹ƒ^[ƒ~ƒiƒ‹‚©‚çdetach‚³‚ê‚Ü‚¹‚ñ
++#
++#     - ƒvƒƒ_ƒNƒg‚Ì‰Šú‰»’†‚ÉƒGƒ‰[‚ª”­¶‚µ‚½ê‡A‹N“®‚Í¸”s‚µ‚Ü‚·
++#       (off‚Ìê‡‚ÍƒCƒxƒ“ƒgƒƒOƒtƒ@ƒCƒ‹‚ÉƒGƒ‰[ƒƒbƒZ[ƒW‚ª‘‚«‚Ü
++#       ‚êA‹N“®‚µ‚Ü‚·)B
++#
++#     - ƒtƒ@ƒCƒ‹ƒVƒXƒeƒ€ƒx[ƒX‚ÌƒXƒNƒŠƒvƒgEƒXƒLƒ“EPageTemplateƒtƒ@ƒCƒ‹E
++#       DTMLƒtƒ@ƒCƒ‹‚È‚Ç‚ªƒT[ƒo[‚Ìƒtƒ@ƒCƒ‹ƒVƒXƒeƒ€ã‚Å•ÒW‚³‚ê‚½ê‡A
++#       Zope‚ª‚»‚ê‚ğ”F¯‚µ‚ÄA©“®“I‚ÉÄ“Ç‚µ‚Ü‚·BƒfƒoƒbƒOƒ‚[ƒh‚ªoff
++#       ‚Ìê‡‚ÍAƒT[ƒo[‚Ìƒtƒ@ƒCƒ‹XV‚ğ”½‰f‚·‚é‚½‚ß‚ÉAÄ‹N“®‚·‚é•K—v
++#       ‚ª‚ ‚è‚Ü‚·B
++#
++#     Zope‚ğƒŠƒŠ[ƒXŠÂ‹«‚Å—˜—p‚·‚éê‡A‚±‚Ìİ’è‚ğoff‚É‚·‚é‚±‚Æ‚ÅZope‚ª
++#     (ê‡‚É‚æ‚Á‚Ä‚Í‚©‚È‚è)‚‘¬‚É“®ì‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: off
++#
++# —á:
++#
++#    debug-mode on
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: effective-user
++#
++# ŠT—v:
++#     ‚à‚µZope‚ğ "root" ƒ†[ƒU[‚Å‹N“®‚·‚é‚Â‚à‚è‚È‚çA‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚É
++#     Zope‚ª 'suid' ‚·‚é‚×‚«ƒ†[ƒU[–¼‚©ƒ†[ƒU[ID‚ğİ’è‚µ‚È‚­‚Ä‚Í‚¢‚¯‚Ü‚¹‚ñB
++#     Zope‚ÍƒT[ƒo[‚Ìƒ|[ƒg‚ªŠ„‚è“–‚Ä‚ç‚ê‚½Œã‚Å 'suid' ‚µ‚Ü‚·B
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ÍUNIXã‚Årootƒ†[ƒU[‚Æ‚µ‚ÄZope‚ğ‹N“®‚µ‚½ê‡‚É‚Ì‚İ
++#     ‹@”\‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    effective-user chrism
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: enable-product-installation
++#
++# ŠT—v:
++#     ‚à‚µ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ªon‚È‚ç‚ÎAZope‚Í‹N“®‚É
++#     'ƒvƒƒ_ƒNƒg‚ÌƒCƒ“ƒXƒg[ƒ‹'(Šeƒvƒƒ_ƒNƒgƒfƒBƒŒƒNƒgƒŠ‚É‚ ‚éPython
++#     ƒ‚ƒWƒ…[ƒ‹‚Ì“o˜^)‚ğs‚¢‚Ü‚·Boff‚É‚µ‚½‚Î‚ ‚¢AZope/ZEO‚Ì‹N“®‚ğ‚‘¬‰»
++#     ‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·‚ªA‚»‚ê‚ÍƒRƒ“ƒgƒ[ƒ‹ƒpƒlƒ‹‚Ìƒvƒƒ_ƒNƒgˆê——‚ªƒvƒ
++#     ƒ_ƒNƒgƒfƒBƒŒƒNƒgƒŠ‚Ì“à—e‚Æ“¯Šú‚µ‚È‚­‚È‚é‚±‚Æ‚É‚È‚è‚Ü‚·B
++#     ’ˆÓ: Zope‚ÍÅ’áˆê‰ñ‚Í‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ªon‚Ìó‘Ô‚Å‹N“®‚³‚ê‚È‚­‚Ä‚Í
++#     ‚¢‚¯‚Ü‚¹‚ñB‚»‚¤‚µ‚È‚¢‚Æ‹N“®‚ÉƒGƒ‰[‚ª”­¶‚µ‚Ü‚·B‚à‚µZEO‚ğg‚¤ê‡A
++#     Å’áˆê‚Â‚ÌZEOƒNƒ‰ƒCƒAƒ“ƒg‚ªˆê‰ñ‚Í‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ğon‚Ìó‘Ô‚Å‹N“®‚µ
++#     ‚È‚¢‚Æ‚¢‚¯‚Ü‚¹‚ñB‘¼‚ÌZEOƒNƒ‰ƒCƒAƒ“ƒg‚Íoff‚Å‚à‚©‚Ü‚¢‚Ü‚¹‚ñB
++#     ’ˆÓ:‚à‚µƒƒCƒ“ƒXƒgƒŒ[ƒW‚ªread-only‚Åƒ}ƒEƒ“ƒg‚³‚ê‚Ä‚¢‚é‚È‚çA‚±‚Ì
++#     ƒfƒBƒŒƒNƒeƒBƒu‚ğoff‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚Ü‚¹‚ñB
++# 
++# ƒfƒtƒHƒ‹ƒg’l: on
++#
++# —á:
++#
++#    enable-product-installation off
++
++# ƒfƒBƒŒƒNƒeƒBƒu: locale
++#
++# ŠT—v:
++#     locale–¼‚ğİ’è‚µ‚Älocale(‘Û‰»)ƒTƒ|[ƒg‚ğ—LŒø‚É‚µ‚Ü‚·BOS‚Ìlocale‚É
++#     ŠÖ‚·‚éƒhƒLƒ…ƒƒ“ƒg‚ğQÆ‚µ‚ÄA‚ ‚È‚½‚ÌƒVƒXƒeƒ€‚Åg—p‚Å‚«‚élocale‚ğŠm”F
++#     ‚µ‚Ä‚­‚¾‚³‚¢B‚à‚µAg—p‚µ‚Ä‚¢‚éPythonƒ‚ƒWƒ…[ƒ‹‚ªlocaleƒ‚ƒWƒ…[ƒ‹‚ğ
++#     ƒTƒ|[ƒg‚µ‚Ä‚¢‚È‚¢A‚ ‚é‚¢‚Í‚±‚±‚Åİ’è‚µ‚½locale–¼‚ªƒVƒXƒeƒ€‚ÅƒTƒ|[ƒg
++#     ‚µ‚Ä‚¢‚È‚¢ê‡AZope‚Ì‹N“®‚ÉƒGƒ‰[‚ª”­¶‚µA‹N“®‚É¸”s‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    locale ja
++#    locale ja_JP.UTF-8
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: datetime-format
++#
++# ŠT—v:
++#     "us"‚©"international"‚ğİ’è‚·‚é‚±‚Æ‚ÅADateTimeƒ‚ƒWƒ…[ƒ‹‚ªƒp[ƒX‚·‚é
++#     “ú•t•¶š—ñ‚ğˆÈ‰º‚Ì‚æ‚¤‚É‹­§‚µ‚Ü‚·B
++#     "us": Œ-“ú-”N
++#     "international": “ú-Œ-”N
++#     ƒfƒtƒHƒ‹ƒg‚Å‚Í"us"•û®‚ªg—p‚³‚ê‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: us
++#
++# —á:
++#
++#    datetime-format international
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: zserver-threads
++#
++# ŠT—v:
++#     Zope‚ÌZServer‚ªƒŠƒNƒGƒXƒg‚ğ‘Ò‚¿ó‚¯‚éƒXƒŒƒbƒh”‚ğİ’è‚µ‚Ü‚·B
++#     ƒfƒtƒHƒ‹ƒg’l‚Í4‚Å‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 4
++#
++# —á:
++#
++#    zserver-threads 10
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: python-check-interval
++#
++# ŠT—v:
++#     PythonƒCƒ“ƒ^ƒvƒŠƒ^‚Ìƒ`ƒFƒbƒNŠÔŠu‚ğ®”’l‚Åİ’è‚µ‚Ü‚·B‚±‚ÌŠÔŠu‚Í
++#     ƒCƒ“ƒ^ƒvƒŠƒ^‚ªƒXƒŒƒbƒhØ‚è‘Ö‚¦‚ÆƒVƒOƒiƒ‹ƒnƒ“ƒhƒ‰‚ğƒ`ƒFƒbƒN‚·‚é‚·‚é
++#     üŠú‚Å‚·BZope‚ÌƒfƒtƒHƒ‹ƒg‚Í500‚Å‚·‚ªAƒpƒtƒH[ƒ}ƒ“ƒX‚ğã‚°‚é‚½‚ß‚É
++#     ‚±‚ÌŠÔŠu‚ğ‘‚â‚·–‚ào—ˆ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 500
++#
++# —á:
++#
++#    python-check-interval 1000
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: zserver-read-only-mode
++#
++# ŠT—v:
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ğon‚É‚µ‚ÄAZope‚ªlogƒtƒ@ƒCƒ‹‚âpidƒtƒ@ƒCƒ‹‚ğì¬‚·‚é
++#     –‚ğ‹Ö~‚µ‚Ü‚·BƒAƒNƒZƒXƒƒO‚âƒCƒxƒ“ƒgƒƒO‚Í•W€o—Í‚É•\¦‚³‚ê‚Ü‚·B
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ªon‚Ìê‡Apcgi, fastcgi, ‚»‚µ‚Äƒf[ƒ‚ƒ“ŠÖ˜A‚Ì
++#     ƒfƒBƒŒƒNƒeƒBƒu‚Í–³Œø‚É‚È‚è‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: off
++#
++# —á:
++#
++#    zserver-read-only-mode on
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: pid-filename
++#
++# ŠT—v:
++#     Zope‚ÌƒvƒƒZƒXID‚ğ‘‚«‚Şƒtƒ@ƒCƒ‹‚Ö‚ÌƒpƒX‚Å‚·BƒfƒtƒHƒ‹ƒg‚Í
++#     CLIENT_HOME/Z2.pid ‚Å‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: CLIENT_HOME/Z2.pid
++#
++# —á:
++#
++#    pid-filename /home/chrism/projects/sessions/var/Z2.pid
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: lock-filename
++#
++# ŠT—v:
++#     Zope‚ª‹N“®’†‚Å‚ ‚é‚±‚Æ‚ğ¦‚·"lock file"‚Ö‚ÌƒpƒX‚Å‚·B‚±‚Ìƒtƒ@ƒCƒ‹‚Í
++#     Zope‚Ì‹N“®’†‚Ízopectl.py‚©‚çƒƒbƒN‚³‚ê‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í
++#     CLIENT_HOME/Z2.lock ‚Å‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: CLIENT_HOME/Z2.lock
++#
++# —á:
++#
++#    lock-filename /home/chrism/projects/sessions/var/Z2.lock
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: mime-types
++#
++# ŠT—v:
++#     Zope‚Émime.typesî•ñ‚ğ’Ç‰Á’è‹`‚µ‚Ü‚·BƒtƒH[ƒ}ƒbƒg‚Íƒtƒ@ƒCƒ‹‚ÍApache
++#     ‚Å’ñ‹Ÿ‚³‚ê‚émime.typesƒtƒ@ƒCƒ‹‚Æ“¯‚¶‚Å‚·B"mime-types"ƒfƒBƒŒƒNƒeƒBƒu
++#     ‚Í•K—v‚È‚¾‚¯•¡”‰ñ‹Lq‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B
++#
++# —á:
++#
++#     mime-types  $INSTANCE/etc/mime.types
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: structured-text-header-level
++#
++# ŠT—v:
++#     \‘¢‰»ƒeƒLƒXƒg(structured text)ƒhƒLƒ…ƒƒ“ƒg‚ÌHTMLƒwƒbƒ_ƒŒƒxƒ‹‚ÌŠJn’l
++#     ‚ğİ’è‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í3‚ÅAˆê”ÔÅ‰‚Ìƒwƒbƒ_‚Í<H3>‚É‚È‚è‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 3
++#
++# —á:
++#
++#    structured-text-header-level 1
++
++# ƒfƒBƒŒƒNƒeƒBƒu: rest-input-encoding
++#
++# ŠT—v:
++#    re-StructuredTextƒhƒLƒ…ƒƒ“ƒg‚Ì“ü—ÍƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ğİ’è‚µ‚Ü‚·B
++#    —á‚¦‚ÎA'utf-8', 'iso-8859-15' ‚ ‚é‚¢‚ÍPython‚ªg—p‚Å‚«‚é’l‚ğİ’è‚µ‚Ü‚·B
++#    ƒfƒtƒHƒ‹ƒg‚Íg—p‚µ‚Ä‚¢‚éPython‚ÌƒfƒtƒHƒ‹ƒgƒGƒ“ƒR[ƒfƒBƒ“ƒO‚Å‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ (ƒVƒXƒeƒ€‚Ì‹K’è’l‚ğg—p)
++#
++# —á:
++#
++#    rest-input-encoding utf-8
++
++# ƒfƒBƒŒƒNƒeƒBƒu: rest-output-encoding
++#
++# ŠT—v:
++#    re-StructuredTextƒhƒLƒ…ƒƒ“ƒg‚Ìo—ÍƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ğİ’è‚µ‚Ü‚·B
++#    —á‚¦‚ÎA'utf-8', 'iso-8859-15' ‚ ‚é‚¢‚ÍPython‚ªg—p‚Å‚«‚é’l‚ğİ’è‚µ‚Ü‚·B
++#    ƒfƒtƒHƒ‹ƒg‚Íg—p‚µ‚Ä‚¢‚éPython‚ÌƒfƒtƒHƒ‹ƒgƒGƒ“ƒR[ƒfƒBƒ“ƒO‚Å‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ (ƒVƒXƒeƒ€‚Ì‹K’è’l‚ğg—p)
++#
++# —á:
++#
++#    rest-output-encoding utf-8
++
++# ƒfƒBƒŒƒNƒeƒBƒu: rest-header-level
++#
++# ŠT—v:
++#     reStructuredTextƒhƒLƒ…ƒƒ“ƒg‚ÌHTMLƒwƒbƒ_ƒŒƒxƒ‹‚ÌŠJn’l‚ğİ’è‚µ‚Ü‚·B
++#     ƒfƒtƒHƒ‹ƒg‚Í3‚ÅAˆê”ÔÅ‰‚Ìƒwƒbƒ_‚Í<H3>‚É‚È‚è‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 3
++#
++# —á:
++#
++#    rest-header-level 2
++
++# ƒfƒBƒŒƒNƒeƒBƒu: rest-language-code 
++#
++# ŠT—v:
++#    docutilƒpƒbƒP[ƒW“à•”‚ÌFX‚È•ÏŠ·‚âADTDƒGƒŒƒƒ“ƒg‚Ìƒ}ƒbƒsƒ“ƒO‚Ég—p
++#    ‚³‚ê‚éŒ¾ŒêƒR[ƒh‚ğİ’è‚µ‚Ü‚·BƒTƒ|[ƒg‚³‚ê‚Ä‚¢‚éŒ¾ŒêƒR[ƒh‚É‚Â‚¢‚ÄA
++#    Ú‚µ‚­‚Í lib/python/docutils/languages/ ‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
++#
++# ƒfƒtƒHƒ‹ƒg’l: en
++#
++# —á:
++#
++#    rest-language-code de
++
++# ƒfƒBƒŒƒNƒeƒBƒu: cgi-environment
++#
++# ŠT—v:
++#     CGI—p‚ÌŠÂ‹«•Ï”‚Æ‚µ‚ÄAKey‚Ævalue‚ÌƒyƒA‚ğ’è‹`‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B
++#     ‚±‚ê‚ÍAZserver‚ª‘¼‚ÌWebƒT[ƒo[‚©‚çProxyƒŠƒNƒGƒXƒg‚ğó‚¯•t‚¯‚½‚¢ê‡
++#     ‚ÉAZserver‚ÌCGIŠÂ‹«•Ï”‚ğ‘¼‚ÌWebƒT[ƒo[‚É”½‰f‚µ‚½‚¢ê‡‚Ég—p‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++# <cgi-environment>
++#   HTTPS_SERVER Foobar Server 1.0
++#   HTTPS_PORT 443
++# </cgi-environment>
++
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: dns-server
++#
++# ŠT—v:
++#     Zope‚ÌƒAƒNƒZƒXƒƒO‚ÉIPƒAƒhƒŒƒX‚Å‚Í‚È‚­ƒzƒXƒg–¼‚ğ‹L˜^‚µ‚½‚¢ê‡‚ÉA
++#     DNSƒT[ƒo[‚ÌƒAƒhƒŒƒX‚ğİ’è‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍZope‚ÍIPƒAƒhƒŒƒX‚ğ
++#     ƒzƒXƒg–¼‚É‚Í•ÏŠ·‚µ‚Ü‚¹‚ñB
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    dns-server 127.0.0.1
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: ip-address
++#
++# ŠT—v:
++#     Zope‚ªƒŠƒNƒGƒXƒg‚ğó‚¯•t‚¯‚éƒfƒtƒHƒ‹ƒgIPƒAƒhƒŒƒX‚ğİ’è‚µ‚Ü‚·B‚±‚ê‚Í
++#     Zope‚ª’ñ‹Ÿ‚·‚é‘S‚Ä‚ÌƒT[ƒo[ƒvƒƒgƒRƒ‹‚Å‹¤’Ê‚Å‚·B‚±‚Ì’l‚ªİ’è‚³‚ê‚È‚¢
++#     ê‡AZope‚ÍOS‚ªƒTƒ|[ƒg‚µ‚Ä‚¢‚éIPƒAƒhƒŒƒX‘S‚Ä‚ÅƒŠƒNƒGƒXƒg‚ğó‚¯•t‚¯
++#     ‚Ü‚·B‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ÍŠeƒT[ƒoƒZƒNƒVƒ‡ƒ“‚Ì’l‚É‚æ‚Á‚Äã‘‚«‚·‚é‚±‚Æ
++#     ‚ª‚Å‚«‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    ip-address 127.0.0.1
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: http-realm
++#
++# ŠT—v:
++#     ‚±‚ÌZopeƒCƒ“ƒXƒ^ƒ“ƒX‚ªHTTP‚Ì"Realm"ƒwƒbƒ_‚Æ‚µ‚Äo—Í‚·‚é’l‚ğİ’è‚µ‚Ü‚·B
++#     ‚±‚Ì’l‚ÍBASIC”FØƒ_ƒCƒAƒƒO‚Å•\¦‚³‚ê‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: Zope
++#
++# —á:
++#
++#    http-realm Slipknot
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: cgi-maxlen
++#
++# ŠT—v:
++#     DoSUŒ‚‚ğ–h~‚·‚é‚½‚ß‚ÉAZope‚ªó‚¯•t‚¯‚éƒtƒH[ƒ€ƒf[ƒ^ƒTƒCƒY‚ÌãŒÀ
++#     ‚ğİ’è‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 0 (= §ŒÀ–³‚µ)
++#
++# —á:
++#
++#    cgi-maxlen 10000
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: http-header-max-length
++#
++# ŠT—v:
++#     HTTPƒŠƒNƒGƒXƒgƒwƒbƒ_‚ÌãŒÀ(byte)‚ğİ’è‚µ‚Ü‚·BãŒÀƒTƒCƒY‚ğ’´‚¦‚½
++#     ƒŠƒNƒGƒXƒg‚ÍDoSUŒ‚‚Æ‚İ‚È‚µA”jŠü‚³‚ê‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 8192
++#
++# —á:
++#
++#     http-header-max-length 16384
++
++# ƒfƒBƒŒƒNƒeƒBƒu: enable-ms-author-via
++#
++# ŠT—v:
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ğ'true'‚Éİ’è‚·‚é‚ÆAOPTIONS WebDAVƒŠƒNƒGƒXƒg
++#     ‚Ö‚ÌƒŒƒXƒ|ƒ“ƒX‚Å"MS-Author-Via"ƒwƒbƒ_[‚ª‘—M‚³‚ê‚Ü‚·B‰Šú‚Ì
++#     Microsoft Web Folder ‚â Microsoft Office ‚ªWebDAVŒo—R‚ÅZope‚ÉÚ‘±
++#     o—ˆ‚é‚æ‚¤‚É‚·‚é‚½‚ß‚É‚ÍA‚±‚Ìƒwƒbƒ_[‚ª•K—v‚Å‚·B
++#
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ÍƒfƒtƒHƒ‹ƒg‚Å‚Í–³Œø‚É‚È‚Á‚Ä‚¢‚Ü‚·: ‚±‚Ìİ’è‚Í
++#     ‘½‚­‚Ì•W€“I‚ÈWebDAVÀ‘•‚É‚Æ‚Á‚Ä—Ç‚¢‚±‚Æ‚ª–³‚¢‚µA‚à‚µƒ†[ƒU[‚ª
++#     ‚»‚Ìƒtƒ@ƒCƒ‹‚ğ•ÒW‚·‚é‚±‚Æ‚ğ‹–‰Â‚³‚ê‚Ä‚¢‚È‚­‚ÄAƒ_ƒEƒ“ƒ[ƒh‚µ‚Ä
++#     ‚¢‚é‚¾‚¯‚Å‚ ‚Á‚Ä‚àAMicrosoft Office‚ÍWebDAVŒo—R‚ÅZope‚ÉŠi”[‚³‚ê
++#     ‚½Officeƒtƒ@ƒCƒ‹‚ğ•ÒW‚µ‚Ä‚¢‚é‚©‚Ì‚æ‚¤‚ÉŒ©‚¹‚©‚¯‚é‚½‚ß‚Å‚·B
++#
++#     ‚±‚ê‚É‚Â‚¢‚ÄÚ‚µ‚­‚ÍˆÈ‰º‚Ìcollector‚ÌƒGƒ“ƒgƒŠ‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢:
++#     http://www.zope.org/Collectors/Zope/1441
++#
++#     2005”N1ŒˆÈ~‚ÉXV‚³‚ê‚½Å‹ß‚Ìƒo[ƒWƒ‡ƒ“‚Ì Microsoft Web Folder
++#     ‚ÍA‚±‚Ìƒwƒbƒ_[‚ğ•K—v‚Æ‚Í‚µ‚Ä‚¨‚ç‚¸A‚»‚Ì‘ã‚í‚è‚É"Public"ƒwƒbƒ_
++#     [‚ªOPTIONS WebDAVƒŠƒNƒGƒXƒg‚Ì‰“š‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚é•K—v‚ª‚ ‚è‚Ü‚·B
++#     (http://www.redmountainsw.com/wordpress/archives/webfolders-zope)
++# 
++#     Å‹ß‚ÌMicrosoft Web FolderÀ‘•‚ğ“üè‚·‚é‚É‚ÍAMicrosoft KB ‚Ì‹L–
++#     907306‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
++#     (Software Update for Web Folders: May 18, 2007).
++#
++# ƒfƒtƒHƒ‹ƒg: off
++#
++# —á:
++#
++#    enable-ms-author-via on
++
++# ƒfƒBƒŒƒNƒeƒBƒu: enable-ms-public-header
++#
++# ŠT—v:
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ğ'true'‚Éİ’è‚·‚é‚ÆAOPTIONS WebDAVƒŠƒNƒGƒXƒg
++#     ‚Ö‚ÌƒŒƒXƒ|ƒ“ƒX‚Å"Public"ƒwƒbƒ_[‚ª‘—M‚³‚ê‚Ü‚·B
++#
++#     Å‹ß‚ÌWebDAV‚Ì‘ˆÄ‚Å‚Í‚±‚Ìƒwƒbƒ_[‚É‚Â‚¢‚ÄŒ¾‹y‚µ‚Ä‚¢‚Ü‚·‚ªAƒIƒŠ
++#     ƒWƒiƒ‹‚ÌWebDAV RFC‚Å‚Í‹KŠi‚Ìˆê•”‚Æ‚µ‚ÄŒ¾‹y‚µ‚Ä‚¢‚Ü‚¹‚ñB‚²‚­­”
++#     ‚ÌWebƒT[ƒo[(IIS‚ÆNetscape Enterprise 3.6 ‚È‚Ç)‚ª‚±‚Ìƒwƒbƒ_[‚ğ
++#     ‰“š‚ÉŠÜ‚ß‚Ä‚¢‚Ü‚·B
++#
++#     ‘½‚­‚Ì—Ç‚¢è–@‚ª‘‚©‚ê‚Ä‚¢‚é"Mask Your Web Server For Enhanced 
++#     Security"‚Æ‚¢‚¤ƒ^ƒCƒgƒ‹‚ÌƒhƒLƒ…ƒƒ“ƒg‚Å‚ÍA‚±‚Ìƒwƒbƒ_[‚Ío—Í‚µ
++#     ‚È‚¢‚±‚Æ‚ğŠ©‚ß‚Ä‚¢‚é‚±‚Æ‚à‚ ‚èAƒfƒtƒHƒ‹ƒg‚Å‚Íoff‚Å‚·Bˆ«ˆÓ‚ ‚é
++#     lX‚Í‚±‚Ìƒwƒbƒ_[‚ª‚ ‚é‚©‚Ç‚¤‚©‚ÅIIS Web Server‚©‚Ç‚¤‚©‚ğ”»•Ê‚µA
++#     ‚ ‚È‚½‚ÌƒTƒCƒg‚ÉƒAƒ^ƒbƒN‚µ‚æ‚¤‚Æ‚·‚é‚©‚à‚µ‚ê‚Ü‚¹‚ñB‚±‚Ì‚½‚ßA
++#     İ’è‚ğon‚É‚·‚éê‡‚Í\•ª’ˆÓ‚µ‚Ä‚­‚¾‚³‚¢B
++#
++#     2005”N1ŒˆÈ~‚ÉXV‚³‚ê‚½Å‹ß‚Ìƒo[ƒWƒ‡ƒ“‚Ì Microsoft Web Folder
++#     ‚ÍA‚±‚Ìƒwƒbƒ_[‚ªOPTIONS WebDAVƒŠƒNƒGƒXƒg‚Ì‰“š‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚é
++#     ‚±‚Æ‚ğ *•K—v* ‚Æ‚µ‚Ä‚¢‚Ü‚·B
++#     (http://www.redmountainsw.com/wordpress/archives/webfolders-zope)
++#
++#     Å‹ß‚ÌMicrosoft Web FolderÀ‘•‚ğ“üè‚·‚é‚É‚ÍAMicrosoft KB ‚Ì‹L–
++#     907306‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
++#     (Software Update for Web Folders: May 18, 2007).
++#
++# ƒfƒtƒHƒ‹ƒg: off
++#
++# —á:
++#
++#    enable-ms-public-header on
++
++# ƒfƒBƒŒƒNƒeƒBƒu: automatically-quote-dtml-request-data
++#
++# ŠT—v:
++#     <dtml-var>‚È‚Ç‚ÅREQUESTƒf[ƒ^‚©‚çæ“¾‚µ‚½•¶š—ñ‚ÉŠÜ‚Ü‚ê‚é'<'•¶š‚Ì
++#     ©“®ƒNƒH[ƒg‹@”\‚ğ–³Œø‚É‚·‚éê‡A‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ğoff‚É‚µ‚Ä‚­‚¾‚³‚¢B
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ªon‚Ìê‡A<dtml-var>‚â&dtml-‚ÅREQUEST‚©‚çƒf[ƒ^
++#     ‚ğæ“¾‚·‚éê‡‚ÉAƒf[ƒ^‚ÉŠÜ‚Ü‚ê‚é'<'‚ªHTMLƒNƒH[ƒg‚³‚ê‚Ü‚·
++#    iREQUEST.somevarname ‚È‚Ç‚Ì’¼ÚƒAƒNƒZƒX‚Í‘ÎÛŠO‚Å‚·jB‚±‚ê‚ÍDTML
++#     ƒvƒƒOƒ‰ƒ}‚ğ"client-side trojan"UŒ‚‚©‚ço—ˆ‚é‚¾‚¯•ÛŒì‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: on
++#
++# —á:
++#
++#    automatically-quote-dtml-request-data on
++
++# ƒfƒBƒŒƒNƒeƒBƒu: trusted-proxy
++#
++# ŠT—v:
++#     ˆê‚Â‚ ‚é‚¢‚Í•¡”‚ÌM—Š‚Å‚«‚éProxy‚ğƒzƒXƒg–¼‚©IPƒAƒhƒŒƒX‚Åİ’è‚µ‚Ü‚·B
++#     ‚±‚ê‚ç‚Ì’è‹`‚É‚æ‚Á‚ÄM—Š‚³‚ê‚½ƒtƒƒ“ƒgƒGƒ“ƒh‚ÌProxy‚©‚ç‚ÌƒAƒNƒZƒX‚Í
++#     Zope‚ÌX-Forwarded-Forƒwƒbƒ_‚Å’ñ‹Ÿ‚³‚ê‚Ü‚·BM—Š‚³‚ê‚éProxy‚©‚çÚ‘±
++#     ‚ª‚ ‚Á‚½ê‡AZope‚ÍX-Forwardedƒwƒbƒ_‚ğM—Š‚µAÚ‘±Œ³ƒ†[ƒU[‚ÌIP
++#     ƒAƒhƒŒƒX‚ğƒAƒhƒŒƒX‚É‚æ‚é”FØ‚Ég—p‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    trusted-proxy www.example.com
++#    trusted-proxy 192.168.1.1
++
++# ƒfƒBƒŒƒNƒeƒBƒu: publisher-profile-file
++#
++# ŠT—v:
++#    ƒtƒ@ƒCƒ‹ƒVƒXƒeƒ€ã‚Ìƒtƒ@ƒCƒ‹–¼‚ğ(•¡”‰Â)’è‹`‚·‚é‚±‚Æ‚ÅAZope‚ªg—p
++#    ‚µ‚Ä‚¢‚éPython‚Ìƒvƒƒtƒ@ƒCƒŠƒ“ƒO‹@”\‚ª—LŒø‚É‚È‚è‚Ü‚·BÚ‚µ‚­‚ÍAZMI
++#    ‚ÌControl_Panel‚©‚çDebug Information‚ÌProfilingƒ^ƒu‚ğQÆ‚µ‚Ä‚­‚¾‚³
++#    ‚¢B
++#    d—v: ‚±‚Ìİ’è‚ÍZope‚ÌÀs‘¬“x‚ğ’˜‚µ‚­’á‰º‚³‚¹‚Ü‚·BƒŠƒŠ[ƒX‚É‚Í
++#    –³Œø‚É‚·‚é–‚ğŠ©‚ß‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    publisher-profile-file $INSTANCE/var/profile.dat
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: security-policy-implementation
++#
++# ŠT—v:
++#     Zope‚Ì•W€ƒZƒLƒ…ƒŠƒeƒB[‹@\‚ÍCŒ¾Œê‚ÅÀ‘•‚³‚ê‚Ä‚¢‚Ü‚·B‚±‚ÌƒfƒBƒŒƒN
++#     ƒeƒBƒu‚ğ"python"‚Éİ’è‚·‚é‚ÆAPython‚ÅÀ‘•‚³‚ê‚½ƒZƒLƒ…ƒŠƒeƒB[‹@\
++#     ‚ğg—p‚µ‚Ü‚·Bˆ—‘¬“x‚ª’á‰º‚·‚é‰e‹¿‚ªo‚Ü‚·‚ªAƒfƒoƒbƒO‚É—L—p‚Å
++#     ‚·B"verbose-security"‚É‚Â‚¢‚Ä‚àQÆ‚µ‚Ä‚­‚¾‚³‚¢B
++#
++# ƒfƒtƒHƒ‹ƒg’l: C
++#
++# —á:
++#
++#    security-policy-implementation python
++
++# ƒfƒBƒŒƒNƒeƒBƒu: skip-authentication-checking
++#
++# ŠT—v:
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ğon‚É‚·‚é‚ÆAZope‚Í”FØŠÖ˜A‚ÌŠm”F‚ğs‚í‚È‚­‚È‚èA
++#     ƒT[ƒo[‚Í–³”FØ‚ÅƒAƒNƒZƒX‚Å‚«‚éƒRƒ“ƒeƒ“ƒc‚Ì‚İ‚ğ’ñ‹Ÿ‚µ‚Ü‚·B
++#     ‚±‚Ì‹@”\‚Ísecurity-policy-implementation‚ª'C'‚Éİ’è‚³‚ê‚Ä‚¢‚éê‡‚Ì‚İ
++#     ‹@”\‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: off
++#
++# —á:
++#
++#    skip-authentication-checking on
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: skip-ownership-checking
++#
++# ŠT—v:
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ğon‚É‚·‚é‚ÆAƒuƒ‰ƒEƒU‚©‚ç‚ÌƒR[ƒhÀs‚És‚í‚ê‚é
++#     Zope‚ÌŠ—LŒ ŒÀŠm”Fˆ—‚ğ–³Œø‚É‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Å‚ÍAon‚Éİ’è‚µA
++#     ’á‚¢Œ ŒÀ‚Ìƒ†[ƒU[‚ªŒ ŒÀ‚Ì‚‚¢ƒ†[ƒU[‚ÉŠëŒ¯‚Èˆ—‚ğÀs‚³‚¹‚é‚±‚Æ‚ª
++#     o—ˆ‚éA‚Æ‚¢‚Á‚½'trojan horse'‚È‚Ç‚ÌƒZƒLƒ…ƒŠƒeƒB[‚Ì–â‘è‚ª‹N‚±‚ç‚È‚¢
++#     ‚æ‚¤‚É‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: off
++#
++# —á:
++#
++#    skip-ownership-checking on
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: verbose-security
++#
++# ŠT—v:
++#     ƒfƒtƒHƒ‹ƒg‚Å‚ÍAZope‚Í”FØ‚É¸”s‚µ‚½ê‡‚ÉAˆê”Ê‚É•s—v‚Èî•ñ‚ğ‰B•Á‚·‚é
++#     ‚½‚ßŠÈŒ‰‚Èî•ñ‚ğo—Í‚µ‚Ü‚·B‚±‚Ìİ’è‚ÅA”FØ¸”s‚É‘½‚­‚Ìî•ñ‚ğo—Í
++#     ‚·‚é‚æ‚¤‚ÉZope‚ÌƒZƒLƒ…ƒŠƒeƒB[ƒ|ƒŠƒV[‚ğ•ÏX‚µ‚Ü‚·B‚±‚ê‚ÍƒfƒoƒbƒO—p“r
++#     ‚É’ñ‹Ÿ‚³‚ê‚Ä‚¢‚Ü‚·B‚±‚Ìİ’è‚ğs‚¤ê‡‚Í'security-policy-implementation'
++#     ‚ğ'python'‚Éİ’è‚µ‚Ä‚­‚¾‚³‚¢B
++#
++# ƒfƒtƒHƒ‹ƒg’l: off
++#
++# —á:
++#
++#    security-policy-implementation python
++#    verbose-security on
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: maximum-number-of-session-objects
++#
++# ŠT—v:
++#     ˆêƒIƒuƒWƒFƒNƒg‚ğŠi”[‚·‚é'/temp_folder/session_data'‚ÌÅ‘åŠi”[”‚ğ
++#     ®”’l‚Åİ’è‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 1000
++#
++# —á:
++#
++#    maximum-number-of-session-objects 10000
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: session-add-notify-script-path
++#
++# ŠT—v:
++#     ‹N“®‚Éì¬‚³‚ê‚½ /temp_folder ‚Ì’†‚É‚ ‚éƒZƒbƒVƒ‡ƒ“ƒf[ƒ^ˆêƒIƒu
++#     ƒWƒFƒNƒgƒRƒ“ƒeƒi‚Ì‚½‚ß‚ÌuƒIƒuƒWƒFƒNƒg‚ª’Ç‰Á‚³‚ê‚½‚Æ‚«‚ÉŒÄ‚Î‚ê‚é
++#     ƒXƒNƒŠƒvƒgv‚Ö‚ÌZope ã‚Å‚Ìƒtƒ‹ƒpƒX‚ğw’è‚µ‚Ü‚·(ƒIƒvƒVƒ‡ƒ“)
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    session-add-notify-script-path /scripts/add_notifier
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: session-delete-notify-script-path
++#
++# ŠT—v:
++#     ‹N“®‚Éì¬‚³‚ê‚½ /temp_folder ‚Ì’†‚É‚ ‚éƒZƒbƒVƒ‡ƒ“ƒf[ƒ^ˆêƒIƒu
++#     ƒWƒFƒNƒgƒRƒ“ƒeƒi‚Ì‚½‚ß‚ÌuƒIƒuƒWƒFƒNƒg‚ªíœ‚³‚ê‚½‚Æ‚«‚ÉŒÄ‚Î‚ê‚é
++#     ƒXƒNƒŠƒvƒgv‚Ö‚ÌZopeã‚Å‚Ìƒtƒ‹ƒpƒX‚ğw’è‚µ‚Ü‚·(ƒIƒvƒVƒ‡ƒ“)
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    session-delete-notify-script-path /scripts/del_notifier
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: session-timeout-minutes
++#
++# ŠT—v:
++#     '/temp_folder/session_data'ˆêƒIƒuƒWƒFƒNƒgƒRƒ“ƒeƒi‚Ìƒf[ƒ^ƒIƒuƒWƒF
++#     ƒNƒg‚ª–³Œø‚É‚È‚é‚Ü‚Å‚ÌŠÔ(•ª)‚ğ®”’l‚Åw’è‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 20
++#
++# —á:
++#
++#    session-timeout-minutes 30
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: session-resolution-seconds
++#
++# ŠT—v:
++#     '/temp_folder/session_data'ˆêƒIƒuƒWƒFƒNƒgƒRƒ“ƒeƒi‚ÌŠÔŒv‘ªŠÔŠu(•b)
++#     ‚ğ®”’l‚Åw’è‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 20
++#
++# —á:
++#
++#    session-resolution-seconds 60
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: suppress-all-access-rules
++#
++# ŠT—v:
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ğon‚Éİ’è‚·‚é‚ÆAZopeã‚Ì'access rule'‚ª–³Œø‚É
++#     ‚È‚è‚Ü‚·B‚à‚µAaccess rule‚Ìİ’è‚É¸”s‚µ‚Ä©•ª©g‚ªƒAƒNƒZƒX‚Å‚«
++#     ‚È‚­‚È‚Á‚Ä‚µ‚Ü‚Á‚½ê‡‚Ég—p‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: off
++#
++# —á:
++#
++#    suppress-all-access-rules on
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: suppress-all-site-roots
++#
++# ŠT—v:
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ğon‚Éİ’è‚·‚é‚ÆAZopeã‚Ì'site root'‚ª–³Œø‚É
++#     ‚È‚è‚Ü‚·B‚à‚µAaccess rule‚Ìİ’è‚É¸”s‚µ‚Ä©•ª©g‚ªƒAƒNƒZƒX‚Å‚«
++#     ‚È‚­‚È‚Á‚Ä‚µ‚Ü‚Á‚½ê‡‚Ég—p‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: off
++#
++# —á:
++#
++#    suppress-all-site-roots on
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: database-quota-size
++#
++# ŠT—v:
++#     ‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu‚ğİ’è‚µ‚ÄAZope‚ÌFileStorageƒf[ƒ^ƒx[ƒX‚ÌÅ‘å—e—Ê
++#     ‚ğ§ŒÀ‚µ‚Ü‚·B’l‚Í®”‚ÅByte’l‚ğİ’è‚µ‚Ü‚·BãŒÀ‚É’B‚µ‚½ê‡Aƒf[ƒ^
++#     ƒx[ƒX‚Ö‚Ì’Ç‰Á‚ğs‚¤‚±‚Æ‚Ío—ˆ‚È‚­‚È‚è‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    database-quota-size 1000000
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: zeo-client-name
++#
++# ŠT—v:
++#     ‚à‚µAZEOƒNƒ‰ƒCƒAƒ“ƒg‚ÌƒLƒƒƒbƒVƒ…‚ğƒNƒ‰ƒCƒAƒ“ƒgÄ‹N“®‚É•Û‚µ‚½‚¢
++#     ‚Ì‚Å‚ ‚ê‚ÎAzeo-client-name‚ğ’è‹`‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B‚±‚ÌƒfƒBƒŒƒNƒeƒBƒu
++#     ‚ğİ’è‚¹‚¸‚ÉZEO‚ğg—p‚µ‚½ê‡AƒNƒ‰ƒCƒAƒ“ƒg‚ªƒVƒƒƒbƒgƒ_ƒEƒ“‚³‚ê‚éÛ
++#     ‚Éˆêƒtƒ@ƒCƒ‹‚É•Û‘¶‚³‚ê‚½ƒNƒ‰ƒCƒAƒ“ƒg‚ÌƒLƒƒƒbƒVƒ…‚Ííœ‚³‚ê‚Ü‚·B
++#     zeo-client-nameƒfƒBƒŒƒNƒeƒBƒu‚Ì’l‚Íd•¡‚µ‚È‚¢–¼‘O‚Æ‚µ‚Äƒ[ƒJƒ‹
++#     ƒLƒƒƒbƒVƒ…ƒtƒ@ƒCƒ‹ì¬‚Ég—p‚³‚ê‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    zeo-client-name zeo1
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: logger
++#
++# ŠT—v:
++#     ‚±‚ÌƒGƒŠƒA‚É‚Íˆê‚ÂˆÈã‚Ì"logger"ƒZƒNƒVƒ‡ƒ“‚ğ’u‚«AŠeƒZƒNƒVƒ‡ƒ“–¼‚Í
++#     "access", "event", "trace" ‚Æ‚È‚è‚Ü‚·B"access"‚ÍZope‚Ö‚ÌƒAƒNƒZƒXƒƒO
++#     ‚ğ‹L˜^‚µ‚Ü‚·B"event"‚ÍZope‚ÌƒCƒxƒ“ƒgî•ñ‚ğ‹L˜^‚µ‚Ü‚·B"trace"‚Í
++#     REQUEST‚ÌÚ×‚ğ‹L˜^‚µ‚Ü‚·(ƒfƒoƒbƒO‚Ì‚İ‚Ì—˜—p‚ğ„§)BŠelogger
++#     ƒZƒNƒVƒ‡ƒ“‚É‚Í"level"‚Æ‚»‚Ì’l‚ğ‚¿A‚±‚ÌƒŒƒxƒ‹‚ÍƒƒO•Û‘¶‚ÌÚ×“x
++#     ‚ğ•\‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Å‚Ílevel‚ÍINFO‚Éİ’è‚³‚ê‚Ü‚·Blevel‚É‚ÍA
++#     "CRITICAL", 'ERROR", WARN", "INFO", "DEBUG", "ALL" ‚ğw’è‚Å‚«‚Ü‚·B
++#     ŠeloggerƒZƒNƒVƒ‡ƒ“‚É‚Íˆê‚ÂˆÈã‚Ì"handler"ƒZƒNƒVƒ‡ƒ“‚ğ’Ç‰Á‚·‚é‚±‚Æ‚ª
++#     ‚Å‚«A‚±‚ÌƒZƒNƒVƒ‡ƒ“‚ÅƒƒOæ“¾‚É—˜—p‚³‚ê‚éƒƒOƒnƒ“ƒhƒ‰‚Ìí•Ê‚ğ
++#     ’è‹`‚µ‚Ü‚·BƒƒOƒnƒ“ƒhƒ‰‚Í5í—Ş—L‚èAlogfile, syslog, win32-eventlog
++#     http-handler, email-notifier‚ª‚ ‚è‚Ü‚·BŠeƒnƒ“ƒhƒ‰‚Íƒnƒ“ƒhƒ‰‚Ì“®ì‚ğ
++#     Œˆ’è‚·‚é’è‹`‚ğ‹Lq‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B‘S‚Ä‚Ìƒnƒ“ƒhƒ‰ƒZƒNƒVƒ‡ƒ“‚É‚Í
++#     "format"(ƒƒOƒƒbƒZ[ƒW‘®)E"dateformat"(ƒƒOƒƒbƒZ[ƒW“ú•t‘®)E
++#     "level"‚ğ’è‹`‚·‚é‚±‚Æ‚ª‚Å‚«A"level"‚ÍãˆÊ‚ÌƒZƒNƒVƒ‡ƒ“‚Å’è‹`‚µ‚½
++#     "level"‚ğ‚»‚Ìƒnƒ“ƒhƒ‰ŒÅ—L‚Ì’l‚Éã‘‚«‚µ‚Ü‚·B
++#     [XXXX ‚±‚±‚É‚à‚¤‚·‚±‚µÚ×‚É‘‚­‚±‚Æ]
++#
++# ƒfƒtƒHƒ‹ƒg’l:
++#
++#     ƒAƒNƒZƒXƒƒO‚Í<instancehome>/log/Z2.logƒtƒ@ƒCƒ‹‚ÉINFOƒŒƒxƒ‹‚Å‹L˜^‚³‚ê
++#     ‚Ü‚·BƒCƒxƒ“ƒgƒƒO‚Í<instancehome>/log/event.logƒtƒ@ƒCƒ‹‚ÉINFOƒŒƒxƒ‹
++#     ‚Å‹L˜^‚³‚ê‚Ü‚·BtraceƒƒO‚Í‹L˜^‚³‚ê‚Ü‚¹‚ñB
++
++<eventlog>
++  level info
++  <logfile>
++    path $INSTANCE/log/event.log
++    level info
++  </logfile>
++</eventlog>
++
++<logger access>
++  level WARN
++  <logfile>
++    path $INSTANCE/log/Z2.log
++    format %(message)s
++  </logfile>
++</logger>
++
++# <logger trace>
++#   level WARN
++#   <logfile>
++#     path $INSTANCE/log/trace.log
++#     format %(message)s
++#   </logfile>
++# </logger>
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: conflict-error-log-level
++#
++# ŠT—v:
++#     ƒRƒ“ƒtƒŠƒNƒgƒGƒ‰[‚ÌƒƒOƒŒƒxƒ‹‚ğ’è‹`‚µ‚Ü‚·B‚²‚­­””­¶‚·‚é
++#     ƒRƒ“ƒtƒŠƒNƒgƒGƒ‰[‚ÍAZope‚ÌŠyŠÏ“I‹£‡‰ğŒˆƒAƒ‹ƒSƒŠƒYƒ€‚É‚æ‚èX”­¶
++#     ‚µ‚Ü‚·B‚»‚ê‚ç‚Í©“®“I‚É”‰ñÄs‚³‚ê‚é‚½‚ßA•’Ê‚Íƒ†[ƒU[‚©‚ç‚Í
++#     ŠÖ’m‚³‚ê‚Ü‚¹‚ñB‚±‚ê‚ğƒƒO‚É‹L˜^‚µ‚½‚­‚È‚¢ê‡‚Í'notset'‚ğİ’è‚µ‚Ä
++#     ‚­‚¾‚³‚¢B‚ ‚é‚¢‚Í—v–]‚É‰‚¶‚Ä‘¼‚ÌƒŒƒxƒ‹‚ğİ’è‚µ‚Ä‚à‚©‚Ü‚¢‚Ü‚¹‚ñB
++#
++# ƒfƒtƒHƒ‹ƒg’l: info
++#
++# —á:
++#
++#    conflict-error-log-level blather
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: max-conflict-retries
++#
++# ŠT—v:
++#     ƒf[ƒ^ƒx[ƒX‚Ì‘‚«‚İ‹£‡‚ª”­¶‚µ‚½Û‚É1ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“’†‚É
++#     ‰½‰ñ‚Ü‚ÅƒŠƒgƒ‰ƒC‚ğs‚¤‚©‚ğw’è‚µ‚Ü‚·B‚±‚Ì–â‘è‚ÍZEOƒT[ƒo[‚ğ
++#     g—p‚µ‚Ä‚¢‚ÄA‚©‚Â‚©‚È‚è‚Ì”‚Ì“¯‘‚«‚İ‚ªs‚í‚ê‚½ê‡‚É–â‘è
++#     ‚É‚È‚è‚¦‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 3
++#
++# —á:
++#
++#    max-conflict-retries 10
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: warnfilter
++#
++# ŠT—v:
++#     ‚±‚ÌƒZƒNƒVƒ‡ƒ“‚É‚ÍŒxƒtƒBƒ‹ƒ^‚ğ’è‹`‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·BˆÈ‰º‚ÌƒL[
++#     ‚ğ‚±‚ÌƒZƒNƒVƒ‡ƒ“‚É’è‹`‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·:
++#
++#      action:  ‚±‚ÌƒL[‚É‘±‚¯‚ÄˆÈ‰º‚Ì•¶š—ñ‚ğw’èo—ˆ‚Ü‚·:
++#
++#           "error"   ˆê’v‚·‚éŒx”­¶‚É—áŠO‚ğ‹N‚±‚µ‚Ü‚·
++#           "ignore"  ˆê’v‚·‚éŒx‚ğˆêØ•\¦‚µ‚Ü‚¹‚ñ
++#           "always"  ˆê’v‚·‚éŒx‚ğí‚É•\¦‚µ‚Ü‚·
++#           "default" Œx‚ª”­¶‚µ‚½ê‡A‚»‚ê‚¼‚ê‚Ì”­¶êŠ‚É‚Â‚¢‚ÄÅ‰‚Ì
++#                     ˆê‰ñ‚¾‚¯•\¦‚µ‚Ü‚·
++#           "module"  Œx‚ª”­¶‚µ‚½ê‡A‚»‚ê‚¼‚ê‚Ìƒ‚ƒWƒ…[ƒ‹‚É‚Â‚¢‚ÄÅ‰
++#                     ‚Ìˆê‰ñ‚¾‚¯•\¦‚µ‚Ü‚·B
++#           "once"    ˆê’v‚·‚éŒx”­¶‚ÉA”­¶‰ÓŠ‚É‚©‚©‚í‚ç‚¸Å‰‚Ìˆê‰ñ
++#                     ‚Ì‚İ•\¦‚µ‚Ü‚·B
++#
++#      message:  ³‹K•\Œ»•¶š—ñ‚Åˆê’v‚³‚¹‚½‚¢ŒxƒƒbƒZ[ƒW‚ğw’è‚µ‚Ü‚·B
++#                (³‹K•\Œ»•¶š—ñ‚Í‘å•¶š¬•¶š‚ğ‹æ•Ê‚µ‚Ü‚¹‚ñ)
++#
++#      category: Python‚Ìƒhƒbƒg‹æØ‚è•\Œ»‚ÅƒNƒ‰ƒX–¼‚ğw’è‚µ‚Ü‚·BƒNƒ‰ƒX–¼‚Í
++#                WarningƒNƒ‰ƒX‚ÌƒTƒuƒNƒ‰ƒX‚Å‚ ‚é•K—v‚ª‚ ‚è‚Ü‚·B‚±‚ÌƒNƒ‰ƒX‚Æ
++#                ˆê’v‚·‚éŒx‚ª‘ÎÛ‚Æ‚È‚è‚Ü‚·B
++#
++#      module:   ³‹K•\Œ»•¶š—ñ‚Åˆê’v‚³‚¹‚½‚¢ƒ‚ƒWƒ…[ƒ‹–¼‚ğw’è‚µ‚Ü‚·B
++#                (³‹K•\Œ»•¶š—ñ‚Í‘å•¶š¬•¶š‚ğ‹æ•Ê‚µ‚Ü‚¹‚ñ)
++#
++#      lineno:   ‘ÎÛ‚Æ‚È‚éŒx‚ª”­¶‚·‚és”Ô†‚ğ®”’l‚Åİ’è‚µ‚Ü‚·B
++#                0‚ğw’è‚·‚é‚Æ‘S‚Ä‚Ìs‚ª‘ÎÛ‚Æ‚È‚è‚Ü‚·B
++#
++#     ‘S‚Ä‚ÌƒL[‚Í‚±‚ÌƒZƒNƒVƒ‡ƒ““à‚Å•K{€–Ú‚Å‚Í‚ ‚è‚Ü‚¹‚ñB‚Ü‚½Aˆê‚ÂˆÈã
++#     •¡”‚ÌwarnfilterƒZƒNƒVƒ‡ƒ“‚ğ’è‹`‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ
++#
++# —á:
++#
++#    <warnfilter>
++#       action ignore
++#       category exceptions.DeprecationWarning
++#    </warnfilter>
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: max-listen-sockets
++#
++# ŠT—v:
++#     ZServer‚ªÚ‘±‘Ò‚¿‚Ég—p‚·‚éƒ\ƒPƒbƒg‚ÌÅ‘å”‚ğİ’è‚µ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 1000
++#
++# —á:
++#
++#    max-listen-sockets 500
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: port-base
++#
++# ŠT—v:
++#     ZServer‚ªg—p‚·‚éport”Ô†’è‹`‚ÌƒIƒtƒZƒbƒg’l‚ğİ’è‚µ‚Ü‚·B—á‚¦‚ÎA
++#     http-serverƒ|[ƒg‚ğ8080‚Éİ’è‚µ‚ÄAport-base‚ğ1000‚Éİ’è‚µ‚½ê‡A
++#     HTTPƒT[ƒo[‚Í9080ƒ|[ƒg‚ğ‘Ò‚¿ó‚¯‚Ég—p‚µ‚Ü‚·B‚±‚Ìİ’è‚ğg—p‚µ‚Ä
++#     ZopeƒT[ƒo[ƒvƒƒZƒX‚ªg—p‚·‚é•¡”‚Ìƒ|[ƒg”Ô†‚ğˆê“x‚ÉŠÈ’P‚É•ÏX‚·‚é
++#     –‚ªo—ˆ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l:
++#
++#     0
++#
++# —á:
++#
++#     port-base 1000
++
++
++# ƒfƒBƒŒƒNƒeƒBƒu: large-file-threshold
++#
++# ŠT—v:
++#     İ’è‚µ‚½ƒTƒCƒYˆÈã‚ÌƒŠƒNƒGƒXƒg‚Íƒƒ‚ƒŠ‚Å‚Í‚È‚­ˆêƒtƒ@ƒCƒ‹‚É•Û‘¶‚µ
++#     ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: 512K
++#
++# —á:
++#
++#    large-file-threshold 1Mb
++
++# ƒfƒBƒŒƒNƒeƒBƒu: default-zpublisher-encoding
++#
++# ŠT—v:
++#     ‚±‚ÌƒRƒ“ƒgƒ[ƒ‹‚ÅAZPublisher‚ªUnicode‚ğƒGƒ“ƒR[ƒh‚·‚é•û–@‚ğİ’è‚µ
++#     ‚Ü‚·B
++#
++# ƒfƒtƒHƒ‹ƒg’l: iso-8859-15
++#
++# —á:
++#
++#    default-zpublisher-encoding utf-8
++
++# ƒfƒBƒŒƒNƒeƒBƒu: servers
++#
++# ŠT—v:
++#     ‚±‚±‚Åà–¾‚·‚éˆê˜A‚ÌƒZƒNƒVƒ‡ƒ“‚ÍZope‚ª’ñ‹Ÿ‚·‚é‚¢‚­‚Â‚©‚ÌZServer‚É
++#     ‚Â‚¢‚Ä’è‹`‚µ‚Ü‚·BˆÈ‰º‚Ì8‚Â‚ÌˆÙ‚È‚éƒT[ƒo[ƒ^ƒCƒv‚ğ’è‹`‚·‚é‚±‚Æ‚ªo
++#     —ˆ‚Ü‚·: http-server, ftp-server, webdav-source-server, persistent-cgi,
++#     fast-cgi, monitor-server, icp-server, clock-server. ‚à‚µA‚Ç‚ÌƒT[ƒo[
++#     ‚à’è‹`‚³‚ê‚È‚©‚Á‚½ê‡AƒfƒtƒHƒ‹ƒg‚ÌƒT[ƒo[’è‹`‚ªg—p‚³‚ê‚Ü‚·B
++#
++#     g—p‚³‚ê‚éƒ|[ƒg‚Ì’è‹`‚Í'address'ƒfƒBƒŒƒNƒeƒBƒu‚Ås‚í‚êAÅ‚àŠÈ’P‚È
++#     ‹Lq‚Íƒ|[ƒg”Ô†‚ğ 80 “™‚Æ‹Lq‚µA•¡G‚È‹Lq‚Æ‚µ‚Ä‚ÍƒzƒXƒg–¼‚İ‚Å
++#     127.0.0.1:80 “™‚Æ‹Lq‚µ‚Ü‚·BƒzƒXƒg–¼‚ªÈ—ª‚³‚ê‚½ê‡‚ÍAƒfƒtƒHƒ‹ƒg
++#     ‚ÌIPƒAƒhƒŒƒX‚ªƒzƒXƒg–¼‚Ég—p‚³‚ê‚Ü‚·B
++#
++#     ƒ|[ƒg”Ô†‚É‚Íport-base‚Å’è‹`‚µ‚½ƒIƒtƒZƒbƒg’l‚ª‰ÁZ‚³‚ê‚Ü‚·B
++#
++#     monitor-server‚ğ‹N“®‚·‚é‚½‚ß‚É‚ÍA‹Ù‹}ƒ†[ƒU[‚ª’è‹`‚³‚ê‚Ä‚¢‚È‚¯‚ê‚Î
++#     ‚¢‚¯‚Ü‚¹‚ñ(accessƒtƒ@ƒCƒ‹‚Æ‚µ‚Ä)B
++#
++# ƒfƒtƒHƒ‹ƒg’l:
++#
++#     HTTPƒT[ƒo[‚ª8080‚Å‹N“®‚³‚ê‚Ü‚·B
++
++<http-server>
++  # —LŒø‚ÈƒL[‚Í"address"‚Æ"force-connection-close"‚Å‚·
++  address 8080
++
++  # force-connection-close on
++  #
++  # ZServer‚ÆZPublisher‚ÌŠÔ‚ÅWSGIƒCƒ“ƒ^[ƒtƒF[ƒX‚ğ‚ğg‚¤‚±‚Æ‚ào—ˆ‚Ü‚·:
++  # use-wsgi on
++  #
++  # HTTPƒ\ƒPƒbƒg‚ğŠJ‚­‚Ì‚ğ‹N“®‚ÌI—¹‚Ü‚Å’x‰„‚³‚¹‚Ü‚·:
++  # fast-listen off
++</http-server>
++
++# —á:
++#
++#  <ftp-server>
++#    # —LŒø‚ÈƒL[‚Í"address"‚Å‚·
++#    address 8021
++#  </ftp-server>
++#
++#  <webdav-source-server>
++#    # —LŒø‚ÈƒL[‚Í"address"‚Æ"force-connection-close"‚Å‚·
++#    address 1980
++#    force-connection-close off
++#  </webdav-source-server>
++#
++#  <persistent-cgi>
++#    # —LŒø‚ÈƒL[‚Í"path"‚Å‚·
++#    path somefile
++#  </persistent-cgi>
++#
++#  <fast-cgi>
++#    # —LŒø‚ÈƒL[‚Í"address"‚ÅAhostname:portŒ`®Eport‚Ì‚İEUnix-domain
++#    # ƒ\ƒPƒbƒg‚Ö‚ÌƒpƒX‚Ì‚Ç‚ê‚©‚ğ‹Lq‚µ‚Ü‚·B
++#    address somefile
++#  </fast-cgi>
++#
++#  <monitor-server>
++#    # —LŒø‚ÈƒL[‚Í"address"‚Å‚·
++#    address 8099
++#  </monitor-server>
++#
++#  <icp-server>
++#    # —LŒø‚ÈƒL[‚Í"address"‚Å‚·
++#    address 888
++#  </icp-server>
++#
++#  <clock-server>
++#    # /foo/bar‚Æ‚¢‚¤–¼‘O‚Å30•bŠÔŠu‚Ìclock‚ğ‹N“®‚µ‚Ü‚·
++#    method /foo/bar
++#    period 30
++#    user admin
++#    password 123
++#  </clock-server>
++
++# ƒf[ƒ^ƒx[ƒX (zodb_db) ƒZƒNƒVƒ‡ƒ“
++#
++# ŠT—v:
++#     ƒf[ƒ^ƒx[ƒXƒZƒNƒVƒ‡ƒ“‚É‚ÍƒJƒXƒ^ƒ€ƒf[ƒ^ƒx[ƒX‚ÆƒXƒgƒŒ[ƒWí•Ê‚ğ’è‹`
++#     ‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·Bˆê‚ÂˆÈã‚Ìzodb_dbƒZƒNƒVƒ‡ƒ“‚ğ’è‹`‚µ‚Ä‚­‚¾‚³‚¢B
++#
++# ƒfƒtƒHƒ‹ƒg’l: –³‚µ.
++#          d—v: Zope‚ª‹N“®‚·‚é‚½‚ß‚ÉA­‚È‚­‚Æ‚àˆê‚ÂˆÈã‚Ìƒf[ƒ^ƒx[ƒX‚ğA
++#          "/"‚ğmount-point‚Æ‚µ‚Ä’è‹`‚µ‚Ä‰º‚³‚¢B
++
++<zodb_db main>
++    # ƒƒCƒ“ FileStorage ƒf[ƒ^ƒx[ƒX
++    <filestorage>
++      # ƒfƒBƒŒƒNƒeƒBƒu‚ÌÚ×‚Í .../ZODB/component.xml ‚ğQÆB
++      # (sectiontype ‚ª "filestorage" ‚Ì‰ÓŠ).
++      path $INSTANCE/var/Data.fs
++    </filestorage>
++    mount-point /
++</zodb_db>
++
++<zodb_db temporary>
++    # ƒeƒ“ƒ|ƒ‰ƒŠƒXƒgƒŒ[ƒWƒf[ƒ^ƒx[ƒX (ƒZƒbƒVƒ‡ƒ“—p)
++    <temporarystorage>
++      name temporary storage for sessioning
++    </temporarystorage>
++    mount-point /temp_folder
++    container-class Products.TemporaryFolder.TemporaryContainer
++</zodb_db>
++
++# ‚»‚Ì‘¼‚ÌƒXƒgƒŒ[ƒW—á
++#
++# ZEOƒNƒ‰ƒCƒAƒ“ƒgƒXƒgƒŒ[ƒW:
++#
++# <zodb_db main>
++#   # Š®‘S‚È mount-point ‚Ì‘®:
++#   #
++#   # mount-point <localpath>[:<remotepath>]
++#   #
++#   # localpath - ƒCƒ“ƒXƒ^ƒ“ƒX“à‚Å‚Ìƒ}ƒEƒ“ƒgˆÊ’u‚ğ¦‚·ƒpƒX
++#   # remotepath - ƒXƒgƒŒ[ƒW“à‚Ìƒ}ƒEƒ“ƒgŒ³‚ÌƒIƒuƒWƒFƒNƒg‚ÌƒpƒXB
++#   #              ƒfƒtƒHƒ‹ƒg‚Å‚Ílocalpath‚Æ“¯‚¶’l‚ªg—p‚³‚ê‚éB
++#   mount-point /
++#   # ZODB ƒLƒƒƒbƒVƒ…‚ğƒIƒuƒWƒFƒNƒg”‚Åw’è
++#   cache-size 5000
++#   <zeoclient>
++#     # ƒfƒBƒŒƒNƒeƒBƒu‚ÌÚ×‚Í .../ZODB/component.xml ‚ğQÆB
++#     # (sectiontype ‚ª "zeoclient" ‚Ì‰ÓŠ).
++#     server localhost:8100
++#     storage 1
++#     name zeostorage
++#     var $INSTANCE/var
++#     # ZEO ƒNƒ‰ƒCƒAƒ“ƒgƒLƒƒƒbƒVƒ…‚ğbyte”‚Åw’è
++#     cache-size 20MB
++#     # ‰i‘±ƒfƒBƒXƒNƒLƒƒƒbƒVƒ…‚ğg—p‚·‚é‚½‚ß‚ÉˆÈ‰º‚ÌƒRƒƒ“ƒg‚ğ‰ğœ
++#     #client zeo1
++#   </zeoclient>
++# </zodb_db>
++
++# ƒvƒƒ_ƒNƒgİ’è(product-config) ƒZƒNƒVƒ‡ƒ“
++#
++# ŠT—v:
++#    ƒAƒhƒIƒ“ƒvƒƒ_ƒNƒg‚É‚Â‚¢‚Äƒ|ƒŠƒV[İ’è‚ğs‚¤‚±‚Æ‚ªo—ˆ‚Ü‚·B‚»‚ê‚ç‚Ì
++#    ƒ|ƒŠƒV[‚Í–¼‘O‚Æ’l‚ÌƒyƒA‚Å•\Œ»‚³‚êA–¼‘O•t‚«ƒZƒNƒVƒ‡ƒ“‚ÅƒOƒ‹[ƒv‰»‚Å
++#    ‚«‚Ü‚·(1ƒvƒƒ_ƒNƒg1ƒZƒNƒVƒ‡ƒ“‚ª“TŒ^“I‚Å‚·‚ª•¡”‚ ‚Á‚Ä‚à‚©‚Ü‚¢‚Ü‚¹‚ñ)B
++#    ‚±‚ê‚ç‚ÌƒZƒNƒVƒ‡ƒ“‚ÍÅãˆÊ‚ÌconfigƒIƒuƒWƒFƒNƒg‚Ì'product_config'
++#    ƒAƒgƒŠƒrƒ…[ƒg‚ÉAƒZƒNƒVƒ‡ƒ“–¼‚É‘Î‰‚·‚éƒL[‚Å•Û‘¶‚³‚ê‚Ü‚·B—á‚¦‚ÎA
++#    ˆÈ‰º‚ÌƒTƒ“ƒvƒ‹ƒZƒNƒVƒ‡ƒ“‚Í {'bar': 'baz'} ‚Æ‚¢‚¤«‘‚É•ª‰ğ‚³‚êA
++#    config.product_config['foo'] ‚Æ‚µ‚ÄƒAƒNƒZƒX‚Å‚«‚Ü‚·B
++#
++#    Šeƒvƒƒ_ƒNƒg‚Í“Æ©‚ÌƒZƒNƒVƒ‡ƒ“ƒ^ƒCƒv‚ğŠg’£‚µ‚Ä“o˜^‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B
++#
++# —á: 
++#
++# 1. ŠÈ’P‚È•¶š—ñ‚ğŠi”[‚·‚éƒZƒNƒVƒ‡ƒ“:
++#
++#    <product-config foo>
++#       bar baz
++#    </product-config>
++#
++# 2. ƒJƒXƒ^ƒ€ƒZƒNƒVƒ‡ƒ“ƒ^ƒCƒv
++#
++#    Products/Foo/component.xml ‚ÉˆÈ‰º‚ğ‹Lq:
++#
++#    <component>
++#     <description>
++#       Some product-specific hackery.
++#     </description>
++#     <sectiontype name="myproduct" implements="zope.product.base">
++#      <description>
++#       Product-specific configuration.
++#      </description>
++#      <key name="foo" />
++#     </sectiontype>
++#    </component>
++#
++#    zope.conf‚Å‚ÍˆÈ‰º‚Ì‚æ‚¤‚É—˜—p:
++#
++#    %import Products.Foo
++#
++#    <myproduct bar>
++#      foo qux
++#    </myproduct>
+
+‘®«‚É•ÏX‚ª‚ ‚Á‚½ƒpƒX: ja\2.12.7\src\Zope2\utilities\skel\etc\zope.conf
+___________________________________________________________________
+’Ç‰Á: svn:eol-style
+   + LF
+
+Index: ja/2.12.7/src/Zope2/utilities/skel/etc/site.zcml
+===================================================================
+--- ja/2.12.7/src/Zope2/utilities/skel/etc/site.zcml	(ƒŠƒrƒWƒ‡ƒ“ 0)
++++ ja/2.12.7/src/Zope2/utilities/skel/etc/site.zcml	(ƒŠƒrƒWƒ‡ƒ“ 670)
+@@ -0,0 +1,26 @@
++<configure xmlns="http://namespaces.zope.org/zope"
++	       xmlns:meta="http://namespaces.zope.org/meta"
++           xmlns:five="http://namespaces.zope.org/five">
++
++  <include package="Products.Five" />
++  <meta:redefinePermission from="zope2.Public" to="zope.Public" />
++
++
++  <!-- Load the meta -->
++
++  <include files="package-includes/*-meta.zcml" />
++  <five:loadProducts file="meta.zcml"/>
++
++
++  <!-- Load the configuration -->
++
++  <include files="package-includes/*-configure.zcml" />
++  <five:loadProducts />
++
++
++  <!-- Load the configuration overrides-->
++
++  <includeOverrides files="package-includes/*-overrides.zcml" />
++  <five:loadProductsOverrides />
++
++</configure>
+
+‘®«‚É•ÏX‚ª‚ ‚Á‚½ƒpƒX: ja\2.12.7\src\Zope2\utilities\skel\etc\site.zcml
+___________________________________________________________________
+’Ç‰Á: svn:eol-style
+   + LF
+
+
+‘®«‚É•ÏX‚ª‚ ‚Á‚½ƒpƒX: ja\zope2docs\releases
+___________________________________________________________________
+•ÏX: svn:externals
+   - 2.12 http://svn.freia.jp/open/zope2docs/branches/ja/2.12.5/doc
+
+   + 2.12 http://svn.freia.jp/open/zope2docs/branches/ja/2.12.7/doc
+
+

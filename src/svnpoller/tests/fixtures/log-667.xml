@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<log>
+<logentry
+   revision="667">
+<author>taka</author>
+<date>2010-05-17T11:22:45.347108Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/zope2docs/branches/ja/2.12.6/doc/CHANGES.rst</path>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.12.5"
+   copyfrom-rev="664"
+   action="A">/zope2docs/branches/ja/2.12.6</path>
+</paths>
+<msg>update to 2.12.6 release (r112410) 日本語訳完了</msg>
+</logentry>
+</log>

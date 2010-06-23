@@ -1,603 +1,111 @@
 <?xml version="1.0"?>
 <log>
 <logentry
-   revision="106448">
-<author>terapyon</author>
-<date>2009-12-11T09:51:35.511282Z</date>
+   revision="670">
+<author>taka</author>
+<date>2010-06-14T09:01:37.400829Z</date>
 <paths>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ja.po</path>
+   action="M">/zope2docs/branches/ja/zope2docs/releases</path>
+<path
+   kind=""
+   action="M">/zope2docs/branches/ja/2.12.7/doc/CHANGES.rst</path>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.12.6"
+   copyfrom-rev="667"
+   action="A">/zope2docs/branches/ja/2.12.7</path>
 </paths>
-<msg>Japanse two portal message fixed #9922</msg>
+<msg>update to 2.12.7 release (r113416) 日本語訳完了</msg>
 </logentry>
 <logentry
-   revision="107126">
-<author>terapyon</author>
-<date>2009-12-20T09:43:32.651672Z</date>
+   revision="668">
+<author>taka</author>
+<date>2010-05-17T11:23:33.436680Z</date>
 <paths>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ja.po</path>
+   action="M">/zope2docs/branches/ja/zope2docs/releases</path>
 </paths>
-<msg>modify last modify date</msg>
+<msg>update to 2.12.6 release (r112410) 日本語訳完了</msg>
 </logentry>
 <logentry
-   revision="113304">
-<author>vincentfretin</author>
-<date>2010-03-17T16:21:02.720070Z</date>
+   revision="667">
+<author>taka</author>
+<date>2010-05-17T11:22:45.347108Z</date>
 <paths>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-el.po</path>
+   action="M">/zope2docs/branches/ja/2.12.6/doc/CHANGES.rst</path>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-gl.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ar.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-et.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-kn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-nl.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-th.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pl.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-nn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-it.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sl.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-lt.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-hk.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ca.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pt.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-da.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-tr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fa.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sv.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-de.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-bg.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ja.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ka.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-he.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-eo.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ta.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-mi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-cs.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-es.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-te.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ko.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-eu.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-tw.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fu.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-cy.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hu.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-no.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sk.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-vi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sm.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-uk.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-cn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hy.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ro.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sr-Latn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-to.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sq.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pt-br.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-my.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-af.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ru.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes.pot</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-id.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-bn.po</path>
+   copyfrom-path="/zope2docs/branches/ja/2.12.5"
+   copyfrom-rev="664"
+   action="A">/zope2docs/branches/ja/2.12.6</path>
 </paths>
-<msg>Added label_use_end_date and label_whole_day_event messages to atcontenttypes</msg>
+<msg>update to 2.12.6 release (r112410) 日本語訳完了</msg>
 </logentry>
 <logentry
-   revision="113533">
-<author>vincentfretin</author>
-<date>2010-03-19T14:51:09.946009Z</date>
+   revision="664">
+<author>taka</author>
+<date>2010-04-25T17:12:35.646537Z</date>
 <paths>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-el.po</path>
+   copyfrom-path="/zope2docs/branches/ja/2.12.4/doc/CHANGES.rst"
+   copyfrom-rev="653"
+   action="R">/zope2docs/branches/ja/2.12.5/doc/CHANGES.rst</path>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-gl.po</path>
+   action="M">/zope2docs/branches/ja/zope2docs/releases</path>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ar.po</path>
+   copyfrom-path="/zope2docs/branches/ja/2.12.4/doc/INSTALL-buildout.rst"
+   copyfrom-rev="655"
+   action="R">/zope2docs/branches/ja/2.12.5/doc/INSTALL-buildout.rst</path>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fr.po</path>
+   action="M">/zope2docs/branches/ja/2.12.5/src/Zope2/utilities/skel/etc/zope.conf</path>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-et.po</path>
+   copyfrom-path="/zope2docs/branches/ja/2.12.4/doc/WHATSNEW.rst"
+   copyfrom-rev="652"
+   action="R">/zope2docs/branches/ja/2.12.5/doc/WHATSNEW.rst</path>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-kn.po</path>
+   copyfrom-path="/zope2docs/branches/ja/2.12.4/doc/operation.rst"
+   copyfrom-rev="655"
+   action="R">/zope2docs/branches/ja/2.12.5/doc/operation.rst</path>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-nl.po</path>
+   copyfrom-path="/zope2docs/branches/ja/2.12.4"
+   copyfrom-rev="647"
+   action="A">/zope2docs/branches/ja/2.12.5</path>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-th.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pl.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-nn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-it.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sl.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-lt.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-hk.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ca.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pt.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-da.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-tr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fa.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sv.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-de.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-bg.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ja.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ka.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-he.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-eo.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ta.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-mi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-cs.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-es.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-te.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ko.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-eu.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-tw.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fu.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-cy.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hu.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-no.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sk.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-vi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sm.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-uk.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-cn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hy.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ro.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sr-Latn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-to.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sq.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pt-br.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-my.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-af.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ru.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes.pot</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-id.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-bn.po</path>
+   copyfrom-path="/zope2docs/branches/ja/2.12.4/doc/INSTALL.rst"
+   copyfrom-rev="654"
+   action="R">/zope2docs/branches/ja/2.12.5/doc/INSTALL.rst</path>
 </paths>
-<msg>atcontenttypes: removed label_use_end_date, added label_event_recurrence</msg>
+<msg>update to 2.12.5 release (r111325)
+
+日本語訳完了</msg>
 </logentry>
 <logentry
-   revision="114575">
-<author>vincentfretin</author>
-<date>2010-04-05T08:42:32.769216Z</date>
+   revision="655">
+<author>taka</author>
+<date>2010-04-06T13:47:53.850795Z</date>
 <paths>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-el.po</path>
+   action="M">/zope2docs/branches/ja/2.12.4/doc/INSTALL-buildout.rst</path>
 <path
    kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-gl.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ar.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-et.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-kn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-nl.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-th.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pl.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-nn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-it.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sl.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-lt.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-hk.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ca.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pt.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-da.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-tr.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fa.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sv.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-de.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-bg.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ja.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ka.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-he.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-eo.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ta.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-mi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-cs.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-es.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-te.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ko.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-eu.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-tw.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-fu.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-cy.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hu.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-no.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sk.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-vi.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sm.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-uk.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-zh-cn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-hy.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ro.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sr-Latn.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-to.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-sq.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-pt-br.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-my.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-af.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ru.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes.pot</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-id.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-bn.po</path>
+   action="M">/zope2docs/branches/ja/2.12.4/doc/operation.rst</path>
 </paths>
-<msg>6 new messages for plone.app.event (Plone 4.1)</msg>
-</logentry>
-<logentry
-   revision="115025">
-<author>tyam</author>
-<date>2010-04-10T07:09:52.745456Z</date>
-<paths>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/plone-ja.po</path>
-<path
-   kind=""
-   action="M">/PloneTranslations/trunk/i18n/atcontenttypes-ja.po</path>
-</paths>
-<msg>新しく追加されたカタログを翻訳しました</msg>
+<msg>update to 2.12.4 release (r110522)
+
+和訳完了</msg>
 </logentry>
 </log>

@@ -59,7 +59,7 @@ class Log(object):
         cmd.append('-r%s' % rev)
         cmd.append(url)
         status, out, err = command(cmd)
-        return out.decode('utf-8')
+        return safe_decode(out, per_line=True)
 
     def __repr__(self):
         return "<Log rev=%s, url='%s'>" % (str(self.rev), str(self.url))
@@ -147,6 +147,6 @@ def command(cmd):
     proc = subprocess.Popen(cmd, **POPEN_KW)
     out, err = proc.communicate()
     proc.wait()
-    out = safe_decode(out).encode('utf-8')
+    out = safe_decode(out, per_line=True).encode('utf-8')
     return proc.returncode, out, err
 

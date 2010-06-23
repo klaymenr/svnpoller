@@ -13,13 +13,15 @@ class TestSvnlog(TestBase):
         log = svnlog.Log(TEST_URL, TEST_REVS[0])
         self.assertEqual(TEST_REVS[0], log.rev)
         self.assertEqual(TEST_URL, log.url)
-        self.assertEqual('http://svn.plone.org/svn/collective', log.root)
-        self.assertEqual('/PloneTranslations/trunk/i18n/atcontenttypes-ja.po', log.subpath)
-        self.assertEqual([('M', '/PloneTranslations/trunk/i18n/atcontenttypes-ja.po')], log.paths)
+        self.assertEqual('http://svn.freia.jp/open', log.root)
+        self.assertEqual('/zope2docs/branches', log.subpath)
+        self.assertEqual([('M', '/zope2docs/branches/ja/2.12.4/doc/INSTALL-buildout.rst'),
+                          ('M', '/zope2docs/branches/ja/2.12.4/doc/operation.rst'),
+                         ], log.paths)
         #self.assertEqual('', log.normalized_paths)
-        self.assertEqual('terapyon', log.author)
-        self.assertEqual('2009-12-11 09:51:35', log.date.strftime('%Y-%m-%d %H:%M:%S'))
-        self.assertEqual('Japanse two portal message fixed #9922', log.msg)
+        self.assertEqual('taka', log.author)
+        self.assertEqual('2010-04-06 13:47:53', log.date.strftime('%Y-%m-%d %H:%M:%S'))
+        self.assertEqual(u'update to 2.12.4 release (r110522)\n\n\u548c\u8a33\u5b8c\u4e86', log.msg)
         self.assert_(log.diff)
 
     def test_get_revisions_ids(self):
@@ -32,8 +34,8 @@ class TestSvnlog(TestBase):
 
     def test_get_logs(self):
         logs = svnlog.get_logs(TEST_URL)
-        self.assertEqual(6, len(logs))
+        self.assertEqual(5, len(logs))
         for log in logs:
             self.assert_(log.rev)
-            self.assertEqual('http://svn.plone.org/svn/collective', log.root)
+            self.assertEqual('http://svn.freia.jp/open', log.root)
 

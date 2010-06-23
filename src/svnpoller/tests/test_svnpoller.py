@@ -6,11 +6,10 @@ if __name__ == '__main__':
     import sys
     sys.path.insert(0, '')
 
-import base
+from base import TestBase
+from base import TEST_URL, TEST_REVS, TEST_MAX_REV
 from svnpoller import svnpoller
 
-TEST_URL = 'http://svn.plone.org/svn/collective/PloneTranslations/trunk/i18n/atcontenttypes-ja.po'
-TEST_REVS = [106448, 107126, 113304, 113533, 114575, 115025]
 
 CONFIG_DATA = '''\
 [mail]
@@ -32,7 +31,7 @@ url = http://svn.plone.org/svn/collective/PloneTranslations/trunk/i18n/atcontent
 address = user1@example.com, user2@example.com
 '''
 
-class TestSvnPoller(base.TestBase):
+class TestSvnPoller(TestBase):
 
     def _make_config(self, data):
         h,fname = mkstemp()
@@ -86,7 +85,7 @@ class TestSvnPoller(base.TestBase):
         conf = ConfigParser()
         conf.read(self.config_file)
         rev = conf.get('PloneTranslations-ja', 'newest_rev')
-        self.assertEqual('115025', rev)
+        self.assertEqual(str(TEST_MAX_REV), rev)
 
         svnpoller.main(self.config_file, self._stub_sender)
         self.assertEqual(0, len(self._sent))

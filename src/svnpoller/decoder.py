@@ -15,10 +15,16 @@ def guess_charset(data):
     return None
 
 
-def safe_decode(data, default=None):
+def decode(data, default=None):
     charset = guess_charset(data) or default
     if charset:
         return data.decode(charset,'replace')
     return data
 
+
+def safe_decode(data, default=None, per_line=False):
+    if per_line:
+        return '\n'.join(decode(l,default) for l in data.splitlines())
+    else:
+        return decode(data, default)
 

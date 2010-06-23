@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<log>
+<logentry
+   revision="655">
+<author>taka</author>
+<date>2010-04-06T13:47:53.850795Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/zope2docs/branches/ja/2.12.4/doc/INSTALL-buildout.rst</path>
+<path
+   kind=""
+   action="M">/zope2docs/branches/ja/2.12.4/doc/operation.rst</path>
+</paths>
+<msg>update to 2.12.4 release (r110522)
+
+和訳完了</msg>
+</logentry>
+</log>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<log>
+<logentry
+   revision="668">
+<author>taka</author>
+<date>2010-05-17T11:23:33.436680Z</date>
+<paths>
+<path
+   kind=""
+   action="M">/zope2docs/branches/ja/zope2docs/releases</path>
+</paths>
+<msg>update to 2.12.6 release (r112410) 日本語訳完了</msg>
+</logentry>
+</log>

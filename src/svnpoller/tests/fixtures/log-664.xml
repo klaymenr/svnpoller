@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<log>
+<logentry
+   revision="664">
+<author>taka</author>
+<date>2010-04-25T17:12:35.646537Z</date>
+<paths>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.12.4/doc/CHANGES.rst"
+   copyfrom-rev="653"
+   action="R">/zope2docs/branches/ja/2.12.5/doc/CHANGES.rst</path>
+<path
+   kind=""
+   action="M">/zope2docs/branches/ja/zope2docs/releases</path>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.12.4/doc/INSTALL-buildout.rst"
+   copyfrom-rev="655"
+   action="R">/zope2docs/branches/ja/2.12.5/doc/INSTALL-buildout.rst</path>
+<path
+   kind=""
+   action="M">/zope2docs/branches/ja/2.12.5/src/Zope2/utilities/skel/etc/zope.conf</path>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.12.4/doc/WHATSNEW.rst"
+   copyfrom-rev="652"
+   action="R">/zope2docs/branches/ja/2.12.5/doc/WHATSNEW.rst</path>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.12.4/doc/operation.rst"
+   copyfrom-rev="655"
+   action="R">/zope2docs/branches/ja/2.12.5/doc/operation.rst</path>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.12.4"
+   copyfrom-rev="647"
+   action="A">/zope2docs/branches/ja/2.12.5</path>
+<path
+   kind=""
+   copyfrom-path="/zope2docs/branches/ja/2.12.4/doc/INSTALL.rst"
+   copyfrom-rev="654"
+   action="R">/zope2docs/branches/ja/2.12.5/doc/INSTALL.rst</path>
+</paths>
+<msg>update to 2.12.5 release (r111325)
+
+日本語訳完了</msg>
+</logentry>
+</log>
