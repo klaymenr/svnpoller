@@ -3,6 +3,9 @@ from optparse import OptionParser
 import minimock
 
 FIXTURE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fixtures')
+TEST_URL = 'http://svn.plone.org/svn/collective/PloneTranslations/trunk/i18n/atcontenttypes-ja.po'
+TEST_REVS = [106448, 107126, 113304, 113533, 114575, 115025]
+TEST_MAX_REV = 115205
 
 svn_command_parser = OptionParser()
 svn_command_parser.add_option('-r', '--revision',
@@ -22,7 +25,7 @@ def command(cmd):
     #    return command_orig(cmd)
 
     if 'info' == cmd[1]:
-        return open(os.path.join(FIXTURE_DIR, 'info-1.xml')).read(), ''
+        return 0, open(os.path.join(FIXTURE_DIR, 'info-1.xml')).read(), ''
 
     elif 'log' == cmd[1]:
         options, args = svn_command_parser.parse_args(cmd[2:])
@@ -33,17 +36,19 @@ def command(cmd):
         else:
             rev = '1-HEAD'
         filename = 'log-%s.xml' % rev
+        if int(rev.split('-',2)[0]) > TEST_MAX_REV:
+            return 1, '<?xml version="1.0"?><log>', ''
         if not os.path.exists(os.path.join(FIXTURE_DIR, filename)):
             raise RuntimeError(filename+' was not found')
 
         f = os.path.join(FIXTURE_DIR, filename)
         #print f
-        return open(f).read(), ''
+        return 0, open(f).read(), ''
 
     elif 'diff' == cmd[1]:
         f = os.path.join(FIXTURE_DIR, 'diff-1.txt')
         #print f
-        return open(f).read(), ''
+        return 0, open(f).read(), ''
 
     else:
         raise RuntimeError("'%s' was not supported." % cmd)

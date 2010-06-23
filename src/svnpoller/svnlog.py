@@ -42,7 +42,7 @@ class Log(object):
         cmd = ['svn', 'info', '--xml']
         cmd.append('-r%s' % str(rev))
         cmd.append(url)
-        out,err = command(cmd)
+        status, out, err = command(cmd)
         return out
 
     def _prepare_log(self, url, rev):
@@ -50,7 +50,7 @@ class Log(object):
         cmd = ['svn', 'log', '-v', '--xml']
         cmd.append('-r%s' % str(rev))
         cmd.append(url)
-        out,err = command(cmd)
+        status, out, err = command(cmd)
         return out
 
     def _prepare_diff(self, url, rev):
@@ -58,7 +58,7 @@ class Log(object):
         cmd = ['svn', 'diff']
         cmd.append('-r%s' % rev)
         cmd.append(url)
-        out,err = command(cmd)
+        status, out, err = command(cmd)
         return out.decode('utf-8')
 
     def __repr__(self):
@@ -83,7 +83,7 @@ def get_logs(url, rev=None, rev2=None):
     elif rev:
         cmd.append('-r%s' % str(rev))
     cmd.append(url)
-    out,err = command(cmd)
+    status, out, err = command(cmd)
     root = xml2elem(out)
     return [Log(url, node.attrib['revision']) for node in root]
 
@@ -108,6 +108,12 @@ def get_revisions(urls, rev=None):
         >>> get_revisions(urls, 3)
         [3,5]
 
+    If `rev` is greater then repository's newest revision, get_revisions
+    return empty list.
+
+        >>> get_revisions(urls, 6)
+        []
+
     Another call samples:
 
         >>> get_revisions(urls, None)
@@ -118,6 +124,10 @@ def get_revisions(urls, rev=None):
         [1,2,3,5]
         >>> get_revisions(urls, '3')
         [3,5]
+        >>> get_revisions(urls, 5)
+        [5]
+        >>> get_revisions(urls, '6')
+        []
     """
     revs = set()
     for url in urls:
@@ -125,17 +135,18 @@ def get_revisions(urls, rev=None):
         if rev:
             cmd.append('-r%s:HEAD' % str(rev))
         cmd.append(url)
-        out,err = command(cmd)
-        root = xml2elem(out)
-        revs.update(int(node.attrib['revision']) for node in root)
+        status, out, err = command(cmd)
+        if status == 0:
+            root = xml2elem(out)
+            revs.update(int(node.attrib['revision']) for node in root)
 
     return sorted(revs)
 
 def command(cmd):
     '''command return communication data by `utf-8` '''
     proc = subprocess.Popen(cmd, **POPEN_KW)
-    out,err = proc.communicate()
+    out, err = proc.communicate()
     proc.wait()
     out = safe_decode(out).encode('utf-8')
-    return out,err
+    return proc.returncode, out, err
 

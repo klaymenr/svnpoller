@@ -112,6 +112,9 @@ History
 * Fix: commit message include multi-byte charactor cause exception.
 * Remove: `lxml` dependency, become optional
   (thanks to 'Federico' for the patch!).
+* Fix: Exception caused by error status return from svn command
+  when repository was not updated since last check
+  (thanks to 'Federico' for the patch!).
 
 0.0.8 (2010-6-20)
 ~~~~~~~~~~~~~~~~~~

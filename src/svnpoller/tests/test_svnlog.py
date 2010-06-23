@@ -1,12 +1,10 @@
 import os
-import base
+from base import TestBase
+from base import TEST_URL, TEST_REVS, TEST_MAX_REV
 from svnpoller import svnlog
 
-TEST_URL = 'http://svn.plone.org/svn/collective/PloneTranslations/trunk/i18n/atcontenttypes-ja.po'
-TEST_REVS = [106448, 107126, 113304, 113533, 114575, 115025]
 
-
-class TestSvnlog(base.TestBase):
+class TestSvnlog(TestBase):
 
     def setUp(self):
         super(TestSvnlog, self).setUp()
@@ -27,6 +25,10 @@ class TestSvnlog(base.TestBase):
     def test_get_revisions_ids(self):
         revs = svnlog.get_revisions([TEST_URL])
         self.assertEqual(TEST_REVS, revs)
+
+    def test_get_revisions_by_non_exist_revision(self):
+        revs = svnlog.get_revisions([TEST_URL], TEST_MAX_REV+1)
+        self.assertEqual([], revs)
 
     def test_get_logs(self):
         logs = svnlog.get_logs(TEST_URL)
