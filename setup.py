@@ -15,11 +15,6 @@ classifiers = [
    "Topic :: Software Development",
 ]
 
-# for python 2.4 support
-if_need_lxml = []
-if sys.version_info[:2] < (2,5):
-    if_need_lxml.append('lxml')
-
 setup(
     name='svnpoller',
     version=version,
@@ -38,7 +33,7 @@ setup(
     install_requires=[
        'setuptools',
         # -*- Extra requirements: -*-
-    ] + if_need_lxml,
+    ],
     extras_require=dict(
         test=[
             'Nose',

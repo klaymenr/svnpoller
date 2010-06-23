@@ -2,7 +2,7 @@ import smtplib
 from types import ListType, TupleType, StringType
 from email.MIMEText import MIMEText
 from email.Header import Header
-
+from decoder import *
 
 def _sender(fromaddr, toaddrs, msg, smtpserver):
     server = smtplib.SMTP(smtpserver)

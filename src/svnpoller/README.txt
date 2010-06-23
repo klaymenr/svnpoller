@@ -54,9 +54,9 @@ Dependencies
 * `setuptools <http://pypi.python.org/pypi/setuptools>`_ or
   `distribute <http://pypi.python.org/pypi/distribute>`_
 
-* `lxml` (if python version less than 2.5)
-
 * svn external command (1.4 or later)
+
+* `lxml` (optional)
 
 
 Features
@@ -106,6 +106,11 @@ or setup cron job::
 
 History
 -------
+
+0.0.9 (2010-6-23)
+~~~~~~~~~~~~~~~~~~
+* Remove: `lxml` dependency, become optional
+  (thanks to 'Federico' for the patch!).
 
 0.0.8 (2010-6-20)
 ~~~~~~~~~~~~~~~~~~

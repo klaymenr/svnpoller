@@ -16,7 +16,6 @@ Functionals
 
 Environments
 ~~~~~~~~~~~~~
-* Remove lxml dependency (but want to support py2.4).
 * Refactoring.
 * Add test: multi url polling
 * Add test: Python2.4, 2.5, 2.6 support check.

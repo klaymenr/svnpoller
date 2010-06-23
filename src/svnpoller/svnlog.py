@@ -4,33 +4,13 @@ __all__ = ['POPEN_KW', 'Log', 'get_logs', 'get_log', 'get_revisions']
 
 
 import os, sys, subprocess
-from datetime import datetime
-
-# import ElementTree or lxml
-try:
-    # for python 2.5 or later.
-    from xml.etree.ElementTree import fromstring as xml2elem
-except:
-    try:
-        # for python 2.4. need lxml
-        from lxml.etree import XML as xml2elem
-    except:
-        raise ImportError("Need 'xml.etree.ElementTree.fromstring' or 'lxml.etree.XML'")
-
-
-# Python2.4 have no `strptime` method at datetime class
-if sys.version_info < (2,5):
-    import time
-    strptime = lambda t,f: datetime(*(time.strptime(t, f)[0:6]))
-else:
-    strptime = datetime.strptime
-
+from compat import xml2elem, strptime
+from decoder import safe_decode
 
 POPEN_ENV = os.environ.copy()
 POPEN_ENV['LANG'] = 'C'
 
 POPEN_KW = dict(stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=POPEN_ENV)
-
 
 
 class Log(object):
@@ -62,21 +42,21 @@ class Log(object):
         cmd.append('-r%s' % str(rev))
         cmd.append(url)
         out,err = command(cmd)
-        return out
+        return safe_decode(out)
 
     def _prepare_log(self, url, rev):
         cmd = ['svn', 'log', '-v', '--xml']
         cmd.append('-r%s' % str(rev))
         cmd.append(url)
         out,err = command(cmd)
-        return out
+        return safe_decode(out)
 
     def _prepare_diff(self, url, rev):
         cmd = ['svn', 'diff']
         cmd.append('-r%s' % rev)
         cmd.append(url)
         out,err = command(cmd)
-        return out
+        return safe_decode(out)
 
     def __repr__(self):
         return "<Log rev=%s, url='%s'>" % (str(self.rev), str(self.url))
