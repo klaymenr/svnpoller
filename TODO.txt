@@ -3,6 +3,9 @@ Todos
 
 Functionals
 ~~~~~~~~~~~~
+* Add debug option '--debug / -d' for processing status output.
+* Add log output option '--log / -l' by :mod:`logging`.
+* Add filtering option for non-target file at same commit rev.
 * Introduce customizable mail template.
 * Remove base64 e-mail encoding always.
 * Add e-mail encoding (now using base64 encoded utf-8)

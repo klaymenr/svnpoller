@@ -107,6 +107,13 @@ or setup cron job::
 History
 -------
 
+0.0.10 (2010-9-16)
+~~~~~~~~~~~~~~~~~~
+* Fix: svnpoller exec 'svn diff -r100 <URL>' for check revision 10000 that
+  command mean 'svn diff -r100:HEAD <URL>' then if HEAD=10000 svnpoller
+  take long time and large svn diff output.
+
+
 0.0.9 (2010-6-23)
 ~~~~~~~~~~~~~~~~~~
 * Fix: commit message include multi-byte charactor cause exception.
