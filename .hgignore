@@ -2,7 +2,7 @@
 .pyc
 .swp
 bin
-build
+_build
 develop-eggs
 dist
 eggs
