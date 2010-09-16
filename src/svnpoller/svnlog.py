@@ -58,8 +58,14 @@ class Log(object):
 
     def _prepare_diff(self, url, rev):
         '''return `unicode` text data'''
+
         cmd = ['svn', 'diff']
-        cmd.append('-r%s' % rev)
+        try:
+            rev_i = int(rev)
+            prev_i = rev_i - 1
+            cmd.append('-r%d:%d' % (prev_i, rev_i))
+        except:
+            cmd.append('-r%s' % rev)
         cmd.append(url)
         status, out, err = command(cmd)
         return safe_decode(out, per_line=True)
@@ -175,6 +181,7 @@ def get_revisions(urls, rev=None):
 
 def command(cmd):
     '''command return communication data by `utf-8` '''
+    #print "#DEBUG#", cmd   #FIXME: we need --debug option
     proc = subprocess.Popen(cmd, **POPEN_KW)
     out, err = proc.communicate()
     proc.wait()
